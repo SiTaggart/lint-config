@@ -1,0 +1,36 @@
+{
+  "name": "@sitaggart/eslint-config-react",
+  "version": "0.0.0",
+  "description": "eslint config for react projects",
+  "keywords": [
+    "eslint",
+    "react",
+    "config"
+  ],
+  "author": "Si Taggart <me@simontaggart.com>",
+  "homepage": "https://github.com/SiTaggart/lint-config#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "publishConfig": {
+    "registry": "https://registry.yarnpkg.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SiTaggart/lint-config.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/SiTaggart/lint-config/issues"
+  },
+  "peerDependencies": {
+    "@sitaggart/eslint-config": "*"
+  },
+  "dependencies": {
+    "eslint-config-standard-jsx": "^8.1.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^2.0.1"
+  }
+}

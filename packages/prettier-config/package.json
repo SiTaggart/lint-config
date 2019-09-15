@@ -1,0 +1,29 @@
+{
+  "name": "@sitaggart/prettier-config",
+  "version": "0.0.0",
+  "description": "prettier config for personal projects",
+  "keywords": [
+    "prettier",
+    "config"
+  ],
+  "author": "Si Taggart <me@simontaggart.com>",
+  "homepage": "https://github.com/SiTaggart/lint-config#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "publishConfig": {
+    "registry": "https://registry.yarnpkg.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SiTaggart/lint-config.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/SiTaggart/lint-config/issues"
+  },
+  "peerDependencies": {
+    "prettier": "*"
+  }
+}

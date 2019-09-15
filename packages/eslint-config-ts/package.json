@@ -1,0 +1,33 @@
+{
+  "name": "@sitaggart/eslint-config-ts",
+  "version": "0.0.0",
+  "description": "eslint config for typescript projects",
+  "keywords": [
+    "eslint",
+    "typescript"
+  ],
+  "author": "Si Taggart <me@simontaggart.com>",
+  "homepage": "https://github.com/SiTaggart/lint-config#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "publishConfig": {
+    "registry": "https://registry.yarnpkg.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SiTaggart/lint-config.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/SiTaggart/lint-config/issues"
+  },
+  "peerDependencies": {
+    "@sitaggart/eslint-config": "*"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.2.0",
+    "@typescript-eslint/parser": "^2.2.0"
+  }
+}
