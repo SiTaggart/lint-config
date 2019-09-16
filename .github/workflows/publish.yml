@@ -13,8 +13,8 @@ jobs:
         node-version: [12.x]
     steps:
       - uses: actions/checkout@master
-        with:
-          ref: master
+      - name: Checkout master
+        run: git checkout "${GITHUB_REF:11}"
       - name: "Init: Summon NodeJS"
         uses: actions/setup-node@v1
         with:
