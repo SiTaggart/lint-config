@@ -30,5 +30,5 @@
     "@typescript-eslint/eslint-plugin": "^2.2.0",
     "@typescript-eslint/parser": "^2.2.0"
   },
-  "gitHead": "61e949b9ad140a20623368c9c9cc190789a87772"
+  "gitHead": "a6961a7c6edecb883f98352075cd0745054ab52d"
 }
