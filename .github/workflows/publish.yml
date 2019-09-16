@@ -22,14 +22,16 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: "Setup npm"
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm config set registry https://registry.npmjs.org/:_authToken=$NPM_TOKEN -q && npm login
       - name: "Init: Install dependencies"
         uses: borales/actions-yarn@master
         with:
           args: install
+      - name: "Setup npm"
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm config set registry https://registry.npmjs.org/:_authToken=$NPM_TOKEN -q
+      - name: "NPM login"
+        run: npm login
       - name: "Publish: Trigger lerna publish"
         uses: borales/actions-yarn@master
         env:
