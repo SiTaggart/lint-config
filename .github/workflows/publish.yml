@@ -12,6 +12,7 @@ jobs:
       matrix:
         node-version: [12.x]
     steps:
+      - uses: actions/checkout@master
       - name: Checkout master
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
