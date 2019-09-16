@@ -18,14 +18,14 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GH_USER_NAME: ${{ secrets.GH_USER_NAME }}
         run: git remote rm origin && git remote add origin "https://$GH_USER_NAME:$GH_TOKEN@github.com/SiTaggart/lint-config.git" && git fetch && git config user.email octobot@github.com && git config user.name GitHub Actions && git checkout "${GITHUB_REF:11}"
-      - name: "Setup npmrc"
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm config set registry //registry.npmjs.org/:_authToken=$NPM_TOKEN -q && npm login
       - name: "Init: Summon NodeJS"
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      - name: "Setup npm"
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm config set registry https://registry.npmjs.org/:_authToken=$NPM_TOKEN -q && npm login
       - name: "Init: Install dependencies"
         uses: borales/actions-yarn@master
         with:
