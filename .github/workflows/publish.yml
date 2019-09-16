@@ -12,9 +12,15 @@ jobs:
       matrix:
         node-version: [12.x]
     steps:
-      - uses: actions/checkout@master
       - name: Checkout master
-        run: git checkout "${GITHUB_REF:11}"
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_USER_NAME: ${{ secrets.GH_USER_NAME }}
+        run: git remote rm origin && git remote add origin "https://$GH_USER_NAME:$GH_TOKEN@github.com/SiTaggart/lint-config.git" && git fetch && git config --global user.email octobot@github.com && git config --global user.name GitHub Actions && git checkout "${GITHUB_REF:11}"
+      - name: "Setup npmrc"
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm config set registry //registry.npmjs.org/:_authToken=$NPM_TOKEN -q
       - name: "Init: Summon NodeJS"
         uses: actions/setup-node@v1
         with:
@@ -25,9 +31,5 @@ jobs:
           args: install
       - name: "Publish: Trigger lerna publish"
         uses: borales/actions-yarn@master
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          GH_USER_NAME: ${{ secrets.GH_USER_NAME }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         with:
-          args: ci:deploy
+          args: release

@@ -3,7 +3,6 @@
   "private": true,
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "ci:deploy": "./deploy.sh",
     "lerna": "lerna",
     "release": "yarn lerna version -m 'chore(release): publish' --conventional-commits --yes --create-release github"
   },
