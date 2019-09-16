@@ -10,6 +10,9 @@
   "homepage": "https://github.com/SiTaggart/lint-config#readme",
   "license": "MIT",
   "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SiTaggart/lint-config.git"
@@ -27,5 +30,5 @@
     "@typescript-eslint/eslint-plugin": "^2.2.0",
     "@typescript-eslint/parser": "^2.2.0"
   },
-  "gitHead": "0bc9c6de7933209668d6cf10a6cef722d1f12414"
+  "gitHead": "5ab9ad16ed50b7f5fa90a71c9efb4cbd95569a43"
 }
