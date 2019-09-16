@@ -16,7 +16,7 @@ jobs:
       - name: Checkout master
         run: git checkout "${GITHUB_REF:11}"
       - name: Set git email and name
-        run: git config user.email "me@simontaggart.com && git config user.name "GitHub Actions CI""
+        run: git config user.email "me@simontaggart.com" && git config user.name "GitHub Actions CI"
       - name: "Init: Summon NodeJS"
         uses: actions/setup-node@v1
         with:
