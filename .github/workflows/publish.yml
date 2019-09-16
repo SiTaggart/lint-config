@@ -21,7 +21,7 @@ jobs:
       - name: "Setup npmrc"
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm config set registry //registry.npmjs.org/:_authToken=$NPM_TOKEN -q
+        run: npm config set registry //registry.npmjs.org/:_authToken=$NPM_TOKEN -q && npm login
       - name: "Init: Summon NodeJS"
         uses: actions/setup-node@v1
         with:
