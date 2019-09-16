@@ -32,5 +32,7 @@ jobs:
           args: install
       - name: "Publish: Trigger lerna publish"
         uses: borales/actions-yarn@master
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
           args: release
