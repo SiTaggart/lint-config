@@ -12,9 +12,7 @@ jobs:
       matrix:
         node-version: [12.x]
     steps:
-      - uses: actions/checkout@v1
-      - name: Prepare repository
-        run: git checkout "${GITHUB_REF:11}"
+      - uses: actions/checkout@master
       - name: "Init: Summon NodeJS"
         uses: actions/setup-node@v1
         with:
