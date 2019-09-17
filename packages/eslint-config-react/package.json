@@ -28,10 +28,10 @@
     "@sitaggart/eslint-config": "*"
   },
   "dependencies": {
-    "eslint-config-standard-jsx": "^8.1.0",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.14.3",
-    "eslint-plugin-react-hooks": "^2.0.1"
+    "eslint-config-standard-jsx": "8.1.0",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-react": "7.14.3",
+    "eslint-plugin-react-hooks": "2.0.1"
   },
   "gitHead": "5ab9ad16ed50b7f5fa90a71c9efb4cbd95569a43"
 }
