@@ -26,15 +26,10 @@ jobs:
         uses: borales/actions-yarn@master
         with:
           args: install
-      - name: "Setup npm"
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm config set registry https://registry.npmjs.org/:_authToken=$NPM_TOKEN -q
-      - name: "NPM login"
-        run: npm whoami
       - name: "Publish: Trigger lerna publish"
-        uses: borales/actions-yarn@master
+        uses: actions/npm@master
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         with:
           args: release
