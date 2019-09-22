@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.6](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config-react@0.1.5...@sitaggart/eslint-config-react@0.1.6) (2019-09-22)
+
+
+### Bug Fixes
+
+* **eslint-config-react:** fix extends typo ([23f78f6](https://github.com/SiTaggart/lint-config/commit/23f78f6))
+
+
+
+
+
 ## [0.1.5](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config-react@0.1.4...@sitaggart/eslint-config-react@0.1.5) (2019-09-22)
 
 
