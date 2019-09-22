@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.5](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config-react@0.1.4...@sitaggart/eslint-config-react@0.1.5) (2019-09-22)
+
+
+### Bug Fixes
+
+* **eslint-config-react:** export the config correctly ([fb449b3](https://github.com/SiTaggart/lint-config/commit/fb449b3))
+
+
+
+
+
 ## [0.1.4](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config-react@0.1.3...@sitaggart/eslint-config-react@0.1.4) (2019-09-17)
 
 **Note:** Version bump only for package @sitaggart/eslint-config-react
