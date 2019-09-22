@@ -1,4 +1,4 @@
-modules.exports = {
+module.exports = {
   extends: ['standard-jsx', 'plugin:react/recommended', 'prettier/react', '"plugin:jsx-a11y/recommended"'],
   plugins: ['jsx-a11y', 'react-hooks'],
   rules: {

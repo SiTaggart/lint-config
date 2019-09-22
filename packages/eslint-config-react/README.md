@@ -1,11 +1,9 @@
 # `@sitaggart/eslint-config-react`
 
-> TODO: description
+## Install
+
+```
+yarn add --dev eslint prettier @sitaggart/eslint-config @sitaggart/eslint-config-react
+```
 
 ## Usage
-
-```
-const eslintConfigReact = require('@sitaggart/eslint-config-react');
-
-// TODO: DEMONSTRATE API
-```
