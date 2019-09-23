@@ -28,6 +28,7 @@
     "@sitaggart/eslint-config": "*"
   },
   "dependencies": {
+    "eslint-config-airbnb": "^18.0.1",
     "eslint-config-standard-jsx": "8.1.0",
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-react": "7.14.3",

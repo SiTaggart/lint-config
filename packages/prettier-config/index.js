@@ -1,8 +1,8 @@
 module.exports = {
-  printWidth: 120,
+  printWidth: 100,
   trailingComma: 'es5',
   tabWidth: 2,
-  semi: false,
+  semi: true,
   singleQuote: true,
   jsxBracketSameLine: false,
   overrides: [
@@ -20,4 +20,4 @@ module.exports = {
       },
     },
   ],
-}
+};

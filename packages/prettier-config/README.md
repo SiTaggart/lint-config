@@ -1,11 +1,19 @@
 # `@sitaggart/prettier-config`
 
-> TODO: description
+## Install
+
+Works best with eslint.
+
+```
+yarn add --dev eslint prettier @sitaggart/eslint-config @sitaggart/prettier-config
+```
 
 ## Usage
 
-```
-const prettierConfig = require('@sitaggart/prettier-config');
+`.prettierrc.js`
 
-// TODO: DEMONSTRATE API
+```js
+module.exports = {
+  ...require('@sitaggart/prettier-config'),
+};
 ```

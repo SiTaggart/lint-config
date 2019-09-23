@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "babel-eslint": "10.0.3",
+    "eslint-config-airbnb-base": "^14.0.0",
     "eslint-config-prettier": "6.3.0",
     "eslint-config-standard": "14.1.0",
     "eslint-plugin-cypress": "2.6.1",
