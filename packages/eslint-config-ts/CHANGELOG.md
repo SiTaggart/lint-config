@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config-ts@0.1.5...@sitaggart/eslint-config-ts@0.2.0) (2019-09-23)
+
+
+### Bug Fixes
+
+* prettier ([c905a5c](https://github.com/SiTaggart/lint-config/commit/c905a5c))
+
+
+### Features
+
+* update configs and readmes ([faad2e2](https://github.com/SiTaggart/lint-config/commit/faad2e2))
+
+
+
+
+
 ## [0.1.5](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config-ts@0.1.4...@sitaggart/eslint-config-ts@0.1.5) (2019-09-18)
 
 

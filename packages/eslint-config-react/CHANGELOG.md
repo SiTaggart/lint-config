@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config-react@0.1.6...@sitaggart/eslint-config-react@0.2.0) (2019-09-23)
+
+
+### Features
+
+* update configs and readmes ([faad2e2](https://github.com/SiTaggart/lint-config/commit/faad2e2))
+
+
+
+
+
 ## [0.1.6](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config-react@0.1.5...@sitaggart/eslint-config-react@0.1.6) (2019-09-22)
 
 
