@@ -29,7 +29,7 @@
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "2.3.0",
     "@typescript-eslint/parser": "2.3.0",
-    "eslint-config-airbnb-typescript": "^5.0.0"
+    "eslint-config-airbnb-typescript": "5.0.0"
   },
   "gitHead": "5ab9ad16ed50b7f5fa90a71c9efb4cbd95569a43"
 }
