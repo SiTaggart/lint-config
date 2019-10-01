@@ -1,6 +1,6 @@
 {
   "name": "@sitaggart/eslint-config-react",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "eslint config for react projects",
   "keywords": [
     "eslint",
