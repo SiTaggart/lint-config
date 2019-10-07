@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.5](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config@0.2.4...@sitaggart/eslint-config@0.2.5) (2019-10-07)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-config-prettier to v6.4.0 ([#22](https://github.com/SiTaggart/lint-config/issues/22)) ([f390808](https://github.com/SiTaggart/lint-config/commit/f390808))
+
+
+
+
+
 ## [0.2.4](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config@0.2.3...@sitaggart/eslint-config@0.2.4) (2019-10-05)
 
 
