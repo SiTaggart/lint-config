@@ -4,7 +4,7 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "lerna": "lerna",
-    "release": "yarn lerna publish from-package -m 'chore(release): publish' --conventional-commits --yes --create-release github"
+    "release": "yarn lerna publish -m 'chore(release): publish' --conventional-commits --yes --create-release github"
   },
   "workspaces": [
     "packages/**"
