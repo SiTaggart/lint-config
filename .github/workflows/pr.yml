@@ -9,16 +9,11 @@ jobs:
       matrix:
         node-version: [12.x]
     steps:
-      - uses: actions/checkout@master
-      - name: "Init: Summon NodeJS"
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: "Init: Install dependencies"
-        uses: borales/actions-yarn@master
-        with:
-          args: install
-      - name: "bootstrap"
-        uses: borales/actions-yarn@master
-        with:
-          args: bootstrap
+      - name: Install deps
+        run: yarn install
+      - name: Bootstrap repo
+        run: yarn bootstrap
