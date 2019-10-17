@@ -11,25 +11,24 @@ jobs:
     strategy:
       matrix:
         node-version: [12.x]
+
     steps:
-      - uses: actions/checkout@master
-      - name: Checkout master
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+          registry-url: "https://registry.npmjs.org"
+      - name: "Checkout master"
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GH_USER_NAME: ${{ secrets.GH_USER_NAME }}
         run: git remote rm origin && git remote add origin "https://$GH_USER_NAME:$GH_TOKEN@github.com/SiTaggart/lint-config.git" && git fetch && git config user.email octobot@github.com && git config user.name GitHub Actions && git checkout "${GITHUB_REF:11}"
-      - name: "Init: Summon NodeJS"
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: "Init: Install dependencies"
-        uses: borales/actions-yarn@master
-        with:
-          args: install
+      - name: Install deps
+        run: yarn install
+      - name: Bootstrap repo
+        run: yarn bootstrap
       - name: "Publish: Trigger lerna publish"
-        uses: actions/npm@master
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        with:
-          args: run release
+        run: yarn release
