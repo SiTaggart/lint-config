@@ -17,7 +17,10 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-          registry-url: "https://registry.npmjs.org"
+          npm-registry:
+            - registry: "https://registry.npmjs.org"
+              scope: "@sitaggart"
+              token: "${{secrets.NPM_TOKEN}}"
       - name: "Checkout master"
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
