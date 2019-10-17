@@ -1,0 +1,24 @@
+name: PR check
+
+on: [pull_request]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+      - uses: actions/checkout@master
+      - name: "Init: Summon NodeJS"
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: "Init: Install dependencies"
+        uses: borales/actions-yarn@master
+        with:
+          args: install
+      - name: "bootstrap"
+        uses: borales/actions-yarn@master
+        with:
+          args: bootstrap
