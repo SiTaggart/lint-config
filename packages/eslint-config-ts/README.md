@@ -1,11 +1,17 @@
 # `@sitaggart/eslint-config-ts`
 
-> TODO: description
+## Install
+
+```
+yarn add --dev eslint prettier @sitaggart/eslint-config @sitaggart/eslint-config-ts
+```
 
 ## Usage
 
-```
-const eslintConfigTs = require('@sitaggart/eslint-config-ts');
+`.eslintrc.js`
 
-// TODO: DEMONSTRATE API
+```js
+module.exports = {
+  extends: ['@sitaggart/eslint-config', '@sitaggart/eslint-config-ts'],
+};
 ```
