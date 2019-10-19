@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.8](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config@0.2.7...@sitaggart/eslint-config@0.2.8) (2019-10-19)
+
+
+### Bug Fixes
+
+* missing dep for airbnb eslint config ([9495658](https://github.com/SiTaggart/lint-config/commit/9495658))
+
+
+
+
+
 ## [0.2.7](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config@0.2.6...@sitaggart/eslint-config@0.2.7) (2019-10-17)
 
 
