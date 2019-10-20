@@ -31,5 +31,8 @@
     "@typescript-eslint/parser": "2.4.0",
     "eslint-config-airbnb-typescript": "5.0.0"
   },
-  "gitHead": "5ab9ad16ed50b7f5fa90a71c9efb4cbd95569a43"
+  "gitHead": "5ab9ad16ed50b7f5fa90a71c9efb4cbd95569a43",
+  "devDependencies": {
+    "typescript": "^3.6.4"
+  }
 }
