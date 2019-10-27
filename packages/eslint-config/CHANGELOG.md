@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.13](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config@0.2.12...@sitaggart/eslint-config@0.2.13) (2019-10-27)
+
+
+### Bug Fixes
+
+* remove react config and make ts or js a single install' ([ab759d9](https://github.com/SiTaggart/lint-config/commit/ab759d91dc7e5668070b1583ab087841ec221e18))
+
+
+
+
+
 ## [0.2.12](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config@0.2.11...@sitaggart/eslint-config@0.2.12) (2019-10-26)
 
 
