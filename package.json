@@ -4,6 +4,7 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "lerna": "lerna",
+    "lint": "eslint ./**/*.js",
     "release": "yarn lerna publish -m 'chore(release): publish' --conventional-commits --yes --create-release github"
   },
   "workspaces": [

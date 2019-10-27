@@ -12,6 +12,11 @@ yarn add --dev eslint prettier @sitaggart/eslint-config @sitaggart/eslint-config
 
 ```js
 module.exports = {
-  extends: ['@sitaggart/eslint-config', '@sitaggart/eslint-config-ts'],
+  extends: ['@sitaggart/eslint-config-ts'],
+  settings: {
+    react: {
+      version: 'x.x.x',
+    },
+  },
 };
 ```
