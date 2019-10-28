@@ -35,11 +35,44 @@ module.exports = {
     ],
     'arrow-body-style': ['error', 'as-needed'],
     'comma-dangle': ['error', 'only-multiline'],
+    'no-use-before-define': ['error', { functions: false, classes: true, variables: true }],
+    'import/no-extraneous-dependencies': context => [
+      'error',
+      {
+        devDependencies: true,
+        packageDir: [context.getFilename(), __dirname],
+      },
+    ],
+    eqeqeq: ['error', 'smart'],
+    'no-plusplus': 'off',
     'prettier/prettier': 'error',
     'unicorn/prevent-abbreviations': 'off',
+    'import/prefer-default-export': 'off',
+    'import/no-default-export': 'error',
     'jsx-quotes': ['error', 'prefer-double'],
     'react/no-unused-prop-types': [2],
     'react/jsx-sort-props': [2],
+    'react/jsx-filename-extension': 'off',
+    'react/jsx-curly-brace-presence': 'ignore',
+    // deprecated rule
+    'jsx-a11y/label-has-for': 'off',
+    'jsx-a11y/label-has-associated-control': [
+      2,
+      {
+        assert: 'either',
+        depth: 3,
+      },
+    ],
+    'emotion/syntax-preference': [1, 'string'],
+    '@typescript-eslint/explicit-function-return-type': [
+      'error',
+      { allowExpressions: true, allowTypedFunctionExpressions: true },
+    ],
+    '@typescript-eslint/no-use-before-define': [
+      'error',
+      { functions: false, classes: true, variables: true, typedefs: true },
+    ],
+    '@typescript-eslint/no-var-requires': 'off',
   },
   env: {
     browser: true,
