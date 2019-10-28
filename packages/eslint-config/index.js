@@ -59,16 +59,6 @@ module.exports = {
         depth: 3,
       },
     ],
-    'emotion/syntax-preference': [1, 'string'],
-    '@typescript-eslint/explicit-function-return-type': [
-      'error',
-      { allowExpressions: true, allowTypedFunctionExpressions: true },
-    ],
-    '@typescript-eslint/no-use-before-define': [
-      'error',
-      { functions: false, classes: true, variables: true, typedefs: true },
-    ],
-    '@typescript-eslint/no-var-requires': 'off',
   },
   env: {
     browser: true,

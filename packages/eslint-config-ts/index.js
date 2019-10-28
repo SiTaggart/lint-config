@@ -49,7 +49,6 @@ module.exports = {
     ],
     eqeqeq: ['error', 'smart'],
     'no-plusplus': 'off',
-    'prettier/prettier': 'error',
     'unicorn/prevent-abbreviations': 'off',
     'import/prefer-default-export': 'off',
     'import/no-default-export': 'error',
@@ -66,7 +65,6 @@ module.exports = {
         depth: 3,
       },
     ],
-    'emotion/syntax-preference': [1, 'string'],
     '@typescript-eslint/explicit-function-return-type': [
       'error',
       { allowExpressions: true, allowTypedFunctionExpressions: true },
