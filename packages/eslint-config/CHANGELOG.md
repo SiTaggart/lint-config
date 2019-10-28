@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config@0.2.14...@sitaggart/eslint-config@0.3.0) (2019-10-28)
+
+
+### Features
+
+* update base rules for js and ts ([924cc21](https://github.com/SiTaggart/lint-config/commit/924cc21cc1d07bf3fc2c345c5d0a0228f73a0bf0))
+
+
+
+
+
 ## [0.2.14](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config@0.2.13...@sitaggart/eslint-config@0.2.14) (2019-10-27)
 
 
