@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.4](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config@0.3.3...@sitaggart/eslint-config@0.3.4) (2019-10-28)
+
+
+### Bug Fixes
+
+* remove dup prettier and ts rules from js config ([cd8fc93](https://github.com/SiTaggart/lint-config/commit/cd8fc93ff1fc3b1c8b153e3c4945e1dc0157825f))
+
+
+
+
+
 ## [0.3.3](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config@0.3.2...@sitaggart/eslint-config@0.3.3) (2019-10-28)
 
 
