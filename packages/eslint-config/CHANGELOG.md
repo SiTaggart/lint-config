@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.3](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config@0.3.2...@sitaggart/eslint-config@0.3.3) (2019-10-28)
+
+
+### Bug Fixes
+
+* remove curly brace rule ([ce8deb9](https://github.com/SiTaggart/lint-config/commit/ce8deb9926499c0c44bde745d26adfd48bf60962))
+
+
+
+
+
 ## [0.3.2](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config@0.3.1...@sitaggart/eslint-config@0.3.2) (2019-10-28)
 
 
