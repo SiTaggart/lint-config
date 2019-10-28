@@ -57,7 +57,6 @@ module.exports = {
     'react/no-unused-prop-types': [2],
     'react/jsx-sort-props': [2],
     'react/jsx-filename-extension': 'off',
-    'react/jsx-curly-brace-presence': 'ignore',
     // deprecated rule
     'jsx-a11y/label-has-for': 'off',
     'jsx-a11y/label-has-associated-control': [
