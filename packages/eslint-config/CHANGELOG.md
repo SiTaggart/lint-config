@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.2](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config@0.3.1...@sitaggart/eslint-config@0.3.2) (2019-10-28)
+
+
+### Bug Fixes
+
+* no-extraneous-dependencies rule ([d80eeba](https://github.com/SiTaggart/lint-config/commit/d80eebafa230fe8dbb68359061cb29aea7ba9ff7))
+
+
+
+
+
 ## [0.3.1](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config@0.3.0...@sitaggart/eslint-config@0.3.1) (2019-10-28)
 
 
