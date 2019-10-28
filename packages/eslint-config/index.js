@@ -36,12 +36,9 @@ module.exports = {
     'arrow-body-style': ['error', 'as-needed'],
     'comma-dangle': ['error', 'only-multiline'],
     'no-use-before-define': ['error', { functions: false, classes: true, variables: true }],
-    'import/no-extraneous-dependencies': context => [
+    'import/no-extraneous-dependencies': [
       'error',
-      {
-        devDependencies: true,
-        packageDir: [context.getFilename(), __dirname],
-      },
+      { devDependencies: ['**/*.test.js', '**/*.spec.js'] },
     ],
     eqeqeq: ['error', 'smart'],
     'no-plusplus': 'off',
