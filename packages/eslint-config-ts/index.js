@@ -5,7 +5,6 @@ module.exports = {
   },
   plugins: [
     'prettier',
-    'cypress',
     'eslint-comments',
     'jest',
     'promise',
@@ -25,6 +24,7 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:jsx-a11y/recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:cypress/recommended',
     'plugin:prettier/recommended',
     'prettier',
     'prettier/react',

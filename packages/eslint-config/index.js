@@ -1,15 +1,6 @@
 module.exports = {
   parser: 'babel-eslint',
-  plugins: [
-    'prettier',
-    'cypress',
-    'eslint-comments',
-    'jest',
-    'promise',
-    'unicorn',
-    'jsx-a11y',
-    'react-hooks',
-  ],
+  plugins: ['prettier', 'eslint-comments', 'jest', 'promise', 'unicorn', 'jsx-a11y', 'react-hooks'],
   extends: [
     'standard',
     'standard-jsx',
@@ -20,6 +11,7 @@ module.exports = {
     'plugin:unicorn/recommended',
     'plugin:react/recommended',
     'plugin:jsx-a11y/recommended',
+    'plugin:cypress/recommended',
     'plugin:prettier/recommended',
     'prettier',
     'prettier/react',
