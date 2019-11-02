@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config@0.3.6...@sitaggart/eslint-config@0.4.0) (2019-11-02)
+
+
+### Features
+
+* use cypress recommended ([1ee353b](https://github.com/SiTaggart/lint-config/commit/1ee353b47d5235a719b1bf068069933afb1794ce))
+
+
+
+
+
 ## [0.3.6](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config@0.3.5...@sitaggart/eslint-config@0.3.6) (2019-10-28)
 
 
