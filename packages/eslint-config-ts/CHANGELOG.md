@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config-ts@0.4.0...@sitaggart/eslint-config-ts@0.5.0) (2019-11-03)
+
+
+### Features
+
+* make sure test devDeps aren't counted ([8df730d](https://github.com/SiTaggart/lint-config/commit/8df730df66d711ee5c7d0ac2a045cbda7cbcbaf6))
+
+
+
+
+
 # [0.4.0](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config-ts@0.3.7...@sitaggart/eslint-config-ts@0.4.0) (2019-11-02)
 
 
