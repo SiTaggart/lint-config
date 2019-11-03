@@ -45,7 +45,9 @@ module.exports = {
     'no-use-before-define': ['error', { functions: false, classes: true, variables: true }],
     'import/no-extraneous-dependencies': [
       'error',
-      { devDependencies: ['**/*.test.js', '**/*.spec.js'] },
+      {
+        devDependencies: ['**/__tests__/**/*', 'jest.setup.js', '**/cypress/**/*'],
+      },
     ],
     eqeqeq: ['error', 'smart'],
     'no-plusplus': 'off',
