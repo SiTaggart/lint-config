@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.12](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config-ts@0.5.11...@sitaggart/eslint-config-ts@0.5.12) (2019-11-25)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-config-airbnb-typescript to v6.3.1 ([ab086ef](https://github.com/SiTaggart/lint-config/commit/ab086ef0dba02be888831e5f738fb5fa28aaf5aa))
+
+
+
+
+
 ## [0.5.11](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config-ts@0.5.10...@sitaggart/eslint-config-ts@0.5.11) (2019-11-19)
 
 
