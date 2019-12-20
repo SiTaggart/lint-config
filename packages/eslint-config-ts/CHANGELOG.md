@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.28](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config-ts@0.5.27...@sitaggart/eslint-config-ts@0.5.28) (2019-12-20)
+
+**Note:** Version bump only for package @sitaggart/eslint-config-ts
+
+
+
+
+
 ## [0.5.27](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config-ts@0.5.26...@sitaggart/eslint-config-ts@0.5.27) (2019-12-16)
 
 
