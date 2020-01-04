@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.36](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config-ts@0.5.35...@sitaggart/eslint-config-ts@0.5.36) (2020-01-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-jest to v23.3.0 ([2d5e7df](https://github.com/SiTaggart/lint-config/commit/2d5e7dffd8d5463c45a7525738ae814d038e6723))
+
+
+
+
+
 ## [0.5.35](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config-ts@0.5.34...@sitaggart/eslint-config-ts@0.5.35) (2019-12-30)
 
 
