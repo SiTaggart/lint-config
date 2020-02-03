@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.53](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config-ts@0.5.52...@sitaggart/eslint-config-ts@0.5.53) (2020-02-03)
+
+
+### Bug Fixes
+
+* **deps:** update typescript-eslint monorepo to v2.19.0 ([b37492e](https://github.com/SiTaggart/lint-config/commit/b37492e7e60b4fd5312519a11b02449a8ab0c5fe))
+
+
+
+
+
 ## [0.5.52](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config-ts@0.5.51...@sitaggart/eslint-config-ts@0.5.52) (2020-02-03)
 
 
