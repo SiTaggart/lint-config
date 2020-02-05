@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.54](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config-ts@0.5.53...@sitaggart/eslint-config-ts@0.5.54) (2020-02-05)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-cypress to v2.9.0 ([d126d05](https://github.com/SiTaggart/lint-config/commit/d126d05fd6250981a197b8b2696e3cbf55b4bcdb))
+
+
+
+
+
 ## [0.5.53](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config-ts@0.5.52...@sitaggart/eslint-config-ts@0.5.53) (2020-02-03)
 
 
