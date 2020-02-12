@@ -22,7 +22,7 @@
     "@sitaggart/eslint-config": "0.1.3",
     "@sitaggart/prettier-config": "0.1.2",
     "eslint": "6.8.0",
-    "husky": "4.2.2",
+    "husky": "4.2.3",
     "lerna": "3.20.2",
     "precise-commits": "1.0.2",
     "prettier": "1.19.1"
