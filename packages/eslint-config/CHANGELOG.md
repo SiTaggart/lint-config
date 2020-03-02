@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.45](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config@0.5.44...@sitaggart/eslint-config@0.5.45) (2020-03-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency babel-eslint to v10.1.0 ([#136](https://github.com/SiTaggart/lint-config/issues/136)) ([fcb9d4a](https://github.com/SiTaggart/lint-config/commit/fcb9d4afd0a7efdee96b7061849f32fe43ff2a36))
+
+
+
+
+
 ## [0.5.44](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config@0.5.43...@sitaggart/eslint-config@0.5.44) (2020-02-29)
 
 
