@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.57](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config@0.5.56...@sitaggart/eslint-config@0.5.57) (2020-03-29)
+
+
+### Bug Fixes
+
+* remove arrow-parens rule as prettier 2.0 does this by default now ([ed5a6b9](https://github.com/SiTaggart/lint-config/commit/ed5a6b96a3740bc83f48a090113a939112a1448f))
+
+
+
+
+
 ## [0.5.56](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config@0.5.55...@sitaggart/eslint-config@0.5.56) (2020-03-29)
 
 
