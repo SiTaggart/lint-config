@@ -18,13 +18,6 @@ module.exports = {
     'prettier/standard',
   ],
   rules: {
-    'arrow-parens': [
-      'error',
-      'as-needed',
-      {
-        requireForBlockBody: false,
-      },
-    ],
     'arrow-body-style': ['error', 'as-needed'],
     'comma-dangle': ['error', 'only-multiline'],
     'no-use-before-define': ['error', { functions: false, classes: true, variables: true }],
