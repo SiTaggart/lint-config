@@ -32,13 +32,6 @@ module.exports = {
     'prettier/@typescript-eslint',
   ],
   rules: {
-    'arrow-parens': [
-      'error',
-      'as-needed',
-      {
-        requireForBlockBody: false,
-      },
-    ],
     'arrow-body-style': ['error', 'as-needed'],
     'comma-dangle': ['error', 'only-multiline'],
     'prettier/prettier': ['error', { parser: 'typescript' }],
