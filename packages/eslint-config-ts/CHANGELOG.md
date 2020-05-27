@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.121](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config-ts@0.5.120...@sitaggart/eslint-config-ts@0.5.121) (2020-05-27)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-unicorn to v20.1.0 ([2cb4f1a](https://github.com/SiTaggart/lint-config/commit/2cb4f1ac7aecba5a24223555b053441adf79744e))
+
+
+
+
+
 ## [0.5.120](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config-ts@0.5.119...@sitaggart/eslint-config-ts@0.5.120) (2020-05-27)
 
 
