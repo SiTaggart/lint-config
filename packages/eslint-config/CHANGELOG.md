@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.74](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config@0.5.73...@sitaggart/eslint-config@0.5.74) (2020-05-27)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-react-hooks to v4.0.4 ([c9c86b0](https://github.com/SiTaggart/lint-config/commit/c9c86b0c18358f09ba5262244195d74846b53227))
+
+
+
+
+
 ## [0.5.73](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config@0.5.72...@sitaggart/eslint-config@0.5.73) (2020-05-27)
 
 
