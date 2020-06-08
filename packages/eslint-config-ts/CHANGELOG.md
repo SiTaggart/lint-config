@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.126](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config-ts@0.5.125...@sitaggart/eslint-config-ts@0.5.126) (2020-06-08)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-import to v2.21.0 ([d32368e](https://github.com/SiTaggart/lint-config/commit/d32368ee9671fb1c31404f31f309046df51878cf))
+
+
+
+
+
 ## [0.5.125](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config-ts@0.5.124...@sitaggart/eslint-config-ts@0.5.125) (2020-06-04)
 
 **Note:** Version bump only for package @sitaggart/eslint-config-ts
