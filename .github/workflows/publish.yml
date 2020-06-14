@@ -3,7 +3,7 @@ name: Publish
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
@@ -19,7 +19,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           registry-url: "https://registry.npmjs.org"
           scope: sitaggart
-      - name: "Checkout master"
+      - name: "Checkout main"
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GH_USER_NAME: ${{ secrets.GH_USER_NAME }}
