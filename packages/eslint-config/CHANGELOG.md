@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.82](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config@0.5.81...@sitaggart/eslint-config@0.5.82) (2020-06-18)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-config-airbnb to v18.2.0 ([4fb4e2a](https://github.com/SiTaggart/lint-config/commit/4fb4e2a7a0c4fb504efd5c5cd32e90cd88537e6d))
+
+
+
+
+
 ## [0.5.81](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config@0.5.80...@sitaggart/eslint-config@0.5.81) (2020-06-18)
 
 
