@@ -17,8 +17,8 @@
     }
   },
   "devDependencies": {
-    "@commitlint/cli": "9.1.1",
-    "@commitlint/config-conventional": "9.1.1",
+    "@commitlint/cli": "9.1.2",
+    "@commitlint/config-conventional": "9.1.2",
     "@sitaggart/eslint-config": "^0.5.44",
     "@sitaggart/prettier-config": "^0.2.0",
     "eslint": "7.7.0",
