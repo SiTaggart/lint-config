@@ -35,7 +35,7 @@ module.exports = {
     'arrow-body-style': ['error', 'as-needed'],
     'comma-dangle': ['error', 'only-multiline'],
     'prettier/prettier': ['error', { parser: 'typescript' }],
-    'no-use-before-define': ['error', { functions: false, classes: true, variables: true }],
+    'no-use-before-define': [0],
     'import/no-extraneous-dependencies': [
       'error',
       {
