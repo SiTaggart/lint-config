@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.181](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config-ts@0.5.180...@sitaggart/eslint-config-ts@0.5.181) (2020-09-26)
+
+
+### Bug Fixes
+
+* correct no-use-before-define usage for TS ([33f5af6](https://github.com/SiTaggart/lint-config/commit/33f5af6c9acaf58c0e6bf2e8da67b761f62b866a))
+
+
+
+
+
 ## [0.5.180](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config-ts@0.5.179...@sitaggart/eslint-config-ts@0.5.180) (2020-09-26)
 
 
