@@ -1,6 +1,6 @@
 {
   "name": "@sitaggart/eslint-config-ts",
-  "version": "0.5.198",
+  "version": "0.5.199",
   "description": "eslint config for typescript projects",
   "keywords": [
     "eslint",
