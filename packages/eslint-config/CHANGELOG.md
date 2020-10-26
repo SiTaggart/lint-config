@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.125](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config@0.5.124...@sitaggart/eslint-config@0.5.125) (2020-10-26)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-jsx-a11y to v6.4.0 ([9b2749e](https://github.com/SiTaggart/lint-config/commit/9b2749e13deafbd23af9c3585b6b71b8d63d925d))
+
+
+
+
+
 ## [0.5.124](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config@0.5.123...@sitaggart/eslint-config@0.5.124) (2020-10-24)
 
 
