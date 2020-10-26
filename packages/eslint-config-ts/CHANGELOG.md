@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.5.208 (2020-10-26)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-jsx-a11y to v6.4.1 ([f8f2836](https://github.com/SiTaggart/lint-config/commit/f8f2836f2baca3e2ef2bb3d69f5e99bb23f2ecff))
+
+
+
+
+
 ## 0.5.207 (2020-10-26)
 
 
