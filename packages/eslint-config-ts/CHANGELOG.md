@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.5.214 (2020-11-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-config-standard-jsx to v10 ([#318](https://github.com/SiTaggart/lint-config/issues/318)) ([78e6631](https://github.com/SiTaggart/lint-config/commit/78e663155deaedd1e7388a5370d065fc479caf3f))
+
+
+
+
+
 ## 0.5.213 (2020-11-02)
 
 
