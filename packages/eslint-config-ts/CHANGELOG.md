@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.5.219 (2020-11-10)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-standard to v4.1.0 ([e271d3c](https://github.com/SiTaggart/lint-config/commit/e271d3c0e17b6ff78249780a9ff4bd96b0a92943))
+
+
+
+
+
 ## 0.5.218 (2020-11-09)
 
 
