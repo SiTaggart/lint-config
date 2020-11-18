@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.5.225 (2020-11-18)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-config-standard to v16.0.2 ([f44bd0e](https://github.com/SiTaggart/lint-config/commit/f44bd0e7dcbdd37af359941e84e786993a90118b))
+
+
+
+
+
 ## 0.5.224 (2020-11-17)
 
 
