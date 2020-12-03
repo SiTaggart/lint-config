@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.5.154 (2020-12-03)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-prettier to v3.2.0 ([d643b79](https://github.com/SiTaggart/lint-config/commit/d643b794e4ea501972dc011b7dc286cbea694d90))
+
+
+
+
+
 ## 0.5.153 (2020-11-30)
 
 
