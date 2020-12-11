@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.5.159 (2020-12-11)
+
+**Note:** Version bump only for package @sitaggart/eslint-config
+
+
+
+
+
 ## 0.5.158 (2020-12-07)
 
 
