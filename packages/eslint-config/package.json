@@ -1,6 +1,6 @@
 {
   "name": "@sitaggart/eslint-config",
-  "version": "0.5.159",
+  "version": "0.5.160",
   "description": "base eslint config for most projects",
   "keywords": [
     "eslint",
