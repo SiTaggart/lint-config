@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.2.35 (2020-12-14)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-config-prettier to v7 ([#340](https://github.com/SiTaggart/lint-config/issues/340)) ([4bea9f1](https://github.com/SiTaggart/lint-config/commit/4bea9f17a33194a4b83c4d5d26e64f8baa037b8a))
+
+
+
+
+
 ## 0.2.34 (2020-12-14)
 
 
