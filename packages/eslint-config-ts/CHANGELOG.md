@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.5.247 (2020-12-30)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-react to v7.22.0 ([5190088](https://github.com/SiTaggart/lint-config/commit/5190088f77ead8e2080b66ef38665d51f104f7c3))
+
+
+
+
+
 ## 0.5.246 (2020-12-28)
 
 
