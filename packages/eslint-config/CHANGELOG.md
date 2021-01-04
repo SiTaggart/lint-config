@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.5.171 (2021-01-04)
+
+
+### Bug Fixes
+
+* **deps:** update typescript-eslint monorepo to v4.12.0 ([68c6644](https://github.com/SiTaggart/lint-config/commit/68c664401a37694e5dcb7faef13508fe95f299d9))
+
+
+
+
+
 ## 0.5.170 (2021-01-02)
 
 **Note:** Version bump only for package @sitaggart/eslint-config
