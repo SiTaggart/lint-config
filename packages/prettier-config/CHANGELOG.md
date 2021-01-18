@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.2.50 (2021-01-18)
+
+
+### Bug Fixes
+
+* **deps:** update typescript-eslint monorepo to v4.14.0 ([187908d](https://github.com/SiTaggart/lint-config/commit/187908dd27e49710b20526af20055068d2971ccf))
+
+
+
+
+
 ## 0.2.49 (2021-01-16)
 
 **Note:** Version bump only for package @sitaggart/prettier-config
