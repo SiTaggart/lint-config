@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.2.55 (2021-02-06)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-config-airbnb-typescript to v12.3.1 ([c57e5b2](https://github.com/SiTaggart/lint-config/commit/c57e5b2fb69f1929a37d655b225d40647a7da838))
+
+
+
+
+
 ## 0.2.54 (2021-02-01)
 
 
