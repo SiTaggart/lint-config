@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.5.185 (2021-02-10)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-promise to v4.3.1 ([92e3194](https://github.com/SiTaggart/lint-config/commit/92e3194eed6e74f2df7640173e0795bdca03e37d))
+
+
+
+
+
 ## 0.5.184 (2021-02-09)
 
 **Note:** Version bump only for package @sitaggart/eslint-config
