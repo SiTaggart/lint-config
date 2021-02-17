@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.5.267 (2021-02-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-jest to v24.1.4 ([5eeca94](https://github.com/SiTaggart/lint-config/commit/5eeca94ac8d9ec97eab7639b00b90678d05eb3d7))
+
+
+
+
+
 ## 0.5.266 (2021-02-15)
 
 
