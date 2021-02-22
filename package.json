@@ -19,8 +19,8 @@
   "devDependencies": {
     "@commitlint/cli": "11.0.0",
     "@commitlint/config-conventional": "11.0.0",
-    "@sitaggart/eslint-config": "^0.5.44",
-    "@sitaggart/prettier-config": "^0.2.0",
+    "@sitaggart/eslint-config": "0.5.190",
+    "@sitaggart/prettier-config": "0.2.63",
     "eslint": "7.20.0",
     "husky": "4.3.8",
     "lerna": "3.22.1",
