@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.2.70 (2021-02-23)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-config-prettier to v8 ([#383](https://github.com/SiTaggart/lint-config/issues/383)) ([2ec051c](https://github.com/SiTaggart/lint-config/commit/2ec051cf0845f27f2a00e94d2d2645bd72957185))
+
+
+
+
+
 ## 0.2.69 (2021-02-23)
 
 
