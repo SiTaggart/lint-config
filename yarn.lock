@@ -1346,11 +1346,6 @@
   dependencies:
     "@types/node" "^12.11.1"
 
-"@sitaggart/prettier-config@0.2.71":
-  version "0.2.71"
-  resolved "https://registry.yarnpkg.com/@sitaggart/prettier-config/-/prettier-config-0.2.71.tgz#37b079ed66ad8a49811d2215691e03cd23645839"
-  integrity sha512-7IpYxEjFRSvr/I3U8hO8DnQ7P0og/zqfuu82xwlUJzrNnhATVkKpNCjJP9HkGJH//hDDesdDJCoakoAJJacqgQ==
-
 "@types/color-name@^1.1.1":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@types/color-name/-/color-name-1.1.1.tgz#1c1261bbeaa10a8055bbc5d8ab84b7b2afc846a0"

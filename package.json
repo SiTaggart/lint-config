@@ -2,6 +2,7 @@
   "name": "root",
   "private": true,
   "scripts": {
+    "postinstall": "husky install",
     "bootstrap": "lerna bootstrap",
     "lerna": "lerna",
     "lint": "eslint ./**/*.js",
@@ -10,17 +11,11 @@
   "workspaces": [
     "packages/**"
   ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "precise-commits",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
   "devDependencies": {
     "@commitlint/cli": "12.0.0",
     "@commitlint/config-conventional": "12.0.0",
-    "@sitaggart/eslint-config": "0.5.201",
-    "@sitaggart/prettier-config": "0.2.71",
+    "@sitaggart/eslint-config": "0.5.202",
+    "@sitaggart/prettier-config": "0.2.75",
     "eslint": "7.20.0",
     "husky": "5.1.1",
     "lerna": "3.22.1",
