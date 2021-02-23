@@ -1346,10 +1346,33 @@
   dependencies:
     "@types/node" "^12.11.1"
 
-"@sitaggart/prettier-config@0.2.71":
-  version "0.2.71"
-  resolved "https://registry.yarnpkg.com/@sitaggart/prettier-config/-/prettier-config-0.2.71.tgz#37b079ed66ad8a49811d2215691e03cd23645839"
-  integrity sha512-7IpYxEjFRSvr/I3U8hO8DnQ7P0og/zqfuu82xwlUJzrNnhATVkKpNCjJP9HkGJH//hDDesdDJCoakoAJJacqgQ==
+"@sitaggart/eslint-config@0.5.201":
+  version "0.5.201"
+  resolved "https://registry.yarnpkg.com/@sitaggart/eslint-config/-/eslint-config-0.5.201.tgz#86a57eee1cd81a7e5aa99773ce7013f95440e4fd"
+  integrity sha512-dJhoZIAYhdfrVCUDoKtCabCkVrGVMITRfKevaU3mLQ849YI6VMC8yWXNV+GPGppN/+3NutfBOCG9c+1wNXbzTw==
+  dependencies:
+    babel-eslint "10.1.0"
+    eslint-config-airbnb "18.2.1"
+    eslint-config-prettier "8.0.0"
+    eslint-config-standard "16.0.2"
+    eslint-config-standard-jsx "10.0.0"
+    eslint-plugin-cypress "2.11.2"
+    eslint-plugin-eslint-comments "3.2.0"
+    eslint-plugin-import "2.22.1"
+    eslint-plugin-jest "24.1.5"
+    eslint-plugin-jsx-a11y "6.4.1"
+    eslint-plugin-node "11.1.0"
+    eslint-plugin-prettier "3.3.1"
+    eslint-plugin-promise "4.3.1"
+    eslint-plugin-react "7.22.0"
+    eslint-plugin-react-hooks "4.2.0"
+    eslint-plugin-standard "4.1.0"
+    eslint-plugin-unicorn "28.0.2"
+
+"@sitaggart/prettier-config@0.2.74":
+  version "0.2.74"
+  resolved "https://registry.yarnpkg.com/@sitaggart/prettier-config/-/prettier-config-0.2.74.tgz#b62d9d0b87f8c811815499777765214d87cca753"
+  integrity sha512-t+4QFCPPWHQgfPqU+r+oN73BJmavFQHTjp+BYCtMYTbya4DbbEtVLUtQI5ReDiD1HZehXyJuVew9DjYAfxXrAA==
 
 "@types/color-name@^1.1.1":
   version "1.1.1"
