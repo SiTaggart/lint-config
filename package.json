@@ -20,7 +20,7 @@
     "@commitlint/cli": "12.0.0",
     "@commitlint/config-conventional": "12.0.0",
     "@sitaggart/eslint-config": "0.5.197",
-    "@sitaggart/prettier-config": "0.2.69",
+    "@sitaggart/prettier-config": "0.2.71",
     "eslint": "7.20.0",
     "husky": "5.1.1",
     "lerna": "3.22.1",
