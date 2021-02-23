@@ -1346,10 +1346,10 @@
   dependencies:
     "@types/node" "^12.11.1"
 
-"@sitaggart/eslint-config@0.5.192":
-  version "0.5.192"
-  resolved "https://registry.yarnpkg.com/@sitaggart/eslint-config/-/eslint-config-0.5.192.tgz#7cdb6151834c30b1b75e5608008130cf01ec765a"
-  integrity sha512-w3tlA1fvKIOJIenWrXMejA4jNs2+8BpNVx7q/QN42RIgdbTFAmLpdQ0w+0akP46FZvpnrvAE3DfvyKqOSIhx4g==
+"@sitaggart/eslint-config@0.5.195":
+  version "0.5.195"
+  resolved "https://registry.yarnpkg.com/@sitaggart/eslint-config/-/eslint-config-0.5.195.tgz#c3e6bc502ad0a18d7cb51f1226556c8b87d461ab"
+  integrity sha512-1hSiDGGIujkvmPRAwULHqA94MY2ITAwBKN7A4ZBr18iBsfrrujOyLABpx6mKdj7IUULHSzLidxEXEO5PTmwqeg==
   dependencies:
     babel-eslint "10.1.0"
     eslint-config-airbnb "18.2.1"
