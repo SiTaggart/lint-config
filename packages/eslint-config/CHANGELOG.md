@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.5.196 (2021-02-23)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-unicorn to v28 ([#376](https://github.com/SiTaggart/lint-config/issues/376)) ([e44bee6](https://github.com/SiTaggart/lint-config/commit/e44bee629353d1edf4437f86154cc6ee2740f0e2))
+
+
+
+
+
 ## 0.5.195 (2021-02-23)
 
 **Note:** Version bump only for package @sitaggart/eslint-config
