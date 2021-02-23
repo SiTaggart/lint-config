@@ -1346,29 +1346,6 @@
   dependencies:
     "@types/node" "^12.11.1"
 
-"@sitaggart/eslint-config@0.5.197":
-  version "0.5.197"
-  resolved "https://registry.yarnpkg.com/@sitaggart/eslint-config/-/eslint-config-0.5.197.tgz#871d255bc78be261c1b888d3cb58a8693aa64578"
-  integrity sha512-5FDpuHYIqOm5MDvpPkxZ+Jg+cYayiOlgzsPSr/9CngCkBMDhCWwWH0lmqT7EiJJzJfm9YVYpNrEehB+EMFPWrg==
-  dependencies:
-    babel-eslint "10.1.0"
-    eslint-config-airbnb "18.2.1"
-    eslint-config-prettier "8.0.0"
-    eslint-config-standard "16.0.2"
-    eslint-config-standard-jsx "10.0.0"
-    eslint-plugin-cypress "2.11.2"
-    eslint-plugin-eslint-comments "3.2.0"
-    eslint-plugin-import "2.22.1"
-    eslint-plugin-jest "24.1.5"
-    eslint-plugin-jsx-a11y "6.4.1"
-    eslint-plugin-node "11.1.0"
-    eslint-plugin-prettier "3.3.1"
-    eslint-plugin-promise "4.3.1"
-    eslint-plugin-react "7.22.0"
-    eslint-plugin-react-hooks "4.2.0"
-    eslint-plugin-standard "4.1.0"
-    eslint-plugin-unicorn "28.0.2"
-
 "@sitaggart/prettier-config@0.2.71":
   version "0.2.71"
   resolved "https://registry.yarnpkg.com/@sitaggart/prettier-config/-/prettier-config-0.2.71.tgz#37b079ed66ad8a49811d2215691e03cd23645839"
