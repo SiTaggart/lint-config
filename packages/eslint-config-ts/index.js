@@ -26,10 +26,6 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:cypress/recommended',
     'plugin:prettier/recommended',
-    'prettier',
-    'prettier/react',
-    'prettier/standard',
-    'prettier/@typescript-eslint',
   ],
   rules: {
     'arrow-body-style': ['error', 'as-needed'],
