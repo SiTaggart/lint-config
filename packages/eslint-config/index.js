@@ -13,9 +13,6 @@ module.exports = {
     'plugin:jsx-a11y/recommended',
     'plugin:cypress/recommended',
     'plugin:prettier/recommended',
-    'prettier',
-    'prettier/react',
-    'prettier/standard',
   ],
   rules: {
     'arrow-body-style': ['error', 'as-needed'],
