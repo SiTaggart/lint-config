@@ -13,7 +13,7 @@
   ],
   "devDependencies": {
     "@commitlint/cli": "12.0.0",
-    "@commitlint/config-conventional": "12.0.0",
+    "@commitlint/config-conventional": "12.0.1",
     "@sitaggart/eslint-config": "latest",
     "@sitaggart/prettier-config": "latest",
     "eslint": "7.20.0",
