@@ -1352,9 +1352,9 @@
     "@octokit/openapi-types" "^5.2.2"
 
 "@sitaggart/eslint-config@latest":
-  version "0.5.217"
-  resolved "https://registry.yarnpkg.com/@sitaggart/eslint-config/-/eslint-config-0.5.217.tgz#33e354e35c689f2ccd4ec95d2ef8c2a052568bf4"
-  integrity sha512-s/56URgWYeohOjy8VLtQyPffv8KoXpUJWtCeNvFM4Votfp/saHGc3XHVPYu4Lhsihr1M+ztff7NliCcyszenXw==
+  version "0.5.219"
+  resolved "https://registry.yarnpkg.com/@sitaggart/eslint-config/-/eslint-config-0.5.219.tgz#58d43f154c5937074a3a937c0279f23971ce0d5f"
+  integrity sha512-Y9tQAVnIjBQRp7BJIJJuNi0t5aIevZiaQHS0Yx+OWCZ88dQfMRBQdu6bnpxw3HwdkomiepmrcItresFUV7x9tg==
   dependencies:
     babel-eslint "10.1.0"
     eslint-config-airbnb "18.2.1"
@@ -1375,9 +1375,9 @@
     eslint-plugin-unicorn "28.0.2"
 
 "@sitaggart/prettier-config@latest":
-  version "0.2.89"
-  resolved "https://registry.yarnpkg.com/@sitaggart/prettier-config/-/prettier-config-0.2.89.tgz#5bb6ae3a5f220ad4dba0b2ba7f13598a22916ad0"
-  integrity sha512-ffyeuM1R/UppWbswlDe/e3nZxJ6COQXgPF5cGMOLra94xNLwaTuN/urTbW6vhYG77ZFTNOjO7PC4RzX0iKzF4Q==
+  version "0.2.92"
+  resolved "https://registry.yarnpkg.com/@sitaggart/prettier-config/-/prettier-config-0.2.92.tgz#e7e4bdf661785bd90b67cbcf2cf96973edc5d444"
+  integrity sha512-gOil+udY48EhdskvChXAeTm2e9t6oG6KgzGHAC/22+izcNgMNkAJg/lm6maMeDtJE3VbUIU0+2GjpEnKKa/iaw==
 
 "@tootallnate/once@1":
   version "1.1.2"
@@ -2682,6 +2682,11 @@ eslint-config-prettier@8.0.0:
   version "8.0.0"
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-8.0.0.tgz#024d661444319686c588c8849c8da33815dbdb1c"
   integrity sha512-5EaAVPsIHu+grmm5WKjxUia4yHgRrbkd8I0ffqUSwixCPMVBrbS97UnzlEY/Q7OWo584vgixefM0kJnUfo/VjA==
+
+eslint-config-prettier@8.1.0:
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-8.1.0.tgz#4ef1eaf97afe5176e6a75ddfb57c335121abc5a6"
+  integrity sha512-oKMhGv3ihGbCIimCAjqkdzx2Q+jthoqnXSP+d86M9tptwugycmTFdVR4IpLgq2c4SHifbwO90z2fQ8/Aio73yw==
 
 eslint-config-standard-jsx@10.0.0:
   version "10.0.0"
