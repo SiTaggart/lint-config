@@ -1319,9 +1319,9 @@
     "@octokit/openapi-types" "^5.2.2"
 
 "@sitaggart/eslint-config@latest":
-  version "0.5.224"
-  resolved "https://registry.yarnpkg.com/@sitaggart/eslint-config/-/eslint-config-0.5.224.tgz#2729bf10a3a8e1cf2499b831e5c43c112ceb62da"
-  integrity sha512-wMSTuMM4tXjNFGjsfTcMJJWxHXQ7rY8p833t7EFRJHiqqhbYg4d6QRYC36Go0cnc2hqv7EW2fg9o7I9wAYNuuw==
+  version "0.5.225"
+  resolved "https://registry.yarnpkg.com/@sitaggart/eslint-config/-/eslint-config-0.5.225.tgz#b0a8fb60907585e86c402850a8fd68c82bfea10e"
+  integrity sha512-VbzcbtYjxpbt8ADGSHcj0jhW9jR/8U3KK03JzAVYyloKDFOhRlBD39/WrmnERbnaBTmS+OZ9MINFpiItu9ySKQ==
   dependencies:
     babel-eslint "10.1.0"
     eslint-config-airbnb "18.2.1"
@@ -1331,7 +1331,7 @@
     eslint-plugin-cypress "2.11.2"
     eslint-plugin-eslint-comments "3.2.0"
     eslint-plugin-import "2.22.1"
-    eslint-plugin-jest "24.3.2"
+    eslint-plugin-jest "24.3.4"
     eslint-plugin-jsx-a11y "6.4.1"
     eslint-plugin-node "11.1.0"
     eslint-plugin-prettier "3.3.1"
@@ -1342,9 +1342,9 @@
     eslint-plugin-unicorn "29.0.0"
 
 "@sitaggart/prettier-config@latest":
-  version "0.2.97"
-  resolved "https://registry.yarnpkg.com/@sitaggart/prettier-config/-/prettier-config-0.2.97.tgz#343ba3d499b1ac8a94419a771650ead175476193"
-  integrity sha512-DhVFgqsa0U2m36OOJgrHYWKnL+hsak6irkVnZFtCoQvXEDunsLKzSK8lJAJ3Wj/qqr+/y+efTHhd/nCCSrwIWw==
+  version "0.2.98"
+  resolved "https://registry.yarnpkg.com/@sitaggart/prettier-config/-/prettier-config-0.2.98.tgz#41f8ea0fed08669dd046d15490bc614d7e1013f0"
+  integrity sha512-nHZzFywDb1TyYjBquSryQiiP24CDdyajHZGiASlhhkr5ddcC37t1IL6wrFM9VIFLzpWZSEFLPTwc3uXb4pNcxg==
 
 "@tootallnate/once@1":
   version "1.1.2"
@@ -2713,13 +2713,6 @@ eslint-plugin-import@2.22.1:
     read-pkg-up "^2.0.0"
     resolve "^1.17.0"
     tsconfig-paths "^3.9.0"
-
-eslint-plugin-jest@24.3.2:
-  version "24.3.2"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-24.3.2.tgz#30a8b2dea6278d0da1d6fb9d6cd530aaf58050a1"
-  integrity sha512-cicWDr+RvTAOKS3Q/k03+Z3odt3VCiWamNUHWd6QWbVQWcYJyYgUTu8x0mx9GfeDEimawU5kQC+nQ3MFxIM6bw==
-  dependencies:
-    "@typescript-eslint/experimental-utils" "^4.0.1"
 
 eslint-plugin-jest@24.3.4:
   version "24.3.4"
@@ -6475,10 +6468,10 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@4.2.3:
-  version "4.2.3"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.2.3.tgz#39062d8019912d43726298f09493d598048c1ce3"
-  integrity sha512-qOcYwxaByStAWrBf4x0fibwZvMRG+r4cQoTjbPtUlrWjBHbmCAww1i448U0GJ+3cNNEtebDteo/cHOR3xJ4wEw==
+typescript@4.2.4:
+  version "4.2.4"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.2.4.tgz#8610b59747de028fda898a8aef0e103f156d0961"
+  integrity sha512-V+evlYHZnQkaz8TRBuxTA92yZBPotr5H+WhQ7bD3hZUndx5tGOa1fuCgeSjxAzM1RiN5IzvadIXTVefuuwZCRg==
 
 uglify-js@^3.1.4:
   version "3.10.4"
