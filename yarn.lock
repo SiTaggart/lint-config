@@ -1319,9 +1319,9 @@
     "@octokit/openapi-types" "^5.2.2"
 
 "@sitaggart/eslint-config@latest":
-  version "0.5.225"
-  resolved "https://registry.yarnpkg.com/@sitaggart/eslint-config/-/eslint-config-0.5.225.tgz#b0a8fb60907585e86c402850a8fd68c82bfea10e"
-  integrity sha512-VbzcbtYjxpbt8ADGSHcj0jhW9jR/8U3KK03JzAVYyloKDFOhRlBD39/WrmnERbnaBTmS+OZ9MINFpiItu9ySKQ==
+  version "0.5.226"
+  resolved "https://registry.yarnpkg.com/@sitaggart/eslint-config/-/eslint-config-0.5.226.tgz#0ac5bd479a0a18368b4ed294fe7ab809b960b0df"
+  integrity sha512-VvYGzutTnlA2G45Cn50AJQorI5ZFXt9WxeOwdWjplB5OZwyAqYtFSxQ4TTyypLY9EiJ+MnDvuF+ta3nakdZV4w==
   dependencies:
     babel-eslint "10.1.0"
     eslint-config-airbnb "18.2.1"
@@ -1331,20 +1331,20 @@
     eslint-plugin-cypress "2.11.2"
     eslint-plugin-eslint-comments "3.2.0"
     eslint-plugin-import "2.22.1"
-    eslint-plugin-jest "24.3.4"
+    eslint-plugin-jest "24.3.5"
     eslint-plugin-jsx-a11y "6.4.1"
     eslint-plugin-node "11.1.0"
     eslint-plugin-prettier "3.3.1"
     eslint-plugin-promise "4.3.1"
-    eslint-plugin-react "7.23.1"
+    eslint-plugin-react "7.23.2"
     eslint-plugin-react-hooks "4.2.0"
     eslint-plugin-standard "5.0.0"
     eslint-plugin-unicorn "29.0.0"
 
 "@sitaggart/prettier-config@latest":
-  version "0.2.98"
-  resolved "https://registry.yarnpkg.com/@sitaggart/prettier-config/-/prettier-config-0.2.98.tgz#41f8ea0fed08669dd046d15490bc614d7e1013f0"
-  integrity sha512-nHZzFywDb1TyYjBquSryQiiP24CDdyajHZGiASlhhkr5ddcC37t1IL6wrFM9VIFLzpWZSEFLPTwc3uXb4pNcxg==
+  version "0.2.99"
+  resolved "https://registry.yarnpkg.com/@sitaggart/prettier-config/-/prettier-config-0.2.99.tgz#e048c210a051cbd44bfbd03178caa1d1ff00ace0"
+  integrity sha512-Vrdzlsn53+ppoPHLwNUCS+p7AeSZbRkveg6A86gB1oOd3Ept/u/UrMYQCpWlrVFdQmLtU4Y9pETrDSjeCY1aYA==
 
 "@tootallnate/once@1":
   version "1.1.2"
@@ -2714,13 +2714,6 @@ eslint-plugin-import@2.22.1:
     resolve "^1.17.0"
     tsconfig-paths "^3.9.0"
 
-eslint-plugin-jest@24.3.4:
-  version "24.3.4"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-24.3.4.tgz#6d90c3554de0302e879603dd6405474c98849f19"
-  integrity sha512-3n5oY1+fictanuFkTWPwSlehugBTAgwLnYLFsCllzE3Pl1BwywHl5fL0HFxmMjoQY8xhUDk8uAWc3S4JOHGh3A==
-  dependencies:
-    "@typescript-eslint/experimental-utils" "^4.0.1"
-
 eslint-plugin-jest@24.3.5:
   version "24.3.5"
   resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-24.3.5.tgz#71f0b580f87915695c286c3f0eb88cf23664d044"
@@ -2764,6 +2757,13 @@ eslint-plugin-prettier@3.3.1:
   dependencies:
     prettier-linter-helpers "^1.0.0"
 
+eslint-plugin-prettier@3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-3.4.0.tgz#cdbad3bf1dbd2b177e9825737fe63b476a08f0c7"
+  integrity sha512-UDK6rJT6INSfcOo545jiaOwB701uAIt2/dR7WnFQoGCVl1/EMqdANBmwUaqqQ45aXprsTGzSa39LI1PyuRBxxw==
+  dependencies:
+    prettier-linter-helpers "^1.0.0"
+
 eslint-plugin-promise@4.3.1:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/eslint-plugin-promise/-/eslint-plugin-promise-4.3.1.tgz#61485df2a359e03149fdafc0a68b0e030ad2ac45"
@@ -2773,24 +2773,6 @@ eslint-plugin-react-hooks@4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.2.0.tgz#8c229c268d468956334c943bb45fc860280f5556"
   integrity sha512-623WEiZJqxR7VdxFCKLI6d6LLpwJkGPYKODnkH3D7WpOG5KM8yWueBd8TLsNAetEJNF5iJmolaAKO3F8yzyVBQ==
-
-eslint-plugin-react@7.23.1:
-  version "7.23.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.23.1.tgz#f1a2e844c0d1967c822388204a8bc4dee8415b11"
-  integrity sha512-MvFGhZjI8Z4HusajmSw0ougGrq3Gs4vT/0WgwksZgf5RrLrRa2oYAw56okU4tZJl8+j7IYNuTM+2RnFEuTSdRQ==
-  dependencies:
-    array-includes "^3.1.3"
-    array.prototype.flatmap "^1.2.4"
-    doctrine "^2.1.0"
-    has "^1.0.3"
-    jsx-ast-utils "^2.4.1 || ^3.0.0"
-    minimatch "^3.0.4"
-    object.entries "^1.1.3"
-    object.fromentries "^2.0.4"
-    object.values "^1.1.3"
-    prop-types "^15.7.2"
-    resolve "^2.0.0-next.3"
-    string.prototype.matchall "^4.0.4"
 
 eslint-plugin-react@7.23.2:
   version "7.23.2"
