@@ -1319,13 +1319,13 @@
     "@octokit/openapi-types" "^5.2.2"
 
 "@sitaggart/eslint-config@latest":
-  version "0.5.226"
-  resolved "https://registry.yarnpkg.com/@sitaggart/eslint-config/-/eslint-config-0.5.226.tgz#0ac5bd479a0a18368b4ed294fe7ab809b960b0df"
-  integrity sha512-VvYGzutTnlA2G45Cn50AJQorI5ZFXt9WxeOwdWjplB5OZwyAqYtFSxQ4TTyypLY9EiJ+MnDvuF+ta3nakdZV4w==
+  version "0.5.228"
+  resolved "https://registry.yarnpkg.com/@sitaggart/eslint-config/-/eslint-config-0.5.228.tgz#a925a54b52d848137eb0fac7ebe4077e53303303"
+  integrity sha512-+UQAj/1APILBviit/S6bPY15AWh/SN3xvzmt2xZHAGpniGgNKGBsThgzGTdjrpyScWWdq/lw0MrOTsosKnXRvA==
   dependencies:
     babel-eslint "10.1.0"
     eslint-config-airbnb "18.2.1"
-    eslint-config-prettier "8.1.0"
+    eslint-config-prettier "8.2.0"
     eslint-config-standard "16.0.2"
     eslint-config-standard-jsx "10.0.0"
     eslint-plugin-cypress "2.11.2"
@@ -1334,17 +1334,17 @@
     eslint-plugin-jest "24.3.5"
     eslint-plugin-jsx-a11y "6.4.1"
     eslint-plugin-node "11.1.0"
-    eslint-plugin-prettier "3.3.1"
+    eslint-plugin-prettier "3.4.0"
     eslint-plugin-promise "4.3.1"
     eslint-plugin-react "7.23.2"
     eslint-plugin-react-hooks "4.2.0"
     eslint-plugin-standard "5.0.0"
-    eslint-plugin-unicorn "29.0.0"
+    eslint-plugin-unicorn "30.0.0"
 
 "@sitaggart/prettier-config@latest":
-  version "0.2.99"
-  resolved "https://registry.yarnpkg.com/@sitaggart/prettier-config/-/prettier-config-0.2.99.tgz#e048c210a051cbd44bfbd03178caa1d1ff00ace0"
-  integrity sha512-Vrdzlsn53+ppoPHLwNUCS+p7AeSZbRkveg6A86gB1oOd3Ept/u/UrMYQCpWlrVFdQmLtU4Y9pETrDSjeCY1aYA==
+  version "0.2.101"
+  resolved "https://registry.yarnpkg.com/@sitaggart/prettier-config/-/prettier-config-0.2.101.tgz#cc845aa26c23f19c21e9fb88278c4aa81b8c23b3"
+  integrity sha512-+N7szqdpardfPFBAxE+aE3N3RG6TXl4wjWIDfotZpeD7tJ20ygAdyYeleScLLrO04VMua2fKCv7zENYx4q9noA==
 
 "@tootallnate/once@1":
   version "1.1.2"
@@ -2641,11 +2641,6 @@ eslint-config-airbnb@18.2.1, eslint-config-airbnb@^18.2.0:
     object.assign "^4.1.2"
     object.entries "^1.1.2"
 
-eslint-config-prettier@8.1.0:
-  version "8.1.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-8.1.0.tgz#4ef1eaf97afe5176e6a75ddfb57c335121abc5a6"
-  integrity sha512-oKMhGv3ihGbCIimCAjqkdzx2Q+jthoqnXSP+d86M9tptwugycmTFdVR4IpLgq2c4SHifbwO90z2fQ8/Aio73yw==
-
 eslint-config-prettier@8.2.0:
   version "8.2.0"
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-8.2.0.tgz#78de77d63bca8e9e59dae75a614b5299925bb7b3"
@@ -2726,6 +2721,13 @@ eslint-plugin-jest@24.3.5:
   dependencies:
     "@typescript-eslint/experimental-utils" "^4.0.1"
 
+eslint-plugin-jest@24.3.6:
+  version "24.3.6"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-24.3.6.tgz#5f0ca019183c3188c5ad3af8e80b41de6c8e9173"
+  integrity sha512-WOVH4TIaBLIeCX576rLcOgjNXqP+jNlCiEmRgFTfQtJ52DpwnIQKAVGlGPAN7CZ33bW6eNfHD6s8ZbEUTQubJg==
+  dependencies:
+    "@typescript-eslint/experimental-utils" "^4.0.1"
+
 eslint-plugin-jsx-a11y@6.4.1:
   version "6.4.1"
   resolved "https://registry.yarnpkg.com/eslint-plugin-jsx-a11y/-/eslint-plugin-jsx-a11y-6.4.1.tgz#a2d84caa49756942f42f1ffab9002436391718fd"
@@ -2754,13 +2756,6 @@ eslint-plugin-node@11.1.0:
     minimatch "^3.0.4"
     resolve "^1.10.1"
     semver "^6.1.0"
-
-eslint-plugin-prettier@3.3.1:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-3.3.1.tgz#7079cfa2497078905011e6f82e8dd8453d1371b7"
-  integrity sha512-Rq3jkcFY8RYeQLgk2cCwuc0P7SEFwDravPhsJZOQ5N4YI4DSg50NyqJ/9gdZHzQlHf8MvafSesbNJCcP/FF6pQ==
-  dependencies:
-    prettier-linter-helpers "^1.0.0"
 
 eslint-plugin-prettier@3.4.0:
   version "3.4.0"
@@ -2801,25 +2796,6 @@ eslint-plugin-standard@5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-standard/-/eslint-plugin-standard-5.0.0.tgz#c43f6925d669f177db46f095ea30be95476b1ee4"
   integrity sha512-eSIXPc9wBM4BrniMzJRBm2uoVuXz2EPa+NXPk2+itrVt+r5SbKFERx/IgrK/HmfjddyKVz2f+j+7gBRvu19xLg==
-
-eslint-plugin-unicorn@29.0.0:
-  version "29.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-unicorn/-/eslint-plugin-unicorn-29.0.0.tgz#7c97cdb5afe932e9f8dc34108e4a5a2a2fbb1906"
-  integrity sha512-R9jGLKb2p6LuOixviByGlH2mkfY72EBELXAPeUufveebN0M2Woa7B7dUO3gN2xPn/+eGjrIm4I2u7dDtr9G4iA==
-  dependencies:
-    ci-info "^3.1.1"
-    clean-regexp "^1.0.0"
-    eslint-template-visitor "^2.3.2"
-    eslint-utils "^2.1.0"
-    eslint-visitor-keys "^2.0.0"
-    import-modules "^2.1.0"
-    lodash "^4.17.20"
-    pluralize "^8.0.0"
-    read-pkg-up "^7.0.1"
-    regexp-tree "^0.1.23"
-    reserved-words "^0.1.2"
-    safe-regex "^2.1.1"
-    semver "^7.3.4"
 
 eslint-plugin-unicorn@30.0.0:
   version "30.0.0"
