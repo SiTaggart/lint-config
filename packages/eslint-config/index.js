@@ -1,5 +1,5 @@
 module.exports = {
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
   plugins: ['prettier', 'eslint-comments', 'jest', 'promise', 'unicorn', 'jsx-a11y', 'react-hooks'],
   extends: [
     'standard',
