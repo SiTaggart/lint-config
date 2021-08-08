@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.5.319 (2021-08-08)
+
+**Note:** Version bump only for package @sitaggart/eslint-config-ts
+
+
+
+
+
 ## 0.5.318 (2021-08-01)
 
 **Note:** Version bump only for package @sitaggart/eslint-config-ts
