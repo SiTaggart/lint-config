@@ -29,7 +29,7 @@
     "prettier": "*"
   },
   "dependencies": {
-    "@babel/eslint-parser": "7.15.0",
+    "@babel/eslint-parser": "7.15.4",
     "eslint-config-airbnb": "18.2.1",
     "eslint-config-prettier": "8.3.0",
     "eslint-config-standard": "16.0.3",
