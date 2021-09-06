@@ -30,7 +30,7 @@
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "4.30.0",
     "@typescript-eslint/parser": "4.29.3",
-    "eslint-config-airbnb-typescript": "13.0.1",
+    "eslint-config-airbnb-typescript": "14.0.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-config-standard": "16.0.3",
     "eslint-config-standard-jsx": "10.0.0",
