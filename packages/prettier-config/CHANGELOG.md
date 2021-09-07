@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/SiTaggart/lint-config/compare/@sitaggart/prettier-config@0.2.116...@sitaggart/prettier-config@0.3.0) (2021-09-07)
+
+
+### Features
+
+* move to yarn 3 ([#540](https://github.com/SiTaggart/lint-config/issues/540)) ([8263c51](https://github.com/SiTaggart/lint-config/commit/8263c513f585614f2ec20571b651f837161b22bf))
+
+
+
+
+
 ## 0.2.116 (2021-08-29)
 
 **Note:** Version bump only for package @sitaggart/prettier-config

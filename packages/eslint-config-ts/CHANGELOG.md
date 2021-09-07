@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config-ts@0.5.321...@sitaggart/eslint-config-ts@0.6.0) (2021-09-07)
+
+
+### Features
+
+* move to yarn 3 ([#540](https://github.com/SiTaggart/lint-config/issues/540)) ([8263c51](https://github.com/SiTaggart/lint-config/commit/8263c513f585614f2ec20571b651f837161b22bf))
+
+
+
+
+
 ## 0.5.321 (2021-08-29)
 
 **Note:** Version bump only for package @sitaggart/eslint-config-ts
