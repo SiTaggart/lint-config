@@ -1,3 +1,4 @@
+// eslint-disable-next-line unicorn/prefer-module
 module.exports = {
   printWidth: 100,
   trailingComma: 'es5',
