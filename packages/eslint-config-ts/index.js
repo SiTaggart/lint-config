@@ -1,4 +1,5 @@
-export default {
+// eslint-disable-next-line unicorn/prefer-module
+module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
     project: './tsconfig.json',
