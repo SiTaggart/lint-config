@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.1](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config@0.6.0...@sitaggart/eslint-config@0.6.1) (2021-09-08)
+
+
+### Bug Fixes
+
+* eslint config exports ([0426ce5](https://github.com/SiTaggart/lint-config/commit/0426ce5bcae649a1da3115288122df731919d0cd))
+
+
+
+
+
 # [0.6.0](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config@0.5.243...@sitaggart/eslint-config@0.6.0) (2021-09-07)
 
 
