@@ -17,6 +17,7 @@ module.exports = {
   extends: [
     'standard',
     'standard-jsx',
+    'airbnb',
     'airbnb-typescript',
     'plugin:eslint-comments/recommended',
     'plugin:jest/recommended',
