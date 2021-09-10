@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/SiTaggart/lint-config/compare/@sitaggart/prettier-config@0.3.0...@sitaggart/prettier-config@0.3.1) (2021-09-10)
+
+
+### Bug Fixes
+
+* remove deprecated jsxBracketSameLine prettier option ([e97eba3](https://github.com/SiTaggart/lint-config/commit/e97eba33ec559c46321b2ef1c60af1d9ca9a16fc))
+
+
+
+
+
 # [0.3.0](https://github.com/SiTaggart/lint-config/compare/@sitaggart/prettier-config@0.2.116...@sitaggart/prettier-config@0.3.0) (2021-09-07)
 
 
