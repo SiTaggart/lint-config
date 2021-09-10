@@ -5,7 +5,7 @@ module.exports = {
   tabWidth: 2,
   semi: true,
   singleQuote: true,
-  jsxBracketSameLine: false,
+  bracketSameLine: false,
   overrides: [
     {
       files: '**/*.scss',
