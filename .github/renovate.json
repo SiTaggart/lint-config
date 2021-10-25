@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "config:base",
+    ":automergeMinor",
+    ":pinVersions",
+    "group:allNonMajor",
+    "schedule:earlyMondays"
+  ]
+}
