@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.3.3 (2021-12-05)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([9830fc1](https://github.com/SiTaggart/lint-config/commit/9830fc1dcc68b96b72d4b1ec0de62e3a9f8f86a3))
+
+
+
+
+
 ## 0.3.2 (2021-11-28)
 
 **Note:** Version bump only for package @sitaggart/prettier-config
