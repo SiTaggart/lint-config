@@ -3018,7 +3018,7 @@ __metadata:
     eslint-plugin-promise: 5.2.0
     eslint-plugin-react: 7.27.1
     eslint-plugin-react-hooks: 4.3.0
-    eslint-plugin-unicorn: 37.0.1
+    eslint-plugin-unicorn: 39.0.0
     typescript: 4.5.2
   peerDependencies:
     eslint: "*"
@@ -3046,7 +3046,7 @@ __metadata:
     eslint-plugin-promise: 5.2.0
     eslint-plugin-react: 7.27.1
     eslint-plugin-react-hooks: 4.3.0
-    eslint-plugin-unicorn: 37.0.1
+    eslint-plugin-unicorn: 39.0.0
   peerDependencies:
     eslint: "*"
     prettier: "*"
@@ -5086,9 +5086,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-unicorn@npm:37.0.1":
-  version: 37.0.1
-  resolution: "eslint-plugin-unicorn@npm:37.0.1"
+"eslint-plugin-unicorn@npm:39.0.0":
+  version: 39.0.0
+  resolution: "eslint-plugin-unicorn@npm:39.0.0"
   dependencies:
     "@babel/helper-validator-identifier": ^7.14.9
     ci-info: ^3.2.0
@@ -5107,7 +5107,7 @@ __metadata:
     strip-indent: ^3.0.0
   peerDependencies:
     eslint: ">=7.32.0"
-  checksum: 9c74b642150c765919fc925808791910a3e8ce642db4a5a38aa4c04e8b4899b8aed5fab4ae73947cf0ad0b4a783161e2389c9148ed30c73469a757ba8372c1cd
+  checksum: a20bee80f1a5a5e4a5984394ba8f9e1669f89f186e92af5eec6bf1f0d90afe3a578b1ed124667b33843a7cac6e0476a86bb1a4ccf8f3293b8d21ae427f4b5168
   languageName: node
   linkType: hard
 
