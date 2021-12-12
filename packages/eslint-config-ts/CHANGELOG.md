@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.6.5 (2021-12-12)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-config-airbnb to v19 ([#571](https://github.com/SiTaggart/lint-config/issues/571)) ([07cfe8c](https://github.com/SiTaggart/lint-config/commit/07cfe8cc4ba5802deef64605d669406dae86d7c1))
+
+
+
+
+
 ## 0.6.4 (2021-12-05)
 
 
