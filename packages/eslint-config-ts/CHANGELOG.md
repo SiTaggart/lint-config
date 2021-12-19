@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.6.6 (2021-12-19)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([e61e787](https://github.com/SiTaggart/lint-config/commit/e61e787283bcfc5af31fadf268f6eb4bdd62b7e1))
+
+
+
+
+
 ## 0.6.5 (2021-12-12)
 
 
