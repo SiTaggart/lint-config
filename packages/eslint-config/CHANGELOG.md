@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.6.7 (2022-01-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-promise to v6 ([#579](https://github.com/SiTaggart/lint-config/issues/579)) ([b971786](https://github.com/SiTaggart/lint-config/commit/b9717869c5f8c2589424d304060c2bf3b4853b04))
+
+
+
+
+
 ## 0.6.6 (2021-12-26)
 
 
