@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.6.9 (2022-01-09)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([2694195](https://github.com/SiTaggart/lint-config/commit/2694195f77a2d9a83e227613b25540117b35d427))
+
+
+
+
+
 ## 0.6.8 (2022-01-02)
 
 
