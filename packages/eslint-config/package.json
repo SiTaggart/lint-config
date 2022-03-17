@@ -45,7 +45,7 @@
     "eslint-plugin-promise": "6.0.0",
     "eslint-plugin-react": "7.28.0",
     "eslint-plugin-react-hooks": "4.3.0",
-    "eslint-plugin-unicorn": "40.0.0"
+    "eslint-plugin-unicorn": "41.0.1"
   },
   "gitHead": "5ab9ad16ed50b7f5fa90a71c9efb4cbd95569a43"
 }
