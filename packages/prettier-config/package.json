@@ -1,6 +1,6 @@
 {
   "name": "@sitaggart/prettier-config",
-  "version": "0.3.9",
+  "version": "0.3.10",
   "description": "prettier config for personal projects",
   "keywords": [
     "prettier",
