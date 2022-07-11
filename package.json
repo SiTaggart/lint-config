@@ -20,7 +20,7 @@
     "@sitaggart/prettier-config": "workspace:*",
     "eslint": "8.19.0",
     "husky": "8.0.1",
-    "lerna": "5.1.6",
+    "lerna": "5.1.8",
     "precise-commits": "1.0.2",
     "prettier": "2.7.1"
   }
