@@ -3104,6 +3104,7 @@ __metadata:
     eslint-plugin-import: 2.26.0
     eslint-plugin-jest: 26.8.0
     eslint-plugin-jsx-a11y: 6.6.1
+    eslint-plugin-n: 15.2.4
     eslint-plugin-node: 11.1.0
     eslint-plugin-prettier: 4.2.1
     eslint-plugin-promise: 6.0.0
@@ -3132,6 +3133,7 @@ __metadata:
     eslint-plugin-import: 2.26.0
     eslint-plugin-jest: 26.8.0
     eslint-plugin-jsx-a11y: 6.6.1
+    eslint-plugin-n: 15.2.4
     eslint-plugin-node: 11.1.0
     eslint-plugin-prettier: 4.2.1
     eslint-plugin-promise: 6.0.0
@@ -3940,7 +3942,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"builtins@npm:^5.0.0":
+"builtins@npm:^5.0.0, builtins@npm:^5.0.1":
   version: 5.0.1
   resolution: "builtins@npm:5.0.1"
   dependencies:
@@ -5147,6 +5149,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-plugin-es@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "eslint-plugin-es@npm:4.1.0"
+  dependencies:
+    eslint-utils: ^2.0.0
+    regexpp: ^3.0.0
+  peerDependencies:
+    eslint: ">=4.19.1"
+  checksum: 26b87a216d3625612b1d3ca8653ac8a1d261046d2a973bb0eb2759070267d2bfb0509051facdeb5ae03dc8dfb51a434be23aff7309a752ca901d637da535677f
+  languageName: node
+  linkType: hard
+
 "eslint-plugin-eslint-comments@npm:3.2.0":
   version: 3.2.0
   resolution: "eslint-plugin-eslint-comments@npm:3.2.0"
@@ -5219,6 +5233,24 @@ __metadata:
   peerDependencies:
     eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8
   checksum: baae7377f0e25a0cc9b34dc333a3dc6ead9ee8365e445451eff554c3ca267a0a6cb88127fe90395c578ab1b92cfed246aef7dc8d2b48b603389e10181799e144
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-n@npm:15.2.4":
+  version: 15.2.4
+  resolution: "eslint-plugin-n@npm:15.2.4"
+  dependencies:
+    builtins: ^5.0.1
+    eslint-plugin-es: ^4.1.0
+    eslint-utils: ^3.0.0
+    ignore: ^5.1.1
+    is-core-module: ^2.9.0
+    minimatch: ^3.1.2
+    resolve: ^1.10.1
+    semver: ^7.3.7
+  peerDependencies:
+    eslint: ">=7.0.0"
+  checksum: dd651651ab76120e45707ee968d846e3ffffb42d1035792fdef6d3b0dcfddf3673bc6a09cb2fac8c5f1d081f14f2a67fc52295d5ed1d2edfb5beead93284eaac
   languageName: node
   linkType: hard
 
@@ -6575,6 +6607,15 @@ fsevents@~2.3.2:
   dependencies:
     has: ^1.0.3
   checksum: b27034318b4b462f1c8f1dfb1b32baecd651d891a4e2d1922135daeff4141dfced2b82b07aef83ef54275c4a3526aa38da859223664d0868ca24182badb784ce
+  languageName: node
+  linkType: hard
+
+"is-core-module@npm:^2.9.0":
+  version: 2.10.0
+  resolution: "is-core-module@npm:2.10.0"
+  dependencies:
+    has: ^1.0.3
+  checksum: 0f3f77811f430af3256fa7bbc806f9639534b140f8ee69476f632c3e1eb4e28a38be0b9d1b8ecf596179c841b53576129279df95e7051d694dac4ceb6f967593
   languageName: node
   linkType: hard
 
