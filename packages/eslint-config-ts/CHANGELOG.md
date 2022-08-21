@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.6.16 (2022-08-21)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([c3da4dd](https://github.com/SiTaggart/lint-config/commit/c3da4dda6d51ab735319cb3e478187880a653316))
+
+
+
+
+
 ## 0.6.15 (2022-08-14)
 
 **Note:** Version bump only for package @sitaggart/eslint-config-ts
