@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.6.21 (2022-10-09)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-unicorn to v44 ([ec6dbff](https://github.com/SiTaggart/lint-config/commit/ec6dbff62d7e34c2fe46d9fe8438c1bf45390bf3))
+
+
+
+
+
 ## 0.6.20 (2022-10-02)
 
 
