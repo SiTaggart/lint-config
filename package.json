@@ -18,9 +18,9 @@
     "@commitlint/config-conventional": "17.1.0",
     "@sitaggart/eslint-config": "workspace:*",
     "@sitaggart/prettier-config": "workspace:*",
-    "eslint": "8.24.0",
+    "eslint": "8.25.0",
     "husky": "8.0.1",
-    "lerna": "5.5.4",
+    "lerna": "5.6.2",
     "precise-commits": "1.0.2",
     "prettier": "2.7.1"
   }
