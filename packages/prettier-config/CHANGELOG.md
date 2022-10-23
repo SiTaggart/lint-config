@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.3.23 (2022-10-23)
+
+**Note:** Version bump only for package @sitaggart/prettier-config
+
 ## 0.3.22 (2022-10-16)
 
 ### Bug Fixes

@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.6.23 (2022-10-23)
+
+**Note:** Version bump only for package @sitaggart/eslint-config
+
 ## 0.6.22 (2022-10-16)
 
 ### Bug Fixes
