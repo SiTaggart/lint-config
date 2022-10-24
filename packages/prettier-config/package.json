@@ -24,7 +24,7 @@
     "url": "https://github.com/SiTaggart/lint-config/issues"
   },
   "peerDependencies": {
-    "prettier": "*"
+    "prettier": "2.7.1"
   },
   "gitHead": "5ab9ad16ed50b7f5fa90a71c9efb4cbd95569a43"
 }

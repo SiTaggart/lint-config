@@ -3353,8 +3353,8 @@ __metadata:
     eslint-plugin-unicorn: 44.0.2
     typescript: 4.8.4
   peerDependencies:
-    eslint: "*"
-    prettier: "*"
+    eslint: 8.26.0
+    prettier: 2.7.1
   languageName: unknown
   linkType: soft
 
@@ -3381,8 +3381,8 @@ __metadata:
     eslint-plugin-react-hooks: 4.6.0
     eslint-plugin-unicorn: 44.0.2
   peerDependencies:
-    eslint: "*"
-    prettier: "*"
+    eslint: 8.26.0
+    prettier: 2.7.1
   languageName: unknown
   linkType: soft
 
@@ -3390,7 +3390,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@sitaggart/prettier-config@workspace:packages/prettier-config"
   peerDependencies:
-    prettier: "*"
+    prettier: 2.7.1
   languageName: unknown
   linkType: soft
 
