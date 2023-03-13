@@ -25,14 +25,14 @@
     "url": "https://github.com/SiTaggart/lint-config/issues"
   },
   "peerDependencies": {
-    "eslint": "8.35.0",
+    "eslint": "8.36.0",
     "prettier": "2.8.4"
   },
   "dependencies": {
     "@babel/core": "7.21.0",
     "@babel/eslint-parser": "7.19.1",
     "eslint-config-airbnb": "19.0.4",
-    "eslint-config-prettier": "8.6.0",
+    "eslint-config-prettier": "8.7.0",
     "eslint-config-standard": "17.0.0",
     "eslint-config-standard-jsx": "11.0.0",
     "eslint-plugin-cypress": "2.12.1",
