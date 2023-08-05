@@ -5785,7 +5785,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"husky@npm:latest":
+"husky@npm:^8.0.3":
   version: 8.0.3
   resolution: "husky@npm:8.0.3"
   bin:
@@ -8916,7 +8916,7 @@ __metadata:
     "@sitaggart/eslint-config": "workspace:*"
     "@sitaggart/prettier-config": "workspace:*"
     eslint: 8.46.0
-    husky: latest
+    husky: ^8.0.3
     lerna: 7.1.4
     precise-commits: 1.0.2
     prettier: 3.0.1

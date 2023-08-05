@@ -5,11 +5,15 @@
     "postinstall": "husky install",
     "lerna": "lerna",
     "lint": "eslint ./packages/**/*.js",
+    "prettier": "prettier -c .",
     "release": "yarn lerna publish -m 'chore(release): publish' --conventional-commits --yes --create-release github"
   },
   "workspaces": [
     "packages/**"
   ],
+  "engines": {
+    "node": "20.x"
+  },
   "devDependencies": {
     "@babel/core": "7.22.9",
     "@babel/eslint-parser": "7.22.9",
@@ -19,7 +23,7 @@
     "@sitaggart/eslint-config": "workspace:*",
     "@sitaggart/prettier-config": "workspace:*",
     "eslint": "8.46.0",
-    "husky": "^8.0.0",
+    "husky": "^8.0.3",
     "lerna": "7.1.4",
     "precise-commits": "1.0.2",
     "prettier": "3.0.1"

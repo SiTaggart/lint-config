@@ -1,4 +1,10 @@
 {
-  "extends": ["config:base", ":pinVersions", "group:allNonMajor", "schedule:earlyMondays"],
+  "extends": [
+    "config:base",
+    ":automergeMinor",
+    ":pinVersions",
+    "group:allNonMajor",
+    "schedule:earlyMondays"
+  ],
   "lockFileMaintenance": { "enabled": true }
 }
