@@ -2333,7 +2333,7 @@ __metadata:
     typescript: 5.1.6
   peerDependencies:
     eslint: 8.36.0
-    prettier: 2.8.4
+    prettier: 3.0.1
   languageName: unknown
   linkType: soft
 
@@ -2361,7 +2361,7 @@ __metadata:
     eslint-plugin-unicorn: 48.0.1
   peerDependencies:
     eslint: 8.36.0
-    prettier: 2.8.4
+    prettier: 3.0.1
   languageName: unknown
   linkType: soft
 
@@ -2369,7 +2369,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@sitaggart/prettier-config@workspace:packages/prettier-config"
   peerDependencies:
-    prettier: 2.8.4
+    prettier: 3.0.1
   languageName: unknown
   linkType: soft
 
@@ -5785,7 +5785,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"husky@npm:latest":
+"husky@npm:^8.0.0":
   version: 8.0.3
   resolution: "husky@npm:8.0.3"
   bin:
@@ -8916,7 +8916,7 @@ __metadata:
     "@sitaggart/eslint-config": "workspace:*"
     "@sitaggart/prettier-config": "workspace:*"
     eslint: 8.46.0
-    husky: latest
+    husky: ^8.0.0
     lerna: 7.1.4
     precise-commits: 1.0.2
     prettier: 3.0.1
