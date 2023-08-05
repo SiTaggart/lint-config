@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/SiTaggart/lint-config/compare/@sitaggart/eslint-config@0.6.24...@sitaggart/eslint-config@0.7.0) (2023-08-05)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([a142845](https://github.com/SiTaggart/lint-config/commit/a142845f7961f854b65cc90e7206676fe10e09ae))
+* **deps:** update all non-major dependencies ([2745cc6](https://github.com/SiTaggart/lint-config/commit/2745cc6d6ae3e251d8cab97ba0d49aa2d6fd9d4f))
+* **deps:** update all non-major dependencies ([24aee32](https://github.com/SiTaggart/lint-config/commit/24aee321dc037769e9ff8fd1e423ca20b974dac3))
+* **deps:** update all non-major dependencies ([9255b8e](https://github.com/SiTaggart/lint-config/commit/9255b8e48311439d299c50efaa6e23c96954934c))
+* **deps:** update all non-major dependencies ([34922a7](https://github.com/SiTaggart/lint-config/commit/34922a7c3405f69e7e0d5e98faf8c7e5033b8c92))
+* **deps:** update all non-major dependencies ([b21e31f](https://github.com/SiTaggart/lint-config/commit/b21e31fb764c5f1dac53d2b5131403dd88c0e702))
+* **deps:** update all non-major dependencies ([90f9d23](https://github.com/SiTaggart/lint-config/commit/90f9d23a69fb1f60743de4e89c2e046bff37a086))
+* **deps:** update all non-major dependencies ([041e522](https://github.com/SiTaggart/lint-config/commit/041e52253ae78231724b9cd21a71354b3b9bb78b))
+* **deps:** update all non-major dependencies ([742636f](https://github.com/SiTaggart/lint-config/commit/742636f4d2162ce0df15c917ab626acef5d06e22))
+* **deps:** update all non-major dependencies ([9ce0cd3](https://github.com/SiTaggart/lint-config/commit/9ce0cd337e5f41d3e9b8f5823a22e5c4a3e27322))
+* **deps:** update all non-major dependencies ([a66834e](https://github.com/SiTaggart/lint-config/commit/a66834e65850da49f6c8153f34c63d617ba39f31))
+* **deps:** update all non-major dependencies ([2c1338a](https://github.com/SiTaggart/lint-config/commit/2c1338a7bd000c9ce505c76d28883d0ddec71602))
+* **deps:** update dependency eslint-plugin-unicorn to v45 ([#625](https://github.com/SiTaggart/lint-config/issues/625)) ([ab21c04](https://github.com/SiTaggart/lint-config/commit/ab21c0409f480550ee8b116c2c651ce88ba606b7))
+* **deps:** update dependency eslint-plugin-unicorn to v46 ([#651](https://github.com/SiTaggart/lint-config/issues/651)) ([0e055c5](https://github.com/SiTaggart/lint-config/commit/0e055c50cd1cdafb11306170137bf57b6038f55b))
+
+
+### Features
+
+* latest version of all packages ([ef3966c](https://github.com/SiTaggart/lint-config/commit/ef3966c4a379a37e546ff2f1d6c276cd34fc8c1a))
+
+
+
+
+
 ## 0.6.24 (2022-10-30)
 
 ### Bug Fixes
