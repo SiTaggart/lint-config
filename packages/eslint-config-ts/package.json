@@ -24,8 +24,8 @@
     "url": "https://github.com/SiTaggart/lint-config/issues"
   },
   "peerDependencies": {
-    "eslint": "8.36.0",
-    "prettier": "2.8.4"
+    "eslint": "8.46.0",
+    "prettier": "2.8.8"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "6.2.1",
