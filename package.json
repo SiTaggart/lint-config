@@ -11,18 +11,18 @@
     "packages/**"
   ],
   "devDependencies": {
-    "@babel/core": "7.21.0",
-    "@babel/eslint-parser": "7.19.1",
-    "@babel/preset-env": "7.20.2",
-    "@commitlint/cli": "17.4.4",
-    "@commitlint/config-conventional": "17.4.4",
+    "@babel/core": "7.22.9",
+    "@babel/eslint-parser": "7.22.9",
+    "@babel/preset-env": "7.22.9",
+    "@commitlint/cli": "17.6.7",
+    "@commitlint/config-conventional": "17.6.7",
     "@sitaggart/eslint-config": "workspace:*",
     "@sitaggart/prettier-config": "workspace:*",
-    "eslint": "8.36.0",
-    "husky": "8.0.3",
-    "lerna": "6.5.1",
+    "eslint": "8.46.0",
+    "husky": "^8.0.0",
+    "lerna": "7.1.4",
     "precise-commits": "1.0.2",
-    "prettier": "2.8.4"
+    "prettier": "3.0.1"
   },
-  "packageManager": "yarn@3.4.1"
+  "packageManager": "yarn@3.6.1"
 }
