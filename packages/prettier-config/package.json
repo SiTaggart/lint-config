@@ -1,15 +1,15 @@
 {
   "name": "@sitaggart/prettier-config",
   "version": "0.3.25",
-  "description": "prettier config for personal projects",
-  "keywords": [
-    "prettier",
-    "config"
-  ],
+  "description": "biome formatter config for personal projects",
+  "keywords": ["biome", "config"],
   "author": "Si Taggart <me@simontaggart.com>",
   "homepage": "https://github.com/SiTaggart/lint-config#readme",
   "license": "MIT",
-  "main": "index.js",
+  "exports": {
+    "./biome": "./biome.json"
+  },
+  "type": "module",
   "publishConfig": {
     "access": "public"
   },
@@ -24,7 +24,10 @@
     "url": "https://github.com/SiTaggart/lint-config/issues"
   },
   "peerDependencies": {
-    "prettier": "2.8.4"
+    "@biomejs/biome": "2.0.0-beta.4"
   },
-  "gitHead": "5ab9ad16ed50b7f5fa90a71c9efb4cbd95569a43"
+  "gitHead": "5ab9ad16ed50b7f5fa90a71c9efb4cbd95569a43",
+  "devDependencies": {
+    "@biomejs/biome": "2.0.0-beta.4"
+  }
 }

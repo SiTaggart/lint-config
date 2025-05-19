@@ -1,33 +1,29 @@
 {
   "name": "root",
   "private": true,
+  "type": "module",
   "scripts": {
-    "postinstall": "husky install",
-    "lerna": "lerna",
-    "lint": "eslint ./packages/**/*.js",
-    "prettier": "prettier -c .",
-    "release": "yarn lerna publish -m 'chore(release): publish' --conventional-commits --yes --create-release github"
+    "prepare": "husky",
+    "lint": "biome check .",
+    "prettier": "biome format .",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "changeset publish"
   },
-  "workspaces": [
-    "packages/**"
-  ],
+  "workspaces": ["packages/*"],
   "engines": {
-    "node": "20.x"
+    "node": "22.x"
   },
   "devDependencies": {
-    "@babel/core": "7.22.9",
-    "@babel/eslint-parser": "7.22.9",
-    "@babel/preset-env": "7.22.9",
-    "@commitlint/cli": "17.6.7",
-    "@commitlint/config-conventional": "17.6.7",
+    "@biomejs/biome": "2.0.0-beta.4",
+    "@changesets/cli": "^2.29.4",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
     "@sitaggart/eslint-config": "workspace:*",
     "@sitaggart/prettier-config": "workspace:*",
-    "dotenv": "16.3.1",
-    "eslint": "8.46.0",
-    "husky": "8.0.3",
-    "lerna": "7.1.4",
-    "precise-commits": "1.0.2",
-    "prettier": "3.0.1"
+    "dotenv": "^16.5.0",
+    "husky": "^9.1.7",
+    "precise-commits": "1.0.2"
   },
-  "packageManager": "yarn@3.6.1"
+  "packageManager": "bun@1.1.13"
 }

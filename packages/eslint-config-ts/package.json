@@ -1,15 +1,15 @@
 {
   "name": "@sitaggart/eslint-config-ts",
   "version": "0.7.0",
-  "description": "eslint config for typescript projects",
-  "keywords": [
-    "eslint",
-    "typescript"
-  ],
+  "description": "biome config for typescript projects",
+  "keywords": ["biome", "typescript"],
   "author": "Si Taggart <me@simontaggart.com>",
   "homepage": "https://github.com/SiTaggart/lint-config#readme",
   "license": "MIT",
-  "main": "index.js",
+  "exports": {
+    "./biome": "./biome.json"
+  },
+  "type": "module",
   "publishConfig": {
     "access": "public"
   },
@@ -24,32 +24,12 @@
     "url": "https://github.com/SiTaggart/lint-config/issues"
   },
   "peerDependencies": {
-    "eslint": "8.36.0",
-    "prettier": "2.8.4"
-  },
-  "dependencies": {
-    "@typescript-eslint/eslint-plugin": "6.2.1",
-    "@typescript-eslint/parser": "6.2.1",
-    "eslint-config-airbnb": "19.0.4",
-    "eslint-config-airbnb-typescript": "17.1.0",
-    "eslint-config-prettier": "9.0.0",
-    "eslint-config-standard": "17.1.0",
-    "eslint-config-standard-jsx": "11.0.0",
-    "eslint-plugin-cypress": "2.13.3",
-    "eslint-plugin-eslint-comments": "3.2.0",
-    "eslint-plugin-import": "2.28.0",
-    "eslint-plugin-jest": "27.2.3",
-    "eslint-plugin-jsx-a11y": "6.7.1",
-    "eslint-plugin-n": "16.0.1",
-    "eslint-plugin-node": "11.1.0",
-    "eslint-plugin-prettier": "5.0.0",
-    "eslint-plugin-promise": "6.1.1",
-    "eslint-plugin-react": "7.33.1",
-    "eslint-plugin-react-hooks": "4.6.0",
-    "eslint-plugin-unicorn": "48.0.1"
+    "@biomejs/biome": "2.0.0-beta.4",
+    "typescript": "5.1.6"
   },
   "gitHead": "5ab9ad16ed50b7f5fa90a71c9efb4cbd95569a43",
   "devDependencies": {
+    "@biomejs/biome": "2.0.0-beta.4",
     "typescript": "5.1.6"
   }
 }
