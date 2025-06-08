@@ -1,6 +1,6 @@
 {
   "name": "@sitaggart/lint-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "base biome config for most projects",
   "keywords": [
     "biome",
