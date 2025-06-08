@@ -1,8 +1,12 @@
 {
   "name": "@sitaggart/lint-config",
-  "version": "0.7.0",
+  "version": "1.0.0",
   "description": "base biome config for most projects",
-  "keywords": ["biome", "js", "javascript"],
+  "keywords": [
+    "biome",
+    "js",
+    "javascript"
+  ],
   "author": "Si Taggart <me@simontaggart.com>",
   "homepage": "https://github.com/SiTaggart/lint-config#readme",
   "license": "MIT",
