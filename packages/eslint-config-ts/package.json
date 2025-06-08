@@ -24,12 +24,12 @@
     "url": "https://github.com/SiTaggart/lint-config/issues"
   },
   "peerDependencies": {
-    "@biomejs/biome": "2.0.0-beta.4",
-    "typescript": "5.1.6"
+    "@biomejs/biome": "2.0.0-beta.6",
+    "typescript": "5.8.3"
   },
   "gitHead": "5ab9ad16ed50b7f5fa90a71c9efb4cbd95569a43",
   "devDependencies": {
-    "@biomejs/biome": "2.0.0-beta.4",
-    "typescript": "5.1.6"
+    "@biomejs/biome": "2.0.0-beta.6",
+    "typescript": "5.8.3"
   }
 }
