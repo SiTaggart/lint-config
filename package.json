@@ -5,6 +5,7 @@
   "scripts": {
     "prepare": "husky",
     "check": "biome check .",
+    "ci": "biome ci .",
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "changeset publish"
