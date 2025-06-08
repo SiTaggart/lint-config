@@ -30,10 +30,12 @@
       "version": "0.7.0",
       "devDependencies": {
         "@biomejs/biome": "2.0.0-beta.6",
+        "@sitaggart/eslint-config": "workspace:*",
         "typescript": "5.8.3",
       },
       "peerDependencies": {
         "@biomejs/biome": "2.0.0-beta.6",
+        "@sitaggart/eslint-config": "workspace:*",
         "typescript": "5.8.3",
       },
     },
@@ -42,9 +44,11 @@
       "version": "0.3.25",
       "devDependencies": {
         "@biomejs/biome": "2.0.0-beta.6",
+        "@sitaggart/eslint-config": "workspace:*",
       },
       "peerDependencies": {
         "@biomejs/biome": "2.0.0-beta.6",
+        "@sitaggart/eslint-config": "workspace:*",
       },
     },
   },

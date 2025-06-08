@@ -1,8 +1,7 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.0.0-beta.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.0.0-beta.6/schema.json",
   "vcs": { "enabled": false, "clientKind": "git", "useIgnoreFile": false },
   "files": { "ignoreUnknown": false },
-  "formatter": { "enabled": true, "indentStyle": "tab" },
   "linter": {
     "enabled": true,
     "rules": {
@@ -46,6 +45,8 @@
       },
       "complexity": {
         "noAdjacentSpacesInRegex": "error",
+        "noArguments": "error",
+        "noCommaOperator": "error",
         "noExtraBooleanCast": "error",
         "noForEach": "error",
         "noStaticOnlyClass": "error",
@@ -61,11 +62,11 @@
         "noUselessTernary": "error",
         "noUselessUndefinedInitialization": "error",
         "noVoid": "error",
-        "noWith": "error",
         "useArrowFunction": "off",
         "useDateNow": "error",
         "useFlatMap": "error",
         "useLiteralKeys": "error",
+        "useNumericLiterals": "error",
         "useRegexLiterals": "error"
       },
       "correctness": {
@@ -96,10 +97,10 @@
         "noUnusedPrivateClassMembers": "off",
         "noUnusedVariables": "error",
         "noVoidElementsWithChildren": "error",
-        "useArrayLiterals": "error",
         "useIsNan": "error",
         "useJsxKeyInIterable": "error",
         "useValidForDirection": "error",
+        "useValidTypeof": "error",
         "useYield": "error"
       },
       "security": {
@@ -109,8 +110,6 @@
         "noGlobalEval": "error"
       },
       "style": {
-        "noArguments": "error",
-        "noCommaOperator": "error",
         "noCommonJs": "off",
         "noDefaultExport": "off",
         "noDoneCallback": "error",
@@ -208,7 +207,6 @@
         "useFragmentSyntax": "error",
         "useNodejsImportProtocol": "error",
         "useNumberNamespace": "error",
-        "useNumericLiterals": "error",
         "useShorthandAssign": "error",
         "useSingleVarDeclarator": "error",
         "useTemplate": "error",
@@ -258,21 +256,17 @@
         "noThenProperty": "error",
         "noUnsafeNegation": "error",
         "noVar": "warn",
+        "noWith": "error",
         "useAwait": "off",
         "useDefaultSwitchClauseLast": "error",
         "useErrorMessage": "error",
         "useGetterReturn": "error",
         "useGuardForIn": "error",
         "useIsArray": "error",
-        "useNumberToFixedDigitsArgument": "error",
-        "useValidTypeof": "error"
+        "useNumberToFixedDigitsArgument": "error"
       }
     },
-    "includes": ["**", "**", "**", "**", "**", "**", "!node_modules/*", "!**/.eslintrc.js"]
-  },
-  "javascript": {
-    "formatter": { "quoteStyle": "double" },
-    "globals": ["navigator", "window", "document"]
+    "includes": ["**", "!node_modules/*", "!**/.eslintrc.js"]
   },
   "assist": {
     "enabled": true,

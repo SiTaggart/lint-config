@@ -1,5 +1,6 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.0.0-beta.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.0.0-beta.6/schema.json",
+  "extends": ["@sitaggart/eslint-config"],
   "vcs": { "enabled": false, "clientKind": "git", "useIgnoreFile": false },
   "files": { "ignoreUnknown": false },
   "formatter": {
@@ -14,13 +15,6 @@
     "bracketSpacing": true,
     "expand": "auto",
     "useEditorconfig": true
-  },
-  "linter": {
-    "enabled": true,
-    "rules": {
-      "recommended": false
-    },
-    "includes": ["**", "**", "!node_modules/*", "!**/.eslintrc.js"]
   },
   "javascript": {
     "formatter": {
@@ -40,19 +34,7 @@
   "overrides": [
     {
       "includes": ["**/*.scss"],
-      "javascript": { "formatter": { "quoteStyle": "double" } }
-    },
-    {
-      "includes": ["*.yml"],
-      "javascript": { "formatter": { "quoteStyle": "double" } }
-    },
-    {
-      "includes": ["**/*.scss"],
-      "javascript": { "formatter": { "quoteStyle": "double" } }
-    },
-    {
-      "includes": ["*.yml"],
-      "javascript": { "formatter": { "quoteStyle": "double" } }
+      "css": { "formatter": { "quoteStyle": "double" } }
     }
   ],
   "assist": {
