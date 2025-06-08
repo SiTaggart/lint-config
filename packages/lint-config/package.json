@@ -1,8 +1,8 @@
 {
-  "name": "@sitaggart/eslint-config-ts",
+  "name": "@sitaggart/lint-config",
   "version": "0.7.0",
-  "description": "biome config for typescript projects",
-  "keywords": ["biome", "typescript"],
+  "description": "base biome config for most projects",
+  "keywords": ["biome", "js", "javascript"],
   "author": "Si Taggart <me@simontaggart.com>",
   "homepage": "https://github.com/SiTaggart/lint-config#readme",
   "license": "MIT",
@@ -24,12 +24,10 @@
     "url": "https://github.com/SiTaggart/lint-config/issues"
   },
   "peerDependencies": {
-    "@biomejs/biome": "2.0.0-beta.4",
-    "typescript": "5.1.6"
+    "@biomejs/biome": "2.0.0-beta.6"
   },
   "gitHead": "5ab9ad16ed50b7f5fa90a71c9efb4cbd95569a43",
   "devDependencies": {
-    "@biomejs/biome": "2.0.0-beta.4",
-    "typescript": "5.1.6"
+    "@biomejs/biome": "2.0.0-beta.6"
   }
 }

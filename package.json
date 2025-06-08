@@ -4,8 +4,8 @@
   "type": "module",
   "scripts": {
     "prepare": "husky",
-    "lint": "biome check .",
-    "prettier": "biome format .",
+    "check": "biome check .",
+    "ci": "biome ci .",
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "changeset publish"
@@ -15,12 +15,11 @@
     "node": "22.16.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.0.0-beta.4",
+    "@biomejs/biome": "2.0.0-beta.6",
     "@changesets/cli": "2.29.4",
     "@commitlint/cli": "19.8.1",
     "@commitlint/config-conventional": "19.8.1",
-    "@sitaggart/eslint-config": "workspace:*",
-    "@sitaggart/prettier-config": "workspace:*",
+    "@sitaggart/lint-config": "workspace:*",
     "dotenv": "16.5.0",
     "husky": "9.1.7",
     "precise-commits": "1.0.2"
