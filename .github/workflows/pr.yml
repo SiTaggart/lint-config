@@ -15,7 +15,5 @@ jobs:
           bun-version: latest
       - name: Install dependencies
         run: bun install
-      - name: Lint
-        run: bun run lint
-      - name: Prettier
-        run: bun run prettier
+      - name: Check
+        run: bun check

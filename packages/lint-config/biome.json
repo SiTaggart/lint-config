@@ -1,6 +1,5 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.0.0-beta.6/schema.json",
-  "extends": ["@sitaggart/eslint-config"],
   "assist": {
     "actions": {
       "source": {
@@ -11,6 +10,38 @@
   },
   "files": {
     "ignoreUnknown": false
+  },
+  "formatter": {
+    "attributePosition": "auto",
+    "bracketSameLine": false,
+    "bracketSpacing": true,
+    "enabled": true,
+    "expand": "auto",
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 100,
+    "useEditorconfig": true
+  },
+  "html": {
+    "formatter": {
+      "selfCloseVoidElements": "always"
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "arrowParentheses": "always",
+      "attributePosition": "auto",
+      "bracketSameLine": false,
+      "bracketSpacing": true,
+      "jsxQuoteStyle": "double",
+      "quoteProperties": "asNeeded",
+      "quoteStyle": "single",
+      "semicolons": "always",
+      "trailingCommas": "es5"
+    },
+    "globals": ["navigator", "window", "document"]
   },
   "linter": {
     "enabled": true,
@@ -87,8 +118,8 @@
       },
       "correctness": {
         "noChildrenProp": "error",
-        "noConstAssign": "error",
         "noConstantCondition": "error",
+        "noConstAssign": "error",
         "noConstructorReturn": "error",
         "noEmptyCharacterClassInRegex": "error",
         "noEmptyPattern": "error",
@@ -145,8 +176,8 @@
               "close": "TODO: Add a custom message here.",
               "closed": "TODO: Add a custom message here.",
               "confirm": "TODO: Add a custom message here.",
-              "defaultStatus": "TODO: Add a custom message here.",
               "defaultstatus": "TODO: Add a custom message here.",
+              "defaultStatus": "TODO: Add a custom message here.",
               "event": "TODO: Add a custom message here.",
               "external": "TODO: Add a custom message here.",
               "find": "TODO: Add a custom message here.",
@@ -189,11 +220,11 @@
               "screenX": "TODO: Add a custom message here.",
               "screenY": "TODO: Add a custom message here.",
               "scroll": "TODO: Add a custom message here.",
+              "scrollbars": "TODO: Add a custom message here.",
               "scrollBy": "TODO: Add a custom message here.",
               "scrollTo": "TODO: Add a custom message here.",
               "scrollX": "TODO: Add a custom message here.",
               "scrollY": "TODO: Add a custom message here.",
-              "scrollbars": "TODO: Add a custom message here.",
               "self": "TODO: Add a custom message here.",
               "status": "TODO: Add a custom message here.",
               "statusbar": "TODO: Add a custom message here.",
