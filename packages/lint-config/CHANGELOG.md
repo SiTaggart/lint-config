@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.0.1
+
+### Patch Changes
+
+- [#681](https://github.com/SiTaggart/lint-config/pull/681) [`eb12489`](https://github.com/SiTaggart/lint-config/commit/eb124899b35b57d0e4813c64691149f32b1aa26a) Thanks [@SiTaggart](https://github.com/SiTaggart)! - fix: ignore generated files by default
+
 ## 1.0.0
 
 ### Major Changes
