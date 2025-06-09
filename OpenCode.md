@@ -6,8 +6,8 @@ This file helps OpenCode remember project-specific information.
 
 Commonly used commands:
 
-- Lint: `bun run lint` (Uses Biome to check the codebase)
-- Format: `bun run prettier` (Uses Biome to format the codebase)
+- Lint: `bun run check` (Uses Biome to check the codebase)
+- Format: `biome format --write .` (Uses Biome to format the codebase)
 - Test: `echo "No test command specified"` (No test script found in package.json)
 - Build: `echo "No build command specified"` (No build script found in package.json)
 - Typecheck: `echo "No typecheck command specified"` (No typecheck script found)
@@ -22,10 +22,7 @@ Commonly used commands:
 
 - Monorepo managed with bun workspaces.
 - Packages are located in the `packages/` directory.
-  - `eslint-config`: Base ESLint configuration.
-  - `eslint-config-react`: ESLint configuration for React projects.
-  - `eslint-config-ts`: ESLint configuration for TypeScript projects.
-  - `prettier-config`: Prettier configuration (though Biome is used for formatting).
+  - `lint-config`: Comprehensive Biome configuration for JavaScript, TypeScript, and React projects.
 - Root `package.json` defines workspace-level scripts and dependencies.
 - Husky is used for pre-commit hooks (`.husky/`).
 - `bun.lock` is the lockfile for bun.
