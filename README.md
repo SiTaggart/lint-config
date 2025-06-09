@@ -1,19 +1,14 @@
 # Lint Config
 
-Personal configurations for eslint and prettier for JavaScript, Typescript and React projects
+Personal Biome configuration for JavaScript, TypeScript and React projects
 
-## Base configs
+## Installation and Usage
 
-Install [eslint-config](https://github.com/SiTaggart/lint-config/tree/main/packages/eslint-config)
+Install [@sitaggart/lint-config](https://github.com/SiTaggart/lint-config/tree/main/packages/lint-config)
 
-## Typescript configs
-
-Install [eslint-config-ts](https://github.com/SiTaggart/lint-config/tree/main/packages/eslint-config-ts)
-
-## React configs
-
-Install [eslint-config-react](https://github.com/SiTaggart/lint-config/tree/main/packages/eslint-config-react)
-
-## Prettier config
-
-Install [prettier-config](https://github.com/SiTaggart/lint-config/tree/main/packages/prettier-config)
+This package provides a comprehensive Biome configuration that includes:
+- Linting rules for JavaScript, TypeScript, and React
+- Code formatting (replaces Prettier)
+- Accessibility (a11y) rules
+- Import organization
+- Security and correctness checks

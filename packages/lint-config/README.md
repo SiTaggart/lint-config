@@ -1,22 +1,47 @@
-# `@sitaggart/eslint-config`
+# `@sitaggart/lint-config`
+
+A comprehensive Biome configuration for JavaScript, TypeScript, and React projects.
+
+## Features
+
+This configuration includes:
+- **Linting**: Comprehensive rules for JavaScript, TypeScript, and React
+- **Formatting**: Code formatting rules (replaces Prettier)
+- **Accessibility**: A11y rules for web applications
+- **Import Organization**: Automatic import sorting and organization
+- **Security**: Security-focused linting rules
+- **Correctness**: Rules to catch common mistakes and bugs
 
 ## Install
 
-```
-yarn add --dev eslint prettier @sitaggart/eslint-config
+```bash
+bun install --save-dev @biomejs/biome @sitaggart/lint-config
 ```
 
 ## Usage
 
-`.eslintrc.js`
+Create a `biome.json` file in your project root:
 
-```js
-module.exports = {
-  extends: ['@sitaggart/eslint-config'],
-  settings: {
-    react: {
-      version: 'x.x.x',
-    },
-  },
-};
+```json
+{
+  "extends": ["@sitaggart/lint-config/biome"]
+}
 ```
+
+### Scripts
+
+Add these scripts to your `package.json`:
+
+```json
+{
+  "scripts": {
+    "lint": "biome check .",
+    "lint:fix": "biome check --apply .",
+    "format": "biome format --write ."
+  }
+}
+```
+
+### VS Code Integration
+
+Install the [Biome VS Code extension](https://marketplace.visualstudio.com/items?itemName=biomejs.biome) for editor integration.
