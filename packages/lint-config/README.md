@@ -15,7 +15,7 @@ This configuration includes:
 ## Install
 
 ```bash
-npm install --save-dev @biomejs/biome @sitaggart/lint-config
+bun install --save-dev @biomejs/biome @sitaggart/lint-config
 ```
 
 ## Usage
