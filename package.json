@@ -12,7 +12,7 @@
   },
   "workspaces": ["packages/*"],
   "engines": {
-    "node": "22.16.0"
+    "node": "24.11.1"
   },
   "devDependencies": {
     "@biomejs/biome": "2.0.0-beta.6",
