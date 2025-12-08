@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.0.2
+
+### Patch Changes
+
+- [#686](https://github.com/SiTaggart/lint-config/pull/686) [`1f028d2`](https://github.com/SiTaggart/lint-config/commit/1f028d25af4623f9d733d3c5ef1f96b430a07529) Thanks [@renovate](https://github.com/apps/renovate)! - Update @biomejs/biome peerDependency from 2.0.0-beta.6 to 2.3.8
+
 ## 1.0.1
 
 ### Patch Changes
