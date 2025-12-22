@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.0.3
+
+### Patch Changes
+
+- [#700](https://github.com/SiTaggart/lint-config/pull/700) [`ed65a3a`](https://github.com/SiTaggart/lint-config/commit/ed65a3a43e0a1635b9299b8dc55405b4d6407046) Thanks [@renovate](https://github.com/apps/renovate)! - fix: minor biome dep update
+
 ## 1.0.2
 
 ### Patch Changes
