@@ -12,16 +12,16 @@
   },
   "workspaces": ["packages/*"],
   "engines": {
-    "node": "24.12.0"
+    "node": "24.15.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.3.10",
-    "@changesets/changelog-github": "0.5.2",
-    "@changesets/cli": "2.29.8",
-    "@commitlint/cli": "20.2.0",
-    "@commitlint/config-conventional": "20.2.0",
+    "@biomejs/biome": "2.4.12",
+    "@changesets/changelog-github": "0.6.0",
+    "@changesets/cli": "2.31.0",
+    "@commitlint/cli": "20.5.0",
+    "@commitlint/config-conventional": "20.5.0",
     "@sitaggart/lint-config": "workspace:*",
-    "dotenv": "17.2.3",
+    "dotenv": "17.4.2",
     "husky": "9.1.7",
     "precise-commits": "1.0.2"
   },
