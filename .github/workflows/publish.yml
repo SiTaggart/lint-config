@@ -30,7 +30,7 @@ jobs:
       - name: Configure npm registry
         run: npm config set registry https://registry.npmjs.org/
       - name: Create Release Pull Request or Publish
-        uses: changesets/action@v1
+        uses: changesets/action@v1.7.0
         with:
           publish: npm run release
           version: npm run version-packages
