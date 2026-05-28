@@ -25,15 +25,19 @@ jobs:
 
       - name: Upgrade npm for OIDC
         run: npm install -g npm@latest
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
       - name: Install dependencies
-        run: npm install
+        run: bun install --frozen-lockfile
       - name: Configure npm registry
         run: npm config set registry https://registry.npmjs.org/
       - name: Create Release Pull Request or Publish
         uses: changesets/action@v1.8.0
         with:
-          publish: npm run release
-          version: npm run version-packages
+          publish: bun run release
+          version: bun run version-packages
           commit: "chore(release): version packages"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          HUSKY: 0
