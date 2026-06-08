@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.0.4
+
+### Patch Changes
+
+- [#704](https://github.com/SiTaggart/lint-config/pull/704) [`7e4f64a`](https://github.com/SiTaggart/lint-config/commit/7e4f64aa201766cf0d6bc44f965270ce850db000) Thanks [@renovate](https://github.com/apps/renovate)! - Update the `@biomejs/biome` peer dependency to `2.4.16`.
+
 ## 1.0.3
 
 ### Patch Changes
