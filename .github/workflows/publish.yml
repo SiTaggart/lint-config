@@ -15,11 +15,11 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6.0.3
+      - uses: actions/checkout@v6.1.0
 
-      - uses: actions/setup-node@v6.4.0
+      - uses: actions/setup-node@v6.5.0
         with:
-          node-version: '24.16.0'
+          node-version: '24.19.0'
           registry-url: 'https://registry.npmjs.org'
       - name: Clear auth token for OIDC
         run: echo "NODE_AUTH_TOKEN=" >> $GITHUB_ENV
