@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.1.0
+
+### Minor Changes
+
+- [#730](https://github.com/SiTaggart/lint-config/pull/730) [`50db70e`](https://github.com/SiTaggart/lint-config/commit/50db70eca92f1cc2608aec5f26a40f15a7552651) Thanks [@renovate](https://github.com/apps/renovate)! - Update non-major dependencies, including the Biome peer to 2.5.10.
+
 ## 1.0.4
 
 ### Patch Changes
