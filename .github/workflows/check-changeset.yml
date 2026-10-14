@@ -6,6 +6,8 @@ on:
 
 jobs:
   check-changeset:
+    # Version Packages PRs consume pending changesets, so they have no changeset files to add.
+    if: ${{ !startsWith(github.head_ref, 'changeset-release/') }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7.0.1
