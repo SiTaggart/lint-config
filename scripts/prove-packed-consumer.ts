@@ -271,12 +271,15 @@ try {
     "src/clean.ts has zero diagnostics",
   );
 
-  const format = run(oxfmtBin, ["--check"], consumer);
+  const format = run(oxfmtBin, ["--list-different"], consumer);
+  const different = format.stdout.split("\n").filter((line) => line !== "");
 
-  process.stdout.write(`packed-consumer oxfmt --check\n${format.stdout}\n${format.stderr}\n`);
-  expect(format.status !== 0, "oxfmt --check exits non-zero");
-  expect(format.stdout.includes("src/messy.ts"), "oxfmt names src/messy.ts");
-  expect(!format.stdout.includes("src/clean.ts"), "oxfmt does not name src/clean.ts");
+  process.stdout.write(
+    `packed-consumer oxfmt --list-different\n${format.stdout}\n${format.stderr}\n`,
+  );
+  expect(format.status !== 0, "oxfmt --list-different exits non-zero");
+  expect(different.includes("src/messy.ts"), "oxfmt lists src/messy.ts");
+  expect(!different.includes("src/clean.ts"), "oxfmt does not list src/clean.ts");
 } finally {
   for (const path of packedInRepo) {
     if (existsSync(path)) {
