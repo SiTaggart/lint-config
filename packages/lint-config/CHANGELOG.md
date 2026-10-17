@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.1.1
+
+### Patch Changes
+
+- [#738](https://github.com/SiTaggart/lint-config/pull/738) [`eacaba2`](https://github.com/SiTaggart/lint-config/commit/eacaba2409e8b71a1e915b57f59f0dd387722c66) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
 ## 1.1.0
 
 ### Minor Changes
