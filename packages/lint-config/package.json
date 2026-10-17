@@ -13,10 +13,18 @@
     "url": "git+https://github.com/SiTaggart/lint-config.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "node --import ./test/setup-rule-tester.ts --test \"src/**/*.test.ts\"",
+    "check": "bun run typecheck && bun run test"
   },
   "bugs": {
     "url": "https://github.com/SiTaggart/lint-config/issues"
   },
-  "gitHead": "5ab9ad16ed50b7f5fa90a71c9efb4cbd95569a43"
+  "gitHead": "5ab9ad16ed50b7f5fa90a71c9efb4cbd95569a43",
+  "devDependencies": {
+    "@oxlint/plugins": "1.88.0",
+    "@types/node": "24.19.2",
+    "oxlint": "1.88.0",
+    "typescript": "7.0.2"
+  }
 }
