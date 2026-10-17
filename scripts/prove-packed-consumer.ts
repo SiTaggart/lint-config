@@ -155,7 +155,7 @@ try {
 
   const oxlintBin = join(consumer, "node_modules/.bin/oxlint");
 
-  const lint = run(oxlintBin, [], consumer);
+  const lint = run(oxlintBin, ["--format=json"], consumer);
 
   process.stdout.write(`packed-consumer oxlint\n${lint.output}\n`);
 
