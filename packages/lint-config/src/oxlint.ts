@@ -28,7 +28,6 @@ type ParsedRule<Option> = {
 const effectMessage =
   "Effects are banned. Derive the value during render, handle it in the event, or load it in a loader.";
 
-/** The React effect ban, as entries for the two rules that between them see every import and member form. */
 const effectBan = {
   imports: [
     { importNames: ["useEffect", "useLayoutEffect"], message: effectMessage, name: "react" },
@@ -42,10 +41,8 @@ const effectBan = {
   readonly properties: ReadonlyArray<PropertyOption>;
 };
 
-/** anti-slop rules that take options. Every other rule the plugin ships runs at plain "error". */
 const antiSlopOptions = new Map([["no-runtime-typeof", [{ allowInTypeGuards: true }]]]);
 
-/** `anti-slop/<rule>` at error for every key of the plugin's rule map, with options from `antiSlopOptions`. */
 function antiSlopRules(): Record<`anti-slop/${string}`, DummyRule> {
   return Object.fromEntries(
     Object.keys(antiSlop.rules).map((name): [string, DummyRule] => [
@@ -55,11 +52,10 @@ function antiSlopRules(): Record<`anti-slop/${string}`, DummyRule> {
   );
 }
 
-/** Internal. Consumers reach it only through `defineConfig`, which puts it first in `extends`. */
 const base: OxlintConfig = {
   extends: [nkzw],
   jsPlugins: [
-    // Extended configs reject relative specifiers. tsc emits this file beside dist/anti-slop.
+    // Extended configs reject relative specifiers.
     { name: "anti-slop", specifier: import.meta.resolve("./anti-slop/index.js") },
   ],
   rules: {
@@ -74,7 +70,6 @@ const base: OxlintConfig = {
   },
 };
 
-/** Oxlint reads "off", "allow", and 0 as the same severity. */
 function isOff(severity: AllowWarnDeny): boolean {
   return severity === "off" || severity === "allow" || severity === 0;
 }
@@ -95,10 +90,6 @@ function parseRule<Option>(
   return { options: [], severity: rule };
 }
 
-/**
- * Normalizes every entry form (module name, path object, `{ paths, patterns }`) into one
- * `{ paths, patterns }` object and appends `effectBan.imports`. The off severity passes through.
- */
 function foldImports(rule: ImportRestriction): ImportRestriction {
   const { options, severity } = parseRule(rule);
 
@@ -121,40 +112,50 @@ function foldImports(rule: ImportRestriction): ImportRestriction {
   return [severity, { paths: [...paths, ...effectBan.imports], patterns }];
 }
 
-/** Appends `effectBan.properties` after the consumer's entries. The off severity passes through. */
 function foldProperties(rule: PropertyRestriction): PropertyRestriction {
   const { options, severity } = parseRule(rule);
 
   return isOff(severity) ? rule : [severity, ...options, ...effectBan.properties];
 }
 
-/** Folds the ban into whichever of the two rules `rules` sets. Unset rules stay unset. */
 function foldRules(rules: DummyRuleMap): DummyRuleMap {
-  const { "no-restricted-imports": imports, "no-restricted-properties": properties } = rules;
+  const next: DummyRuleMap = { ...rules };
+  const imports = rules["no-restricted-imports"];
+  const properties = rules["no-restricted-properties"];
 
-  return {
-    ...rules,
-    "no-restricted-imports": imports === undefined ? imports : foldImports(imports),
-    "no-restricted-properties": properties === undefined ? properties : foldProperties(properties),
-  };
+  if (imports !== undefined) {
+    next["no-restricted-imports"] = foldImports(imports);
+  }
+
+  if (properties !== undefined) {
+    next["no-restricted-properties"] = foldProperties(properties);
+  }
+
+  return next;
 }
 
 /**
- * Applies `foldRules` to the root rules, every override's rules, and every extended config,
- * recursively. Oxlint replaces rule options wholesale, so any config the consumer hands us that sets
- * a restriction rule would otherwise delete the ban. Oxlint serializes the config to JSON, which
- * drops the `undefined` fields this leaves where the consumer set nothing.
+ * Oxlint replaces rule options wholesale, so any config the consumer hands us that sets a
+ * restriction rule would otherwise delete the ban.
  */
 function keepEffectBan(config: OxlintConfig): OxlintConfig {
-  return {
-    ...config,
-    extends: config.extends?.map(keepEffectBan),
-    overrides: config.overrides?.map((override) => ({
-      ...override,
-      rules: override.rules && foldRules(override.rules),
-    })),
-    rules: config.rules && foldRules(config.rules),
-  };
+  const next: OxlintConfig = { ...config };
+
+  if (config.extends !== undefined) {
+    next.extends = config.extends.map(keepEffectBan);
+  }
+
+  if (config.overrides !== undefined) {
+    next.overrides = config.overrides.map((override) =>
+      override.rules === undefined ? override : { ...override, rules: foldRules(override.rules) },
+    );
+  }
+
+  if (config.rules !== undefined) {
+    next.rules = foldRules(config.rules);
+  }
+
+  return next;
 }
 
 /**

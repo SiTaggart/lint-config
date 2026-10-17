@@ -4,10 +4,8 @@ import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-/** Files of a throwaway consumer project, keyed by project-relative path. */
 export type ProjectFiles = Readonly<Record<string, string>>;
 
-/** One oxlint report, reduced to what a consumer acts on. `rule` is the config key, e.g. "anti-slop/no-reflect-get". */
 export type Report = { readonly file: string; readonly rule: string };
 
 type Diagnostic = { readonly code: string; readonly filename: string };
@@ -36,12 +34,10 @@ const tsconfig = `${JSON.stringify(
   2,
 )}\n`;
 
-/** The consumer's `oxfmt.config.ts`, re-exporting the built `./oxfmt`. */
 export const oxfmtModuleConfig = {
   "oxfmt.config.ts": `export { default } from "${new URL("oxfmt.js", dist).href}";\n`,
 } satisfies ProjectFiles;
 
-/** The consumer's `.oxfmtrc.json`, copied from the built `./oxfmt.json`. */
 export const oxfmtJsonConfig = {
   ".oxfmtrc.json": readFileSync(new URL("oxfmt.json", dist), "utf8"),
 } satisfies ProjectFiles;
@@ -66,7 +62,6 @@ function hasDiagnostics(value: unknown): value is { readonly diagnostics: Readon
   );
 }
 
-/** Oxlint prints `plugin(rule)`, and core rules as `eslint(rule)`. Config keys drop the `eslint` prefix. */
 function ruleKey(code: string): string {
   const groups = /^(?<plugin>[^(]+)\((?<rule>[^)]+)\)$/u.exec(code)?.groups;
 
@@ -108,12 +103,6 @@ function withProject<Result>(files: ProjectFiles, run: (root: string) => Result)
   }
 }
 
-/**
- * Writes `files`, a tsconfig.json, and an oxlint.config.ts whose default export is `configSource`
- * (with `defineConfig` and `stylex` imported from the built dist by file URL) into a fresh temp
- * directory outside any node_modules. Runs the real oxlint binary with `--format=json` and
- * OXLINT_TSGOLINT_PATH set, then parses its JSON into reports.
- */
 export function lint(configSource: string, files: ProjectFiles): ReadonlyArray<Report> {
   const config = `import { defineConfig, stylex } from "${new URL("oxlint.js", dist).href}";\n\nexport default ${configSource};\n`;
 
@@ -128,12 +117,10 @@ export function lint(configSource: string, files: ProjectFiles): ReadonlyArray<R
   });
 }
 
-/** The rules oxlint reported for one project-relative file. */
 export function rulesIn(reports: ReadonlyArray<Report>, file: string): ReadonlyArray<string> {
   return reports.flatMap((report) => (report.file === file ? [report.rule] : []));
 }
 
-/** Writes `files` and a tsconfig.json into a fresh temp directory. Returns the paths oxfmt would reformat. */
 export function formatCheck(files: ProjectFiles): ReadonlyArray<string> {
   return withProject(files, (root) => {
     const result = spawnSync(process.execPath, [oxfmt, "--list-different"], {
