@@ -31,7 +31,10 @@ for (const { config, name } of configs) {
   await test(`${name} keeps oxfmt defaults and skips every shared ignore pattern`, () => {
     const rejected = formatCheck({ ...fixtures, ...config });
 
-    assert.ok(rejected.includes("src/unformatted.ts"), "single quotes and a missing semicolon are rejected");
+    assert.ok(
+      rejected.includes("src/unformatted.ts"),
+      "single quotes and a missing semicolon are rejected",
+    );
     assert.ok(!rejected.includes("src/formatted.ts"), "double quotes pass");
 
     for (const file of ignoredFiles) {

@@ -33,11 +33,15 @@ function isPath(target: ExportTarget): target is string {
 }
 
 function hasFiles(value: unknown): value is { readonly files: ReadonlyArray<unknown> } {
-  return typeof value === "object" && value !== null && "files" in value && Array.isArray(value.files);
+  return (
+    typeof value === "object" && value !== null && "files" in value && Array.isArray(value.files)
+  );
 }
 
 function isPackedFile(value: unknown): value is { readonly path: string } {
-  return typeof value === "object" && value !== null && "path" in value && typeof value.path === "string";
+  return (
+    typeof value === "object" && value !== null && "path" in value && typeof value.path === "string"
+  );
 }
 
 function isPluginModule(value: unknown): value is { readonly default: { readonly rules: object } } {
@@ -79,7 +83,9 @@ const packed = packedPaths(
 );
 
 await test("publishes every exports target", () => {
-  const targets = Object.values(manifest.exports).flatMap((target) => (isPath(target) ? [target] : Object.values(target)));
+  const targets = Object.values(manifest.exports).flatMap((target) =>
+    isPath(target) ? [target] : Object.values(target),
+  );
 
   for (const target of targets) {
     assert.ok(packed.includes(target.replace(/^\.\//u, "")), `${target} ships`);

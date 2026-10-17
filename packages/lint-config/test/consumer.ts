@@ -15,26 +15,36 @@ type Diagnostic = { readonly code: string; readonly filename: string };
 const dist = new URL("../dist/", import.meta.url);
 
 const oxlint = fileURLToPath(new URL("bin/oxlint", import.meta.resolve("oxlint/package.json")));
+
 const oxfmt = fileURLToPath(new URL("bin/oxfmt", import.meta.resolve("oxfmt/package.json")));
+
 const tsgolint = fileURLToPath(
   new URL("bin/tsgolint.js", import.meta.resolve("oxlint-tsgolint/package.json")),
 );
 
 const tsconfig = `${JSON.stringify(
-  { compilerOptions: { module: "NodeNext", noEmit: true, skipLibCheck: true, strict: true, target: "ES2024" } },
+  {
+    compilerOptions: {
+      module: "NodeNext",
+      noEmit: true,
+      skipLibCheck: true,
+      strict: true,
+      target: "ES2024",
+    },
+  },
   null,
   2,
 )}\n`;
 
 /** The consumer's `oxfmt.config.ts`, re-exporting the built `./oxfmt`. */
-export const oxfmtModuleConfig: ProjectFiles = {
+export const oxfmtModuleConfig = {
   "oxfmt.config.ts": `export { default } from "${new URL("oxfmt.js", dist).href}";\n`,
-};
+} satisfies ProjectFiles;
 
 /** The consumer's `.oxfmtrc.json`, copied from the built `./oxfmt.json`. */
-export const oxfmtJsonConfig: ProjectFiles = {
+export const oxfmtJsonConfig = {
   ".oxfmtrc.json": readFileSync(new URL("oxfmt.json", dist), "utf8"),
-};
+} satisfies ProjectFiles;
 
 function isDiagnostic(value: unknown): value is Diagnostic {
   return (
@@ -48,18 +58,23 @@ function isDiagnostic(value: unknown): value is Diagnostic {
 }
 
 function hasDiagnostics(value: unknown): value is { readonly diagnostics: ReadonlyArray<unknown> } {
-  return typeof value === "object" && value !== null && "diagnostics" in value && Array.isArray(value.diagnostics);
+  return (
+    typeof value === "object" &&
+    value !== null &&
+    "diagnostics" in value &&
+    Array.isArray(value.diagnostics)
+  );
 }
 
 /** Oxlint prints `plugin(rule)`, and core rules as `eslint(rule)`. Config keys drop the `eslint` prefix. */
 function ruleKey(code: string): string {
-  const match = /^(?<plugin>[^(]+)\((?<rule>[^)]+)\)$/u.exec(code);
+  const groups = /^(?<plugin>[^(]+)\((?<rule>[^)]+)\)$/u.exec(code)?.groups;
 
-  if (match?.groups?.plugin === undefined || match.groups.rule === undefined) {
+  if (groups === undefined) {
     throw new Error(`Unrecognized oxlint diagnostic code: ${code}`);
   }
 
-  return match.groups.plugin === "eslint" ? match.groups.rule : `${match.groups.plugin}/${match.groups.rule}`;
+  return groups.plugin === "eslint" ? groups.rule : `${groups.plugin}/${groups.rule}`;
 }
 
 function parseReports(stdout: string, stderr: string): ReadonlyArray<Report> {
@@ -121,7 +136,10 @@ export function rulesIn(reports: ReadonlyArray<Report>, file: string): ReadonlyA
 /** Writes `files` and a tsconfig.json into a fresh temp directory. Returns the paths oxfmt would reformat. */
 export function formatCheck(files: ProjectFiles): ReadonlyArray<string> {
   return withProject(files, (root) => {
-    const result = spawnSync(process.execPath, [oxfmt, "--list-different"], { cwd: root, encoding: "utf8" });
+    const result = spawnSync(process.execPath, [oxfmt, "--list-different"], {
+      cwd: root,
+      encoding: "utf8",
+    });
 
     if (result.status !== 0 && result.status !== 1) {
       throw new Error(`oxfmt failed:\n${result.stdout}\n${result.stderr}`);

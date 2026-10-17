@@ -5,11 +5,19 @@ import antiSlop from "./anti-slop/index.ts";
 import { ignorePatterns } from "./ignore-patterns.ts";
 
 type ImportRestriction = NonNullable<DummyRuleMap["no-restricted-imports"]>;
+
 type PropertyRestriction = NonNullable<DummyRuleMap["no-restricted-properties"]>;
-type OptionOf<Rule> = Rule extends readonly [AllowWarnDeny, ...infer Options] ? Options[number] : never;
+
+type OptionOf<Rule> = Rule extends readonly [AllowWarnDeny, ...infer Options]
+  ? Options[number]
+  : never;
+
 type ImportOption = OptionOf<ImportRestriction>;
+
 type ImportPath = Extract<ImportOption, { name: string }>;
+
 type ImportGroups = Exclude<ImportOption, ImportPath | string>;
+
 type PropertyOption = OptionOf<PropertyRestriction>;
 
 type ParsedRule<Option> = {
@@ -21,15 +29,17 @@ const effectMessage =
   "Effects are banned. Derive the value during render, handle it in the event, or load it in a loader.";
 
 /** The React effect ban, as entries for the two rules that between them see every import and member form. */
-const effectBan: {
-  readonly imports: ReadonlyArray<ImportPath>;
-  readonly properties: ReadonlyArray<PropertyOption>;
-} = {
-  imports: [{ importNames: ["useEffect", "useLayoutEffect"], message: effectMessage, name: "react" }],
+const effectBan = {
+  imports: [
+    { importNames: ["useEffect", "useLayoutEffect"], message: effectMessage, name: "react" },
+  ],
   properties: [
     { message: effectMessage, property: "useEffect" },
     { message: effectMessage, property: "useLayoutEffect" },
   ],
+} satisfies {
+  readonly imports: ReadonlyArray<ImportPath>;
+  readonly properties: ReadonlyArray<PropertyOption>;
 };
 
 /** anti-slop rules that take options. Every other rule the plugin ships runs at plain "error". */
@@ -73,7 +83,9 @@ function isModuleName(option: ImportOption): option is string {
   return typeof option === "string";
 }
 
-function parseRule<Option>(rule: AllowWarnDeny | [AllowWarnDeny, ...Array<Option>]): ParsedRule<Option> {
+function parseRule<Option>(
+  rule: AllowWarnDeny | [AllowWarnDeny, ...Array<Option>],
+): ParsedRule<Option> {
   if (Array.isArray(rule)) {
     const [severity, ...options] = rule;
 
@@ -152,7 +164,12 @@ function keepEffectBan(config: OxlintConfig): OxlintConfig {
  * React effect ban unless set to off.
  */
 export function defineConfig(config: OxlintConfig = {}): OxlintConfig {
-  const { extends: extended = [], ignorePatterns: extra = [], options, ...rest } = keepEffectBan(config);
+  const {
+    extends: extended = [],
+    ignorePatterns: extra = [],
+    options,
+    ...rest
+  } = keepEffectBan(config);
 
   return {
     ...rest,

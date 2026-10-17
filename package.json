@@ -1,16 +1,21 @@
 {
   "name": "root",
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "type": "module",
   "scripts": {
     "prepare": "husky",
+    "build": "bun run --filter @sitaggart/lint-config build",
+    "lint": "bun run build && oxlint",
+    "lint:fix": "bun run build && oxlint --fix",
+    "format": "bun run build && oxfmt",
+    "format:check": "bun run build && oxfmt --check",
+    "check": "bun run --filter @sitaggart/lint-config check && oxlint && oxfmt --check",
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "changeset publish"
-  },
-  "workspaces": ["packages/*"],
-  "engines": {
-    "node": "24.20.0"
   },
   "devDependencies": {
     "@changesets/changelog-github": "1.0.0",
@@ -20,7 +25,13 @@
     "@sitaggart/lint-config": "workspace:*",
     "dotenv": "18.0.1",
     "husky": "9.1.7",
+    "oxfmt": "0.73.0",
+    "oxlint": "1.88.0",
+    "oxlint-tsgolint": "7.0.2004",
     "precise-commits": "1.0.2"
+  },
+  "engines": {
+    "node": "24.20.0"
   },
   "packageManager": "bun@1.4.3"
 }

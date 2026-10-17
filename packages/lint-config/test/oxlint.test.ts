@@ -7,18 +7,47 @@ const namedEffect = 'import { useEffect } from "react";\n\nuseEffect(() => {}, [
 
 const effectForms = [
   { file: "src/effect/named.ts", rule: "no-restricted-imports", source: namedEffect },
-  { file: "src/effect/aliased.ts", rule: "no-restricted-imports", source: 'import { useLayoutEffect as ule } from "react";\n\nule(() => {}, []);\n' },
-  { file: "src/effect/reexport.ts", rule: "no-restricted-imports", source: 'export { useEffect } from "react";\n' },
-  { file: "src/effect/namespace.ts", rule: "no-restricted-imports", source: 'import * as R from "react";\n\nexport const r = R;\n' },
-  { file: "src/effect/namespace-member.ts", rule: "no-restricted-properties", source: 'import * as R from "react";\n\nR.useEffect(() => {}, []);\n' },
-  { file: "src/effect/default-member.ts", rule: "no-restricted-properties", source: 'import React from "react";\n\nReact.useLayoutEffect(() => {}, []);\n' },
-  { file: "src/effect/destructure.ts", rule: "no-restricted-properties", source: 'import React from "react";\n\nexport const { useEffect } = React;\n' },
-  { file: "src/effect/computed.ts", rule: "no-restricted-properties", source: 'import React from "react";\n\nReact["useEffect"](() => {}, []);\n' },
+  {
+    file: "src/effect/aliased.ts",
+    rule: "no-restricted-imports",
+    source: 'import { useLayoutEffect as ule } from "react";\n\nule(() => {}, []);\n',
+  },
+  {
+    file: "src/effect/reexport.ts",
+    rule: "no-restricted-imports",
+    source: 'export { useEffect } from "react";\n',
+  },
+  {
+    file: "src/effect/namespace.ts",
+    rule: "no-restricted-imports",
+    source: 'import * as R from "react";\n\nexport const r = R;\n',
+  },
+  {
+    file: "src/effect/namespace-member.ts",
+    rule: "no-restricted-properties",
+    source: 'import * as R from "react";\n\nR.useEffect(() => {}, []);\n',
+  },
+  {
+    file: "src/effect/default-member.ts",
+    rule: "no-restricted-properties",
+    source: 'import React from "react";\n\nReact.useLayoutEffect(() => {}, []);\n',
+  },
+  {
+    file: "src/effect/destructure.ts",
+    rule: "no-restricted-properties",
+    source: 'import React from "react";\n\nexport const { useEffect } = React;\n',
+  },
+  {
+    file: "src/effect/computed.ts",
+    rule: "no-restricted-properties",
+    source: 'import React from "react";\n\nReact["useEffect"](() => {}, []);\n',
+  },
 ];
 
 const allowedReact = {
+  "src/react/state-member.ts":
+    'import React from "react";\n\nexport const state = React.useState;\n',
   "src/react/state.ts": 'import { useState } from "react";\n\nexport const state = useState;\n',
-  "src/react/state-member.ts": 'import React from "react";\n\nexport const state = React.useState;\n',
 };
 
 const unknownAlias = "export type Value = unknown;\n";
@@ -46,7 +75,8 @@ const reports = lint("defineConfig()", {
   "src/reflect.ts": 'export const value = Reflect.get({ a: 1 }, "a");\n',
   "src/typeof-bare.ts":
     'export function size(value: string | number): number {\n  if (typeof value === "string") {\n    return value.length;\n  }\n\n  return value;\n}\n',
-  "src/typeof-guard.ts": 'export function isText(value: unknown): value is string {\n  return typeof value === "string";\n}\n',
+  "src/typeof-guard.ts":
+    'export function isText(value: unknown): value is string {\n  return typeof value === "string";\n}\n',
 });
 
 await test("bans every React effect import and member form", () => {
@@ -75,7 +105,10 @@ await test("skips every shared ignore pattern", () => {
 await test("runs anti-slop rules", () => {
   assert.ok(rulesIn(reports, "src/reflect.ts").includes("anti-slop/no-reflect-get"));
   assert.ok(rulesIn(reports, "src/typeof-bare.ts").includes("anti-slop/no-runtime-typeof"));
-  assert.ok(!rulesIn(reports, "src/typeof-guard.ts").includes("anti-slop/no-runtime-typeof"), "typeof is allowed in a type guard");
+  assert.ok(
+    !rulesIn(reports, "src/typeof-guard.ts").includes("anti-slop/no-runtime-typeof"),
+    "typeof is allowed in a type guard",
+  );
 });
 
 await test("runs type-aware rules by default", () => {
@@ -83,7 +116,9 @@ await test("runs type-aware rules by default", () => {
 });
 
 await test("turns type-aware rules off with typeAware false", () => {
-  const untyped = lint("defineConfig({ options: { typeAware: false } })", { "src/floating.ts": floating });
+  const untyped = lint("defineConfig({ options: { typeAware: false } })", {
+    "src/floating.ts": floating,
+  });
 
   assert.ok(!rulesIn(untyped, "src/floating.ts").includes("typescript/no-floating-promises"));
 });
@@ -103,25 +138,40 @@ await test("appends caller ignore patterns to the shared list", () => {
 const importEntryForms = [
   { entry: '"lodash"', name: "module name" },
   { entry: '{ message: "Use the helpers.", name: "lodash" }', name: "path object" },
-  { entry: '{ paths: ["lodash"], patterns: [{ group: ["lodash/*"] }] }', name: "paths and patterns object" },
+  {
+    entry: '{ paths: ["lodash"], patterns: [{ group: ["lodash/*"] }] }',
+    name: "paths and patterns object",
+  },
 ];
 
 for (const { entry, name } of importEntryForms) {
   await test(`keeps the React ban when the caller adds a ${name}`, () => {
-    const custom = lint(`defineConfig({ rules: { "no-restricted-imports": ["error", ${entry}] } })`, {
-      "src/lodash.ts": 'import { map } from "lodash";\n\nexport const m = map;\n',
-      "src/react.ts": namedEffect,
-    });
+    const custom = lint(
+      `defineConfig({ rules: { "no-restricted-imports": ["error", ${entry}] } })`,
+      {
+        "src/lodash.ts": 'import { map } from "lodash";\n\nexport const m = map;\n',
+        "src/react.ts": namedEffect,
+      },
+    );
 
-    assert.ok(rulesIn(custom, "src/lodash.ts").includes("no-restricted-imports"), "lodash is banned");
-    assert.ok(rulesIn(custom, "src/react.ts").includes("no-restricted-imports"), "useEffect is still banned");
+    assert.ok(
+      rulesIn(custom, "src/lodash.ts").includes("no-restricted-imports"),
+      "lodash is banned",
+    );
+    assert.ok(
+      rulesIn(custom, "src/react.ts").includes("no-restricted-imports"),
+      "useEffect is still banned",
+    );
   });
 }
 
 await test("keeps the patterns of a paths and patterns object", () => {
-  const custom = lint('defineConfig({ rules: { "no-restricted-imports": ["error", { patterns: [{ group: ["lodash/*"] }] }] } })', {
-    "src/lodash.ts": 'import map from "lodash/map";\n\nexport const m = map;\n',
-  });
+  const custom = lint(
+    'defineConfig({ rules: { "no-restricted-imports": ["error", { patterns: [{ group: ["lodash/*"] }] }] } })',
+    {
+      "src/lodash.ts": 'import map from "lodash/map";\n\nexport const m = map;\n',
+    },
+  );
 
   assert.ok(rulesIn(custom, "src/lodash.ts").includes("no-restricted-imports"));
 });
@@ -135,8 +185,14 @@ await test("keeps the React ban when the caller adds a property restriction", ()
     },
   );
 
-  assert.ok(rulesIn(custom, "src/random.ts").includes("no-restricted-properties"), "Math.random is banned");
-  assert.ok(rulesIn(custom, "src/react.ts").includes("no-restricted-properties"), "React.useEffect is still banned");
+  assert.ok(
+    rulesIn(custom, "src/random.ts").includes("no-restricted-properties"),
+    "Math.random is banned",
+  );
+  assert.ok(
+    rulesIn(custom, "src/react.ts").includes("no-restricted-properties"),
+    "React.useEffect is still banned",
+  );
 });
 
 await test("off disables only the rule the caller turns off", () => {
@@ -145,8 +201,14 @@ await test("off disables only the rule the caller turns off", () => {
     "src/named.ts": namedEffect,
   });
 
-  assert.ok(!rulesIn(custom, "src/named.ts").includes("no-restricted-imports"), "the import half is off");
-  assert.ok(rulesIn(custom, "src/member.ts").includes("no-restricted-properties"), "the property half still runs");
+  assert.ok(
+    !rulesIn(custom, "src/named.ts").includes("no-restricted-imports"),
+    "the import half is off",
+  );
+  assert.ok(
+    rulesIn(custom, "src/member.ts").includes("no-restricted-properties"),
+    "the property half still runs",
+  );
 });
 
 await test("keeps the React ban in overrides and extended configs that set the rules", () => {
@@ -161,8 +223,14 @@ await test("keeps the React ban in overrides and extended configs that set the r
     },
   );
 
-  assert.ok(rulesIn(custom, "src/named.ts").includes("no-restricted-imports"), "override keeps the import ban");
-  assert.ok(rulesIn(custom, "src/member.ts").includes("no-restricted-properties"), "extended config keeps the property ban");
+  assert.ok(
+    rulesIn(custom, "src/named.ts").includes("no-restricted-imports"),
+    "override keeps the import ban",
+  );
+  assert.ok(
+    rulesIn(custom, "src/member.ts").includes("no-restricted-properties"),
+    "extended config keeps the property ban",
+  );
 });
 
 await test("stylex allows only the StyleX namespace import", () => {
@@ -170,10 +238,17 @@ await test("stylex allows only the StyleX namespace import", () => {
     "src/path.ts": 'import * as path from "node:path";\n\nexport const p = path;\n',
     "src/stylex.ts": 'import * as stylex from "@stylexjs/stylex";\n\nexport const s = stylex;\n',
   };
+
   const plain = lint("defineConfig()", files);
   const withStylex = lint("defineConfig({ extends: [stylex] })", files);
 
   assert.ok(rulesIn(plain, "src/stylex.ts").includes("import/no-namespace"), "off by default");
-  assert.ok(!rulesIn(withStylex, "src/stylex.ts").includes("import/no-namespace"), "allowed with stylex");
-  assert.ok(rulesIn(withStylex, "src/path.ts").includes("import/no-namespace"), "other namespaces stay banned");
+  assert.ok(
+    !rulesIn(withStylex, "src/stylex.ts").includes("import/no-namespace"),
+    "allowed with stylex",
+  );
+  assert.ok(
+    rulesIn(withStylex, "src/path.ts").includes("import/no-namespace"),
+    "other namespaces stay banned",
+  );
 });
