@@ -1,10 +1,28 @@
 {
   "name": "@sitaggart/lint-config",
   "version": "1.1.1",
+  "description": "Shared oxlint and oxfmt config with the anti-slop oxlint plugin",
+  "keywords": ["oxlint", "oxfmt", "lint", "typescript"],
   "author": "Si Taggart <me@simontaggart.com>",
   "homepage": "https://github.com/SiTaggart/lint-config#readme",
   "license": "MIT",
   "type": "module",
+  "files": ["dist"],
+  "exports": {
+    "./oxlint": {
+      "types": "./dist/oxlint.d.ts",
+      "default": "./dist/oxlint.js"
+    },
+    "./oxfmt": {
+      "types": "./dist/oxfmt.d.ts",
+      "default": "./dist/oxfmt.js"
+    },
+    "./oxfmt.json": "./dist/oxfmt.json",
+    "./anti-slop": {
+      "types": "./dist/anti-slop/index.d.ts",
+      "default": "./dist/anti-slop/index.js"
+    }
+  },
   "publishConfig": {
     "access": "public"
   },
@@ -13,18 +31,30 @@
     "url": "git+https://github.com/SiTaggart/lint-config.git"
   },
   "scripts": {
+    "build": "bun scripts/build.ts",
     "typecheck": "tsc -p tsconfig.json",
-    "test": "node --import ./test/setup-rule-tester.ts --test \"src/**/*.test.ts\"",
-    "check": "bun run typecheck && bun run test"
+    "test": "bun run build && node --import ./test/setup-rule-tester.ts --test \"src/**/*.test.ts\" \"test/**/*.test.ts\"",
+    "check": "bun run typecheck && bun run test",
+    "prepack": "bun run build"
   },
   "bugs": {
     "url": "https://github.com/SiTaggart/lint-config/issues"
   },
   "gitHead": "5ab9ad16ed50b7f5fa90a71c9efb4cbd95569a43",
+  "peerDependencies": {
+    "@nkzw/oxlint-config": "^2.0.1",
+    "@oxlint/plugins": "^1.88.0",
+    "oxfmt": ">=0.73.0",
+    "oxlint": "^1.88.0",
+    "oxlint-tsgolint": ">=7.0.2004"
+  },
   "devDependencies": {
+    "@nkzw/oxlint-config": "2.0.1",
     "@oxlint/plugins": "1.88.0",
     "@types/node": "24.19.2",
+    "oxfmt": "0.73.0",
     "oxlint": "1.88.0",
+    "oxlint-tsgolint": "7.0.2004",
     "typescript": "7.0.2"
   }
 }
