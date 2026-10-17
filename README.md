@@ -14,13 +14,13 @@ bun install
 bun run check
 ```
 
-`bun run check` is the full gate, and CI runs it on every pull request. It typechecks the package, builds `dist`, and runs the rule suites and the oxlint and oxfmt CLI tests. Then it lints and format-checks this repo with the fresh build.
+`bun run check` is the full gate, and CI runs it on every pull request. It typechecks the package, builds `dist`, and runs the rule suites and the oxlint and oxfmt CLI tests. Then it lints and format-checks this repo with the fresh build. It also packs `@sitaggart/lint-config`, installs that tarball with its peers into a temporary consumer, and asserts the consumer diagnostics.
 
 This repo lints and formats itself with the built package, so `lint`, `lint:fix`, `format`, and `format:check` each build first.
 
 ## Vendored anti-slop
 
-`packages/lint-config/src/anti-slop` is a verbatim copy of [dmmulroy/anti-slop](https://github.com/dmmulroy/anti-slop). Both root configs ignore it so it stays byte-identical to upstream. Its own tests and `tsc` still cover it. [`UPSTREAM.md`](packages/lint-config/src/anti-slop/UPSTREAM.md) records the source commit, the one local change, and how to update the copy.
+`packages/lint-config/src/anti-slop` comes from [dmmulroy/anti-slop](https://github.com/dmmulroy/anti-slop) at commit `c44ef22ca116d0ba62a3ff663a0bd13a3f3fa40b`. The shared oxlint and oxfmt configs lint that directory. [`UPSTREAM.md`](packages/lint-config/src/anti-slop/UPSTREAM.md) records the source commit, the local adaptations, and how to update the copy.
 
 ## Release
 

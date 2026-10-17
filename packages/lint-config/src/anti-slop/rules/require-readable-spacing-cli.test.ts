@@ -8,16 +8,21 @@ import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const probeRoot = mkdtempSync(join(tmpdir(), "anti-slop-spacing-"));
+
 const config = join(probeRoot, "oxlint.json");
+
 const first = join(probeRoot, "first.ts");
+
 const second = join(probeRoot, "second.ts");
+
 const oxlintBin = fileURLToPath(new URL("bin/oxlint", import.meta.resolve("oxlint/package.json")));
 
-function runSpacingLint(...args: string[]) {
+function runSpacingLint(...args: Array<string>) {
   const result = spawnSync(process.execPath, [oxlintBin, "--config", config, ...args], {
     encoding: "utf8",
   });
-  return { status: result.status, output: `${result.stdout ?? ""}\n${result.stderr ?? ""}` };
+
+  return { output: `${result.stdout}\n${result.stderr}`, status: result.status };
 }
 
 try {
@@ -55,5 +60,5 @@ try {
   assert.equal(repeated.status, 0, repeated.output);
   assert.deepEqual([readFileSync(first, "utf8"), readFileSync(second, "utf8")], stable);
 } finally {
-  rmSync(probeRoot, { recursive: true, force: true });
+  rmSync(probeRoot, { force: true, recursive: true });
 }

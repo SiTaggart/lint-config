@@ -3,33 +3,33 @@ import type { CreateRule } from "@oxlint/plugins";
 import createPaddingLineRule from "../vendor/eslint-stylistic/padding-line-between-statements.ts";
 
 const paddingRule = createPaddingLineRule([
-  { blankLine: "always", prev: "import", next: "*" },
-  { blankLine: "always", prev: "*", next: { selector: "Program > :not(ImportDeclaration)" } },
-  { blankLine: "always", prev: { selector: "Program > :not(ImportDeclaration)" }, next: "*" },
-  { blankLine: "always", prev: "*", next: ["function", "class", "interface", "type"] },
-  { blankLine: "always", prev: ["function", "class", "interface", "type"], next: "*" },
+  { blankLine: "always", next: "*", prev: "import" },
+  { blankLine: "always", next: { selector: "Program > :not(ImportDeclaration)" }, prev: "*" },
+  { blankLine: "always", next: "*", prev: { selector: "Program > :not(ImportDeclaration)" } },
+  { blankLine: "always", next: ["function", "class", "interface", "type"], prev: "*" },
+  { blankLine: "always", next: "*", prev: ["function", "class", "interface", "type"] },
   {
     blankLine: "always",
-    prev: "*",
     next: ["multiline-const", "multiline-let", "multiline-var", "multiline-using"],
+    prev: "*",
   },
   {
     blankLine: "always",
-    prev: ["multiline-const", "multiline-let", "multiline-var", "multiline-using"],
     next: "*",
+    prev: ["multiline-const", "multiline-let", "multiline-var", "multiline-using"],
   },
-  { blankLine: "always", prev: "*", next: ["return", "if", "switch", "try", "for", "while", "do"] },
-  { blankLine: "always", prev: "block-like", next: "*" },
-  { blankLine: "any", prev: "import", next: "import" },
+  { blankLine: "always", next: ["return", "if", "switch", "try", "for", "while", "do"], prev: "*" },
+  { blankLine: "always", next: "*", prev: "block-like" },
+  { blankLine: "any", next: "import", prev: "import" },
   {
     blankLine: "any",
-    prev: {
-      selector:
-        ':matches(TSDeclareFunction, ExportNamedDeclaration[declaration.type="TSDeclareFunction"])',
-    },
     next: {
       selector:
         ':matches(TSDeclareFunction, FunctionDeclaration, ExportNamedDeclaration[declaration.type="TSDeclareFunction"], ExportNamedDeclaration[declaration.type="FunctionDeclaration"])',
+    },
+    prev: {
+      selector:
+        ':matches(TSDeclareFunction, ExportNamedDeclaration[declaration.type="TSDeclareFunction"])',
     },
   },
 ]);

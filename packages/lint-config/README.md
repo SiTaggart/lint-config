@@ -137,4 +137,4 @@ Install the [Oxc VS Code extension](https://marketplace.visualstudio.com/items?i
 
 ## anti-slop source
 
-`src/anti-slop` is [dmmulroy/anti-slop](https://github.com/dmmulroy/anti-slop) at commit `c44ef22`, without its Effect rules. It is MIT-licensed, and its license ships at `dist/anti-slop/LICENSE`. [`src/anti-slop/UPSTREAM.md`](src/anti-slop/UPSTREAM.md) records the one local change and how to update the copy.
+`src/anti-slop` is [dmmulroy/anti-slop](https://github.com/dmmulroy/anti-slop) at commit `c44ef22`, without its Effect rules. It is MIT-licensed, and its license ships at `dist/anti-slop/LICENSE`. [`src/anti-slop/UPSTREAM.md`](src/anti-slop/UPSTREAM.md) records the local adaptations and how to update the copy.
