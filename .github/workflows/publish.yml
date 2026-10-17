@@ -6,10 +6,9 @@ on:
   workflow_dispatch:
 
 permissions:
-  id-token: write  # Required for OIDC
+  id-token: write # Required for OIDC
   contents: write
   pull-requests: write
-
 
 jobs:
   release:
@@ -19,8 +18,8 @@ jobs:
 
       - uses: actions/setup-node@v7.0.0
         with:
-          node-version: '24.20.0'
-          registry-url: 'https://registry.npmjs.org'
+          node-version: "24.20.0"
+          registry-url: "https://registry.npmjs.org"
       - name: Clear auth token for OIDC
         run: echo "NODE_AUTH_TOKEN=" >> $GITHUB_ENV
 

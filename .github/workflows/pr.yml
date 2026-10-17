@@ -10,10 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7.0.0
+        with:
+          node-version-file: .nvmrc
       - uses: oven-sh/setup-bun@v2.2.0
         with:
           bun-version-file: package.json
       - name: Install dependencies
         run: bun install --frozen-lockfile
-      - name: Ci Check
-        run: bun ci
+      - name: Check
+        run: bun run check
