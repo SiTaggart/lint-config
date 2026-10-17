@@ -8,7 +8,9 @@ Shared [oxlint](https://oxc.rs/docs/guide/usage/linter) and [oxfmt](https://oxc.
 bun add -d @sitaggart/lint-config oxlint oxfmt oxlint-tsgolint @nkzw/oxlint-config @oxlint/plugins
 ```
 
-All five tools are peer dependencies. Keep `oxlint` and `@oxlint/plugins` on the same version. anti-slop's rules are built against that pairing.
+All five tools are peer dependencies. Keep `oxlint` and `@oxlint/plugins` on the same version. anti-slop's rules are built against that pairing. `oxlint-tsgolint` stays on `^7.0.2004`, the same major as the version this package develops against.
+
+Bun may warn that `typescript@7` is an incorrect peer of a transitive `@typescript-eslint` package. The install still completes, and this package typechecks with TypeScript 7.
 
 oxlint loads `oxlint.config.ts` through Node.js. TypeScript config files need Node.js `^20.19.0` or `>=22.18.0`.
 

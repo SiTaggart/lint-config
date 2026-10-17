@@ -14,7 +14,7 @@ Added exports:
 - `./oxlint`: `defineConfig()` and the `stylex` fragment. It enables `@nkzw/oxlint-config`, every anti-slop rule, a ban on React's `useEffect` and `useLayoutEffect`, and type-aware rules.
 - `./oxfmt`: the oxfmt config object.
 - `./oxfmt.json`: the same oxfmt config as JSON.
-- `./anti-slop`: the anti-slop oxlint plugin, vendored from `dmmulroy/anti-slop`.
+- `./anti-slop`: the anti-slop oxlint plugin, vendored from `dmmulroy/anti-slop`. `defineConfig()` enables `anti-slop/no-runtime-typeof` with `allowInTypeGuards: true`. The rule's own default is `false`.
 
 Added peer dependencies:
 

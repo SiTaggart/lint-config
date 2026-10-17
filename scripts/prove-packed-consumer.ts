@@ -3,6 +3,7 @@ import {
   existsSync,
   mkdirSync,
   mkdtempSync,
+  readFileSync,
   readdirSync,
   realpathSync,
   renameSync,
@@ -17,7 +18,98 @@ const repoRoot = fileURLToPath(new URL("..", import.meta.url));
 
 const packageDir = join(repoRoot, "packages/lint-config");
 
+type Report = { readonly file: string; readonly rule: string };
+
 const failures: Array<string> = [];
+
+function isString(value: unknown): value is string {
+  return typeof value === "string";
+}
+
+function isDevDependencies(value: unknown): value is Readonly<Record<string, string>> {
+  return (
+    typeof value === "object" &&
+    value !== null &&
+    !Array.isArray(value) &&
+    Object.values(value).every(isString)
+  );
+}
+
+function isManifest(value: unknown): value is { readonly devDependencies: unknown } {
+  return typeof value === "object" && value !== null && "devDependencies" in value;
+}
+
+function isDiagnostic(
+  value: unknown,
+): value is { readonly code: string; readonly filename: string } {
+  return (
+    typeof value === "object" &&
+    value !== null &&
+    "code" in value &&
+    isString(value.code) &&
+    "filename" in value &&
+    isString(value.filename)
+  );
+}
+
+function devDependencies(): Readonly<Record<string, string>> {
+  const manifest: unknown = JSON.parse(readFileSync(join(packageDir, "package.json"), "utf8"));
+
+  if (!isManifest(manifest) || !isDevDependencies(manifest.devDependencies)) {
+    throw new Error("packages/lint-config/package.json has no devDependency versions");
+  }
+
+  return manifest.devDependencies;
+}
+
+function pinned(dependencies: Readonly<Record<string, string>>, name: string): string {
+  const version = dependencies[name];
+
+  if (!isString(version)) {
+    throw new Error(`packages/lint-config is missing devDependency ${name}`);
+  }
+
+  return version;
+}
+
+function ruleKey(code: string): string {
+  const groups = /^(?<plugin>[^(]+)\((?<rule>[^)]+)\)$/u.exec(code)?.groups;
+
+  if (groups === undefined) {
+    throw new Error(`Unrecognized oxlint diagnostic code: ${code}`);
+  }
+
+  return groups.plugin === "eslint" ? groups.rule : `${groups.plugin}/${groups.rule}`;
+}
+
+function hasDiagnostics(value: unknown): value is { readonly diagnostics: ReadonlyArray<unknown> } {
+  return (
+    typeof value === "object" &&
+    value !== null &&
+    "diagnostics" in value &&
+    Array.isArray(value.diagnostics)
+  );
+}
+
+function reportsFrom(stdout: string): ReadonlyArray<Report> {
+  const output: unknown = JSON.parse(stdout);
+
+  if (!hasDiagnostics(output)) {
+    throw new Error(`oxlint printed no diagnostics:\n${stdout}`);
+  }
+
+  return output.diagnostics.map((diagnostic) => {
+    if (!isDiagnostic(diagnostic)) {
+      throw new Error(`Unexpected oxlint diagnostic: ${JSON.stringify(diagnostic)}`);
+    }
+
+    return { file: diagnostic.filename, rule: ruleKey(diagnostic.code) };
+  });
+}
+
+function hasPair(reports: ReadonlyArray<Report>, file: string, rule: string): boolean {
+  return reports.some((report) => report.file === file && report.rule === rule);
+}
 
 function expect(condition: boolean, message: string): void {
   if (!condition) {
@@ -39,8 +131,9 @@ function run(bin: string, args: ReadonlyArray<string>, cwd: string) {
   const result = spawnSync(bin, args, { cwd, encoding: "utf8", env });
 
   return {
-    output: `${result.stdout}\n${result.stderr}`,
     status: result.status,
+    stderr: result.stderr,
+    stdout: result.stdout,
   };
 }
 
@@ -69,6 +162,7 @@ try {
   renameSync(created[0], tarball);
 
   const consumer = join(temp, "consumer");
+  const versions = devDependencies();
 
   mkdirSync(consumer);
   writeFileSync(
@@ -76,15 +170,15 @@ try {
     `${JSON.stringify(
       {
         dependencies: {
-          "@nkzw/oxlint-config": "2.0.1",
-          "@oxlint/plugins": "1.88.0",
+          "@nkzw/oxlint-config": pinned(versions, "@nkzw/oxlint-config"),
+          "@oxlint/plugins": pinned(versions, "@oxlint/plugins"),
           "@sitaggart/lint-config": `file:${tarball}`,
           "@types/react": "19.2.2",
-          oxfmt: "0.73.0",
-          oxlint: "1.88.0",
-          "oxlint-tsgolint": "7.0.2004",
+          oxfmt: pinned(versions, "oxfmt"),
+          oxlint: pinned(versions, "oxlint"),
+          "oxlint-tsgolint": pinned(versions, "oxlint-tsgolint"),
           react: "19.2.0",
-          typescript: "7.0.2",
+          typescript: pinned(versions, "typescript"),
         },
         name: "packed-consumer",
         private: true,
@@ -156,29 +250,33 @@ try {
   const oxlintBin = join(consumer, "node_modules/.bin/oxlint");
 
   const lint = run(oxlintBin, ["--format=json"], consumer);
+  const reports = reportsFrom(lint.stdout);
 
-  process.stdout.write(`packed-consumer oxlint\n${lint.output}\n`);
+  process.stdout.write(`packed-consumer oxlint\n${lint.stdout}\n${lint.stderr}\n`);
+  expect(lint.status !== 0, "oxlint exits non-zero");
+  expect(
+    hasPair(reports, "src/effect.ts", "no-restricted-imports"),
+    "src/effect.ts reports no-restricted-imports",
+  );
+  expect(
+    hasPair(reports, "src/reflect.ts", "anti-slop/no-reflect-get"),
+    "src/reflect.ts reports anti-slop/no-reflect-get",
+  );
+  expect(
+    hasPair(reports, "src/float.ts", "typescript/no-floating-promises"),
+    "src/float.ts reports typescript/no-floating-promises",
+  );
+  expect(
+    reports.every((report) => report.file !== "src/clean.ts"),
+    "src/clean.ts has zero diagnostics",
+  );
 
   const format = run(oxfmtBin, ["--check"], consumer);
 
-  process.stdout.write(`packed-consumer oxfmt --check\n${format.output}\n`);
-
-  expect(lint.status !== 0, "oxlint exits non-zero");
-  expect(lint.output.includes("src/effect.ts"), "oxlint names src/effect.ts");
-  expect(lint.output.includes("no-restricted-imports"), "oxlint reports no-restricted-imports");
-  expect(
-    lint.output.includes("anti-slop/no-reflect-get") ||
-      lint.output.includes("anti-slop(no-reflect-get)"),
-    "oxlint reports anti-slop/no-reflect-get",
-  );
-  expect(
-    lint.output.includes("typescript/no-floating-promises") ||
-      lint.output.includes("typescript(no-floating-promises)"),
-    "oxlint reports typescript/no-floating-promises",
-  );
+  process.stdout.write(`packed-consumer oxfmt --check\n${format.stdout}\n${format.stderr}\n`);
   expect(format.status !== 0, "oxfmt --check exits non-zero");
-  expect(format.output.includes("src/messy.ts"), "oxfmt names src/messy.ts");
-  expect(!format.output.includes("src/clean.ts"), "oxfmt does not name src/clean.ts");
+  expect(format.stdout.includes("src/messy.ts"), "oxfmt names src/messy.ts");
+  expect(!format.stdout.includes("src/clean.ts"), "oxfmt does not name src/clean.ts");
 } finally {
   for (const path of packedInRepo) {
     if (existsSync(path)) {
