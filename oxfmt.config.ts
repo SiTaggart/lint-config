@@ -1,1 +1,1 @@
-export { default } from "@sitaggart/lint-config/oxfmt";
+export { default } from "./packages/lint-config/src/oxfmt.ts";

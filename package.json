@@ -10,9 +10,9 @@
     "build": "bun run --filter @sitaggart/lint-config build",
     "lint": "bun run build && oxlint",
     "lint:fix": "bun run build && oxlint --fix",
-    "format": "bun run build && oxfmt",
-    "format:check": "bun run build && oxfmt --check",
-    "check": "bun run --filter @sitaggart/lint-config check && oxlint && oxfmt --check && bun scripts/prove-packed-consumer.ts",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "check": "bun scripts/prove-release-format.ts && bun run --filter @sitaggart/lint-config check && oxlint && oxfmt --check && bun scripts/prove-packed-consumer.ts",
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "changeset publish"
