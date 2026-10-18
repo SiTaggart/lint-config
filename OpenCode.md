@@ -4,17 +4,15 @@ This file helps OpenCode remember project-specific information.
 
 ## Commands
 
-Commonly used commands:
-
-- Lint: `bun run check` (Uses Biome to check the codebase)
-- Format: `biome format --write .` (Uses Biome to format the codebase)
-- Test: `echo "No test command specified"` (No test script found in package.json)
-- Build: `echo "No build command specified"` (No build script found in package.json)
-- Typecheck: `echo "No typecheck command specified"` (No typecheck script found)
+- `bun install`: install dependencies with Bun 1.4.3. Node.js 24.20.0 must be on `PATH` for tests and linting.
+- `bun run check`: typecheck, build, test, lint and format-check the repo, then prove a packed consumer. CI runs this.
+- `bun run lint` / `bun run lint:fix`: build, then run oxlint.
+- `bun run format` / `bun run format:check`: build, then run oxfmt.
+- `bun run --filter @sitaggart/lint-config test`: build and run the package tests under `node --test`. Do not use `bun test`. oxlint's `RuleTester` refuses Bun.
 
 ## Code Style
 
-- This project uses Biome for linting and formatting. Configuration is in `biome.json` and per-package `biome.json` files.
+- Formatting is oxfmt defaults. Linting is the package's own `defineConfig()`, built from `dist`.
 - Commit messages should follow conventional commit format (enforced by `commitlint`).
 - Uses `changeset` for versioning and publishing packages.
 
@@ -22,7 +20,7 @@ Commonly used commands:
 
 - Monorepo managed with bun workspaces.
 - Packages are located in the `packages/` directory.
-  - `lint-config`: Comprehensive Biome configuration for JavaScript, TypeScript, and React projects.
+  - `lint-config`: Shared oxlint and oxfmt config, plus the vendored anti-slop plugin in `src/anti-slop`. That directory is linted with the shared config. See its `UPSTREAM.md`.
 - Root `package.json` defines workspace-level scripts and dependencies.
 - Husky is used for pre-commit hooks (`.husky/`).
 - `bun.lock` is the lockfile for bun.

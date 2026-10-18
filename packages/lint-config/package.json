@@ -1,37 +1,67 @@
 {
   "name": "@sitaggart/lint-config",
   "version": "1.1.1",
-  "description": "base biome config for most projects",
+  "gitHead": "5ab9ad16ed50b7f5fa90a71c9efb4cbd95569a43",
+  "description": "Shared oxlint and oxfmt config with the anti-slop oxlint plugin",
   "keywords": [
-    "biome",
-    "js",
-    "javascript"
+    "lint",
+    "oxfmt",
+    "oxlint",
+    "typescript"
   ],
-  "author": "Si Taggart <me@simontaggart.com>",
   "homepage": "https://github.com/SiTaggart/lint-config#readme",
+  "bugs": {
+    "url": "https://github.com/SiTaggart/lint-config/issues"
+  },
   "license": "MIT",
-  "exports": {
-    "./biome": "./biome.json"
-  },
-  "type": "module",
-  "publishConfig": {
-    "access": "public"
-  },
+  "author": "Si Taggart <me@simontaggart.com>",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SiTaggart/lint-config.git"
   },
-  "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "exports": {
+    "./oxlint": {
+      "types": "./dist/oxlint.d.ts",
+      "default": "./dist/oxlint.js"
+    },
+    "./oxfmt": {
+      "types": "./dist/oxfmt.d.ts",
+      "default": "./dist/oxfmt.js"
+    },
+    "./oxfmt.json": "./dist/oxfmt.json",
+    "./anti-slop": {
+      "types": "./dist/anti-slop/index.d.ts",
+      "default": "./dist/anti-slop/index.js"
+    }
   },
-  "bugs": {
-    "url": "https://github.com/SiTaggart/lint-config/issues"
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "bun scripts/build.ts",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "bun run build && node --import ./test/setup-rule-tester.ts --test \"src/**/*.test.ts\" \"test/**/*.test.ts\"",
+    "check": "bun run typecheck && bun run test",
+    "prepack": "bun run build"
+  },
+  "devDependencies": {
+    "@nkzw/oxlint-config": "2.0.1",
+    "@oxlint/plugins": "1.88.0",
+    "@types/node": "24.19.2",
+    "oxfmt": "0.73.0",
+    "oxlint": "1.88.0",
+    "oxlint-tsgolint": "7.0.2004",
+    "typescript": "7.0.2"
   },
   "peerDependencies": {
-    "@biomejs/biome": "2.5.11"
-  },
-  "gitHead": "5ab9ad16ed50b7f5fa90a71c9efb4cbd95569a43",
-  "devDependencies": {
-    "@biomejs/biome": "2.5.11"
+    "@nkzw/oxlint-config": "^2.0.1",
+    "@oxlint/plugins": "^1.88.0",
+    "oxfmt": "^0.73.0",
+    "oxlint": "^1.88.0",
+    "oxlint-tsgolint": "^7.0.2004"
   }
 }

@@ -1,14 +1,27 @@
-# Lint Config
+# Lint config
 
-Personal Biome configuration for JavaScript, TypeScript and React projects
+This repo publishes [`@sitaggart/lint-config`](packages/lint-config), a shared oxlint and oxfmt config for TypeScript and React projects. The package README covers install and usage.
 
-## Installation and Usage
+## Requirements
 
-Install [@sitaggart/lint-config](https://github.com/SiTaggart/lint-config/tree/main/packages/lint-config)
+- Node.js 24.20.0, from `.nvmrc`. The rule tests run under `node --test`, because oxlint's `RuleTester` refuses to run on Bun. oxlint also loads `oxlint.config.ts` through Node.js.
+- Bun 1.4.3, from `packageManager`. Bun installs dependencies and runs every script.
 
-This package provides a comprehensive Biome configuration that includes:
-- Linting rules for JavaScript, TypeScript, and React
-- Code formatting (replaces Prettier)
-- Accessibility (a11y) rules
-- Import organization
-- Security and correctness checks
+## Develop
+
+```bash
+bun install
+bun run check
+```
+
+`bun run check` is the full gate, and CI runs it on every pull request. It typechecks the package, builds `dist`, and runs the rule suites and the oxlint and oxfmt CLI tests. Then it lints and format-checks this repo with the fresh build. It also packs `@sitaggart/lint-config`, installs that tarball with its peers into a temporary consumer, and asserts the consumer diagnostics.
+
+This repo lints and formats itself with the built package, so `lint`, `lint:fix`, `format`, and `format:check` each build first.
+
+## Vendored anti-slop
+
+`packages/lint-config/src/anti-slop` comes from [dmmulroy/anti-slop](https://github.com/dmmulroy/anti-slop) at commit `c44ef22ca116d0ba62a3ff663a0bd13a3f3fa40b`. The shared oxlint and oxfmt configs lint that directory. [`UPSTREAM.md`](packages/lint-config/src/anti-slop/UPSTREAM.md) records the source commit, the local adaptations, and how to update the copy.
+
+## Release
+
+Run `bun run changeset` to describe a change. On `main`, the release workflow opens a version pull request. Merging it publishes the package, and `prepack` builds `dist` first.
