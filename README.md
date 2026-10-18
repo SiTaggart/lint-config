@@ -14,9 +14,9 @@ bun install
 bun run check
 ```
 
-`bun run check` is the full gate, and CI runs it on every pull request. First it runs `bun x oxfmt --write --no-error-on-unmatched-pattern` on the package changelog with `dist` moved aside, which is the format command the release workflow runs. Then it typechecks the package, builds `dist`, and runs the rule suites and the oxlint and oxfmt CLI tests. Then it lints and format-checks this repo with the fresh build. It also packs `@sitaggart/lint-config`, installs that tarball with its peers into a temporary consumer, and asserts the consumer diagnostics.
+`bun run check` is the full gate, and CI runs it on every pull request. First it runs `bun x oxfmt --write --no-error-on-unmatched-pattern` on the package changelog with `dist` moved aside, which is the format command the release workflow runs. Then it typechecks the package, builds `dist`, and runs the rule suites and the oxlint and oxfmt CLI tests. Then it lints this repo with that build and format-checks it from the oxfmt source. It also packs `@sitaggart/lint-config`, installs that tarball with its peers into a temporary consumer, and asserts the consumer diagnostics.
 
-This repo lints and formats itself with the built package, so `lint`, `lint:fix`, `format`, and `format:check` each build first.
+This repo lints itself with the built package, so `lint` and `lint:fix` build first. `oxfmt.config.ts` imports `packages/lint-config/src/oxfmt.ts`, so `format` and `format:check` do not build.
 
 ## Vendored anti-slop
 
