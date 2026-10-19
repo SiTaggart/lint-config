@@ -16,9 +16,9 @@ jobs:
     steps:
       - uses: actions/checkout@v7.0.1
 
-      - uses: actions/setup-node@v7.0.0
+      - uses: actions/setup-node@v7.1.0
         with:
-          node-version: "24.20.0"
+          node-version: "24.22.0"
           registry-url: "https://registry.npmjs.org"
       - name: Clear auth token for OIDC
         run: echo "NODE_AUTH_TOKEN=" >> $GITHUB_ENV
@@ -33,7 +33,7 @@ jobs:
       - name: Configure npm registry
         run: npm config set registry https://registry.npmjs.org/
       - name: Create Release Pull Request or Publish
-        uses: changesets/action@v2.1.1
+        uses: changesets/action@v2.1.2
         with:
           publish-script: bun run release
           version-script: bun run version-packages
