@@ -6,11 +6,5 @@
     "group:allNonMajor",
     "schedule:earlyMondays"
   ],
-  "lockFileMaintenance": { "enabled": true },
-  "postUpgradeTasks": {
-    "commands": ["bun scripts/write-renovate-changeset.ts"],
-    "fileFilters": [".changeset/renovate-dependencies.md"],
-    "executionMode": "branch",
-    "installTools": { "bun": {} }
-  }
+  "lockFileMaintenance": { "enabled": true }
 }

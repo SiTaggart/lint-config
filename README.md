@@ -25,3 +25,5 @@ This repo lints itself with the built package, so `lint` and `lint:fix` build fi
 ## Release
 
 Run `bun run changeset` to describe a change. On `main`, the release workflow opens a version pull request. Merging it publishes the package, and `prepack` builds `dist` first.
+
+Renovate opens dependency pull requests on its early Monday schedule. The Monday sweep adds the changeset to those pull requests. Renovate does not write the changeset.
