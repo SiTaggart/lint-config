@@ -208,10 +208,6 @@ try {
     )}\n`,
   );
   writeFileSync(
-    join(consumer, "oxlint.config.ts"),
-    'import { defineConfig } from "@sitaggart/lint-config/oxlint";\n\nexport default defineConfig();\n',
-  );
-  writeFileSync(
     join(consumer, "oxfmt.config.ts"),
     'export { default } from "@sitaggart/lint-config/oxfmt";\n',
   );
@@ -249,14 +245,16 @@ try {
 
   const oxlintBin = join(consumer, "node_modules/.bin/oxlint");
 
-  const lint = run(oxlintBin, ["--format=json"], consumer);
+  const config = join(installed, "dist/oxlint.js");
+
+  const lint = run(oxlintBin, ["--config", config, "--format=json", "src"], consumer);
   const reports = reportsFrom(lint.stdout);
 
   process.stdout.write(`packed-consumer oxlint\n${lint.stdout}\n${lint.stderr}\n`);
   expect(lint.status !== 0, "oxlint exits non-zero");
   expect(
-    hasPair(reports, "src/effect.ts", "no-restricted-imports"),
-    "src/effect.ts reports no-restricted-imports",
+    hasPair(reports, "src/effect.ts", "react-effect-ban/no-react-effects"),
+    "src/effect.ts reports react-effect-ban/no-react-effects",
   );
   expect(
     hasPair(reports, "src/reflect.ts", "anti-slop/no-reflect-get"),
