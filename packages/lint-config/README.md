@@ -16,13 +16,20 @@ oxlint loads `oxlint.config.ts` through Node.js. TypeScript config files need No
 
 ## Usage
 
-Point oxlint at the shared config file.
+Add a project config. Oxlint loads `oxlint.config.ts`, and the shared ignore patterns resolve from that file.
+
+```ts
+// oxlint.config.ts
+import { defineConfig } from "@sitaggart/lint-config/oxlint";
+
+export default defineConfig();
+```
 
 ```json
 {
   "scripts": {
-    "lint": "oxlint --config ./node_modules/@sitaggart/lint-config/dist/oxlint.js src",
-    "lint:fix": "oxlint --fix --config ./node_modules/@sitaggart/lint-config/dist/oxlint.js src",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
     "format": "oxfmt",
     "format:check": "oxfmt --check"
   }
@@ -34,18 +41,11 @@ Point oxlint at the shared config file.
 export { default } from "@sitaggart/lint-config/oxfmt";
 ```
 
-The oxlint file extends `@nkzw/oxlint-config` and enables the `react-effect-ban` plugin. `react-effect-ban/no-react-effects` is `error`. It reports `useEffect` and `useLayoutEffect` imported from `react`, including aliases and re-exports. It also reports member forms such as `React.useEffect`, `import * as React from "react"`, and `React["useEffect"]`.
+`defineConfig()` extends `@nkzw/oxlint-config` and enables the `react-effect-ban` plugin. `react-effect-ban/no-react-effects` is `error`. It reports `useEffect` and `useLayoutEffect` imported from `react`, including aliases and re-exports. It also reports member forms such as `React.useEffect`, `import * as React from "react"`, and `React["useEffect"]`.
 
 The project needs a `tsconfig.json`. Type-aware rules are on by default.
 
-To add ignores or extra rules, call `defineConfig` from the same module instead of `--config`.
-
-```ts
-// oxlint.config.ts
-import { defineConfig } from "@sitaggart/lint-config/oxlint";
-
-export default defineConfig();
-```
+`defineConfig()` returns the root config, including the shared ignore list. Passing that object through `extends` drops `ignorePatterns`, so the project file exports `defineConfig()` directly.
 
 ## What the oxlint config enables
 
@@ -54,7 +54,7 @@ export default defineConfig();
 - A ban on React's `useEffect` and `useLayoutEffect` through the `react-effect-ban` plugin, at `error`.
 - `typescript/await-thenable`, `typescript/no-floating-promises`, `typescript/no-misused-promises`, `typescript/no-unnecessary-condition`, and `oxc/no-accumulating-spread`.
 
-Both configs ignore build output, coverage, framework caches, `node_modules`, `bun.lock`, and generated files such as `worker-configuration.d.ts` and `src/routeTree.gen.ts`. The patterns resolve from the config file's directory, so `dist/**` does not match `packages/app/dist/`.
+Both configs ignore build output, coverage, framework caches, `node_modules`, `bun.lock`, and generated files such as `worker-configuration.d.ts` and `src/routeTree.gen.ts`. Oxlint and oxfmt resolve those patterns from the project config file. `dist/**` matches that file's `dist` directory and does not match `packages/app/dist`.
 
 ## Customize
 

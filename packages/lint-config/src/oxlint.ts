@@ -58,5 +58,6 @@ export const stylex: OxlintConfig = {
   rules: { "import/no-namespace": ["error", { ignore: ["@stylexjs/stylex"] }] },
 };
 
-// `oxlint --config` loads the default export. `defineConfig()` is that config.
+// The project file must export this object. Oxlint roots ignorePatterns at the file it
+// loads, rejects `..`, and drops ignorePatterns from extended configs.
 export default defineConfig();
