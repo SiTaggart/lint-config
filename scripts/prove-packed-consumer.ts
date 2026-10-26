@@ -123,12 +123,44 @@ function tarballsIn(directory: string): Array<string> {
     .map((name) => join(directory, name));
 }
 
+function tarballEntries(tarball: string): ReadonlyArray<string> {
+  return execFileSync("tar", ["-tzf", tarball], { encoding: "utf8" })
+    .split("\n")
+    .filter((line) => line !== "");
+}
+
+function isPackedManifest(value: unknown): value is { readonly exports: object } {
+  return (
+    typeof value === "object" &&
+    value !== null &&
+    "exports" in value &&
+    typeof value.exports === "object" &&
+    value.exports !== null &&
+    !Array.isArray(value.exports)
+  );
+}
+
+function exportKeysFrom(raw: string): ReadonlyArray<string> {
+  const manifest: unknown = JSON.parse(raw);
+
+  if (!isPackedManifest(manifest)) {
+    throw new Error("packed package.json has no exports");
+  }
+
+  return Object.keys(manifest.exports);
+}
+
 function run(bin: string, args: ReadonlyArray<string>, cwd: string) {
   const env = { ...process.env };
 
   delete env.OXLINT_TSGOLINT_PATH;
 
-  const result = spawnSync(bin, args, { cwd, encoding: "utf8", env });
+  const result = spawnSync(bin, args, {
+    cwd,
+    encoding: "utf8",
+    env,
+    maxBuffer: 128 * 1024 * 1024,
+  });
 
   return {
     status: result.status,
@@ -160,6 +192,21 @@ try {
   const tarball = join(temp, "lint-config.tgz");
 
   renameSync(created[0], tarball);
+
+  const entries = tarballEntries(tarball);
+
+  const exportKeys = exportKeysFrom(
+    execFileSync("tar", ["-xOf", tarball, "package/package.json"], { encoding: "utf8" }),
+  );
+
+  process.stdout.write(`packed tarball\n${entries.join("\n")}\n`);
+  process.stdout.write(`packed exports ${exportKeys.join(" ")}\n`);
+  expect(
+    !entries.some((entry) => entry === "package/biome.json" || entry.endsWith("/biome.json")),
+    "tarball has no biome.json",
+  );
+  expect(!exportKeys.includes("./biome"), "tarball exports have no ./biome");
+  expect(!exportKeys.includes("./biome.json"), "tarball exports have no ./biome.json");
 
   const consumer = join(temp, "consumer");
   const versions = devDependencies();
@@ -208,18 +255,19 @@ try {
     )}\n`,
   );
   writeFileSync(
-    join(consumer, "oxlint.config.ts"),
-    'import { defineConfig } from "@sitaggart/lint-config/oxlint";\n\nexport default defineConfig();\n',
-  );
-  writeFileSync(
     join(consumer, "oxfmt.config.ts"),
     'export { default } from "@sitaggart/lint-config/oxfmt";\n',
+  );
+  writeFileSync(
+    join(consumer, "oxlint.config.ts"),
+    'import { defineConfig } from "@sitaggart/lint-config/oxlint";\n\nexport default defineConfig();\n',
   );
   mkdirSync(join(consumer, "src"));
   writeFileSync(
     join(consumer, "src/effect.ts"),
     'import { useEffect } from "react";\n\nuseEffect(() => {}, []);\n',
   );
+  writeFileSync(join(consumer, "src/routeTree.gen.ts"), 'console.log("generated");\n');
   writeFileSync(
     join(consumer, "src/reflect.ts"),
     'export const value = Reflect.get({ a: 1 }, "a");\n',
@@ -248,15 +296,39 @@ try {
   expect(prepared.status === 0, "oxfmt formats the generated package.json and tsconfig.json");
 
   const oxlintBin = join(consumer, "node_modules/.bin/oxlint");
+  const readme = readFileSync(join(packageDir, "README.md"), "utf8");
+
+  expect(readme.includes('"lint": "oxlint"'), "README lint script is bare oxlint");
+  expect(!readme.includes("dist/oxlint.js"), "README does not point oxlint at the package file");
+
+  mkdirSync(join(consumer, "node_modules/planted"), { recursive: true });
+  writeFileSync(
+    join(consumer, "node_modules/planted/violation.ts"),
+    'console.log("dependency");\n',
+  );
 
   const lint = run(oxlintBin, ["--format=json"], consumer);
   const reports = reportsFrom(lint.stdout);
+  const reportedFiles = [...new Set(reports.map((report) => report.file))];
 
-  process.stdout.write(`packed-consumer oxlint\n${lint.stdout}\n${lint.stderr}\n`);
+  const nodeModuleReports = reports.filter((report) => report.file.includes("node_modules")).length;
+  const routeReports = reports.filter((report) => report.file === "src/routeTree.gen.ts").length;
+
+  process.stdout.write(
+    `packed-consumer oxlint files ${reportedFiles.length} node_modules ${nodeModuleReports} routeTree ${routeReports}\n${reportedFiles.filter((file) => !file.includes("node_modules")).join("\n")}\n${lint.stderr}\n`,
+  );
   expect(lint.status !== 0, "oxlint exits non-zero");
   expect(
-    hasPair(reports, "src/effect.ts", "no-restricted-imports"),
-    "src/effect.ts reports no-restricted-imports",
+    reports.every((report) => !report.file.includes("node_modules")),
+    "node_modules is not reported",
+  );
+  expect(
+    reports.every((report) => report.file !== "src/routeTree.gen.ts"),
+    "src/routeTree.gen.ts is not reported",
+  );
+  expect(
+    hasPair(reports, "src/effect.ts", "react-effect-ban/no-react-effects"),
+    "src/effect.ts reports react-effect-ban/no-react-effects",
   );
   expect(
     hasPair(reports, "src/reflect.ts", "anti-slop/no-reflect-get"),
