@@ -37,9 +37,16 @@ const effectForms = [
     file: "src/effect/computed.ts",
     source: 'import React from "react";\n\nReact["useEffect"](() => {}, []);\n',
   },
+  {
+    file: "src/effect/literal-key.ts",
+    source:
+      'const source = { useEffect() {} };\n\nexport const { ["useEffect"]: effect } = source;\n',
+  },
 ];
 
 const allowedReact = {
+  "src/react/computed-key.ts":
+    'const useEffect = "value";\n\nexport const { [useEffect]: value } = { value: 1 };\n',
   "src/react/state-member.ts":
     'import React from "react";\n\nexport const state = React.useState;\n',
   "src/react/state.ts": 'import { useState } from "react";\n\nexport const state = useState;\n',

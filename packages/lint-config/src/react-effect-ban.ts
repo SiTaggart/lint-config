@@ -99,6 +99,7 @@ export const noReactEffectsRule = defineRule({
           }
         }
       },
+      // `.useEffect` on any object stays banned. That matches the old no-restricted-properties rule.
       MemberExpression(node) {
         if (isEffectName(memberName(node))) {
           context.report({ messageId: "effect", node });
@@ -106,6 +107,12 @@ export const noReactEffectsRule = defineRule({
       },
       Property(node) {
         if (node.parent.type !== "ObjectPattern") {
+          return;
+        }
+
+        // `const { [useEffect]: value }` names the variable, not the property.
+        // A string key such as `{ ["useEffect"]: value }` is still the property name.
+        if (node.computed && node.key.type !== "Literal") {
           return;
         }
 
