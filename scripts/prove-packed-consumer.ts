@@ -123,6 +123,33 @@ function tarballsIn(directory: string): Array<string> {
     .map((name) => join(directory, name));
 }
 
+function tarballEntries(tarball: string): ReadonlyArray<string> {
+  return execFileSync("tar", ["-tzf", tarball], { encoding: "utf8" })
+    .split("\n")
+    .filter((line) => line !== "");
+}
+
+function isPackedManifest(value: unknown): value is { readonly exports: object } {
+  return (
+    typeof value === "object" &&
+    value !== null &&
+    "exports" in value &&
+    typeof value.exports === "object" &&
+    value.exports !== null &&
+    !Array.isArray(value.exports)
+  );
+}
+
+function exportKeysFrom(raw: string): ReadonlyArray<string> {
+  const manifest: unknown = JSON.parse(raw);
+
+  if (!isPackedManifest(manifest)) {
+    throw new Error("packed package.json has no exports");
+  }
+
+  return Object.keys(manifest.exports);
+}
+
 function run(bin: string, args: ReadonlyArray<string>, cwd: string) {
   const env = { ...process.env };
 
@@ -160,6 +187,21 @@ try {
   const tarball = join(temp, "lint-config.tgz");
 
   renameSync(created[0], tarball);
+
+  const entries = tarballEntries(tarball);
+
+  const exportKeys = exportKeysFrom(
+    execFileSync("tar", ["-xOf", tarball, "package/package.json"], { encoding: "utf8" }),
+  );
+
+  process.stdout.write(`packed tarball\n${entries.join("\n")}\n`);
+  process.stdout.write(`packed exports ${exportKeys.join(" ")}\n`);
+  expect(
+    !entries.some((entry) => entry === "package/biome.json" || entry.endsWith("/biome.json")),
+    "tarball has no biome.json",
+  );
+  expect(!exportKeys.includes("./biome"), "tarball exports have no ./biome");
+  expect(!exportKeys.includes("./biome.json"), "tarball exports have no ./biome.json");
 
   const consumer = join(temp, "consumer");
   const versions = devDependencies();

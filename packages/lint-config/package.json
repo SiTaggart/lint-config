@@ -20,7 +20,6 @@
     "url": "git+https://github.com/SiTaggart/lint-config.git"
   },
   "files": [
-    "biome.json",
     "dist"
   ],
   "type": "module",
@@ -37,9 +36,7 @@
     "./anti-slop": {
       "types": "./dist/anti-slop/index.d.ts",
       "default": "./dist/anti-slop/index.js"
-    },
-    "./biome": "./biome.json",
-    "./biome.json": "./biome.json"
+    }
   },
   "publishConfig": {
     "access": "public"
@@ -52,7 +49,6 @@
     "prepack": "bun run build"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.5.11",
     "@nkzw/oxlint-config": "2.0.1",
     "@oxlint/plugins": "1.88.0",
     "@types/node": "24.19.2",
@@ -62,16 +58,10 @@
     "typescript": "7.0.2"
   },
   "peerDependencies": {
-    "@biomejs/biome": "2.5.11",
     "@nkzw/oxlint-config": "^2.0.1",
     "@oxlint/plugins": "^1.88.0",
     "oxfmt": "^0.73.0",
     "oxlint": "^1.88.0",
     "oxlint-tsgolint": "^7.0.2004"
-  },
-  "peerDependenciesMeta": {
-    "@biomejs/biome": {
-      "optional": true
-    }
   }
 }

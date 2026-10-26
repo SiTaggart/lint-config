@@ -1,6 +1,6 @@
 # `@sitaggart/lint-config`
 
-Shared [oxlint](https://oxc.rs/docs/guide/usage/linter), [oxfmt](https://oxc.rs/docs/guide/usage/formatter), and Biome config for TypeScript and React projects. The oxlint config includes a vendored copy of the [anti-slop](https://github.com/dmmulroy/anti-slop) plugin and the `react-effect-ban` plugin.
+Shared [oxlint](https://oxc.rs/docs/guide/usage/linter) and [oxfmt](https://oxc.rs/docs/guide/usage/formatter) config for TypeScript and React projects. The oxlint config includes a vendored copy of the [anti-slop](https://github.com/dmmulroy/anti-slop) plugin and the `react-effect-ban` plugin.
 
 ## Install
 
@@ -129,21 +129,6 @@ export default defineConfig({
 | `@sitaggart/lint-config/oxfmt`      | The oxfmt config object                                                 |
 | `@sitaggart/lint-config/oxfmt.json` | The same oxfmt config as JSON                                           |
 | `@sitaggart/lint-config/anti-slop`  | The anti-slop oxlint plugin                                             |
-| `@sitaggart/lint-config/biome`      | The Biome config                                                        |
-| `@sitaggart/lint-config/biome.json` | The same Biome config. Use this path in `extends`.                      |
-
-## Biome
-
-`@biomejs/biome` is an optional peer at `2.5.11`. Extend the JSON path. The `./biome` export is the same file.
-
-```json
-{
-  "root": true,
-  "extends": ["@sitaggart/lint-config/biome.json"]
-}
-```
-
-The shared file sets `"root": false`, so Biome can load it from a project that already has a root config.
 
 ## Editor
 

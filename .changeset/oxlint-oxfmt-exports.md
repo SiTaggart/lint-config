@@ -1,8 +1,13 @@
 ---
-"@sitaggart/lint-config": minor
+"@sitaggart/lint-config": major
 ---
 
-Add oxlint and oxfmt configs and the anti-slop oxlint plugin. The Biome export stays.
+Replace the Biome config with oxlint and oxfmt configs and the anti-slop oxlint plugin.
+
+Removed:
+
+- The `./biome` export.
+- The `@biomejs/biome` peer dependency.
 
 Added exports:
 
@@ -19,6 +24,6 @@ Added peer dependencies:
 - `@nkzw/oxlint-config`
 - `@oxlint/plugins`
 
-This repo formats with oxfmt. Quotes are double, trailing commas are `all`, and the line width stays at 100.
+Formatting moves from Biome's single quotes and `es5` trailing commas to oxfmt's double quotes and `all` trailing commas. Line width stays at 100.
 
-The Biome export remains for projects that still extend it. To add oxlint, install the five oxlint peers. The package README has the setup.
+To migrate, delete `biome.json` and `@biomejs/biome`. Install the five peers. Add an `oxlint.config.ts` that exports `defineConfig()` and an `oxfmt.config.ts` that re-exports `@sitaggart/lint-config/oxfmt`. Run `oxfmt` once to reformat. The package README has the full setup.
