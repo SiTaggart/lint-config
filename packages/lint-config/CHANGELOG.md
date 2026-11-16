@@ -1,5 +1,39 @@
 # Change Log
 
+## 2.0.0
+
+### Major Changes
+
+- [#746](https://github.com/SiTaggart/lint-config/pull/746) [`124cc87`](https://github.com/SiTaggart/lint-config/commit/124cc8735ea6612ae3ab37497e57adb6d592ec07) Thanks [@SiTaggart](https://github.com/SiTaggart)! - Replace the Biome config with oxlint and oxfmt configs and the anti-slop oxlint plugin.
+
+  Removed:
+
+  - The `./biome` export.
+  - The `@biomejs/biome` peer dependency.
+
+  Added exports:
+
+  - `./oxlint`: `defineConfig()` and the `stylex` fragment. It enables `@nkzw/oxlint-config`, every anti-slop rule, a ban on React's `useEffect` and `useLayoutEffect`, and type-aware rules.
+  - `./oxfmt`: the oxfmt config object.
+  - `./oxfmt.json`: the same oxfmt config as JSON.
+  - `./anti-slop`: the anti-slop oxlint plugin, vendored from `dmmulroy/anti-slop`. `defineConfig()` enables `anti-slop/no-runtime-typeof` with `allowInTypeGuards: true`. The rule's own default is `false`.
+
+  Added peer dependencies:
+
+  - `oxlint`
+  - `oxfmt`
+  - `oxlint-tsgolint`
+  - `@nkzw/oxlint-config`
+  - `@oxlint/plugins`
+
+  Formatting moves from Biome's single quotes and `es5` trailing commas to oxfmt's double quotes and `all` trailing commas. Line width stays at 100.
+
+  To migrate, delete `biome.json` and `@biomejs/biome`. Install the five peers. Add an `oxlint.config.ts` that exports `defineConfig()` and an `oxfmt.config.ts` that re-exports `@sitaggart/lint-config/oxfmt`. Run `oxfmt` once to reformat. The package README has the full setup.
+
+### Minor Changes
+
+- [#753](https://github.com/SiTaggart/lint-config/pull/753) [`398fa8f`](https://github.com/SiTaggart/lint-config/commit/398fa8f3361035e02b685eb68858516f4f994a54) Thanks [@SiTaggart](https://github.com/SiTaggart)! - Load the shared oxlint config from the project's `oxlint.config.ts` by exporting `defineConfig()`, then run `oxlint`. The shared ignore patterns then apply from the project root. The React `useEffect` and `useLayoutEffect` ban is the `react-effect-ban` plugin, at error.
+
 ## 1.1.1
 
 ### Patch Changes
