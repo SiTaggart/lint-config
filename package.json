@@ -23,15 +23,15 @@
     "@commitlint/cli": "21.2.4",
     "@commitlint/config-conventional": "21.2.4",
     "@sitaggart/lint-config": "workspace:*",
-    "dotenv": "18.0.8",
+    "dotenv": "18.0.10",
     "husky": "9.1.7",
-    "oxfmt": "0.73.0",
-    "oxlint": "1.88.0",
-    "oxlint-tsgolint": "7.0.2004",
+    "oxfmt": "0.79.0",
+    "oxlint": "1.94.0",
+    "oxlint-tsgolint": "7.0.2008",
     "precise-commits": "1.0.2"
   },
   "engines": {
-    "node": "24.22.0"
+    "node": "24.22.3"
   },
-  "packageManager": "bun@1.4.3"
+  "packageManager": "bun@1.4.5"
 }
