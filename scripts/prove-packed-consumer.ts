@@ -331,8 +331,12 @@ try {
     "src/effect.ts reports react-effect-ban/no-react-effects",
   );
   expect(
-    hasPair(reports, "src/reflect.ts", "anti-slop/no-reflect-get"),
-    "src/reflect.ts reports anti-slop/no-reflect-get",
+    hasPair(reports, "src/reflect.ts", "quality/no-reflect-get"),
+    "src/reflect.ts reports quality/no-reflect-get",
+  );
+  expect(
+    !hasPair(reports, "src/reflect.ts", "anti-slop/no-reflect-get"),
+    "src/reflect.ts does not also report anti-slop/no-reflect-get",
   );
   expect(
     hasPair(reports, "src/float.ts", "typescript/no-floating-promises"),
