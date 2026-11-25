@@ -94,15 +94,16 @@ await test("leaves other React hooks alone", () => {
 });
 
 await test("skips every shared ignore pattern", () => {
-  assert.deepEqual(rulesIn(reports, "src/control.ts"), ["anti-slop/no-unknown-type-aliases"]);
+  assert.deepEqual(rulesIn(reports, "src/control.ts"), ["quality/no-unknown-type-aliases"]);
 
   for (const file of ignoredFiles) {
     assert.deepEqual(rulesIn(reports, file), [], `${file} is ignored`);
   }
 });
 
-await test("runs anti-slop rules", () => {
-  assert.ok(rulesIn(reports, "src/reflect.ts").includes("anti-slop/no-reflect-get"));
+await test("runs preset quality rules and the remaining anti-slop rules", () => {
+  assert.ok(rulesIn(reports, "src/reflect.ts").includes("quality/no-reflect-get"));
+  assert.ok(!rulesIn(reports, "src/reflect.ts").includes("anti-slop/no-reflect-get"));
   assert.ok(rulesIn(reports, "src/typeof-bare.ts").includes("anti-slop/no-runtime-typeof"));
   assert.ok(
     !rulesIn(reports, "src/typeof-guard.ts").includes("anti-slop/no-runtime-typeof"),
@@ -131,7 +132,7 @@ await test("appends caller ignore patterns to the shared list", () => {
 
   assert.deepEqual(rulesIn(custom, "public/x.ts"), []);
   assert.deepEqual(rulesIn(custom, "dist/x.ts"), []);
-  assert.deepEqual(rulesIn(custom, "src/control.ts"), ["anti-slop/no-unknown-type-aliases"]);
+  assert.deepEqual(rulesIn(custom, "src/control.ts"), ["quality/no-unknown-type-aliases"]);
 });
 
 await test("keeps the React effect ban when the caller sets no-restricted-imports", () => {

@@ -6,12 +6,20 @@ import { ignorePatterns } from "./ignore-patterns.ts";
 
 const antiSlopOptions = new Map([["no-runtime-typeof", [{ allowInTypeGuards: true }]]]);
 
+const presetQualityRules = new Set(
+  Object.keys(nkzw.rules ?? {})
+    .filter((rule) => rule.startsWith("quality/"))
+    .map((rule) => rule.slice("quality/".length)),
+);
+
 function antiSlopRules(): Record<`anti-slop/${string}`, DummyRule> {
   return Object.fromEntries(
-    Object.keys(antiSlop.rules).map((name): [string, DummyRule] => [
-      `anti-slop/${name}`,
-      ["error", ...(antiSlopOptions.get(name) ?? [])],
-    ]),
+    Object.keys(antiSlop.rules)
+      .filter((name) => !presetQualityRules.has(name))
+      .map((name): [string, DummyRule] => [
+        `anti-slop/${name}`,
+        ["error", ...(antiSlopOptions.get(name) ?? [])],
+      ]),
   );
 }
 

@@ -8,7 +8,7 @@ Shared [oxlint](https://oxc.rs/docs/guide/usage/linter) and [oxfmt](https://oxc.
 bun add -d @sitaggart/lint-config oxlint oxfmt oxlint-tsgolint @nkzw/oxlint-config @oxlint/plugins
 ```
 
-All five tools are peer dependencies. Keep `oxlint` and `@oxlint/plugins` on the same version. anti-slop's rules are built against that pairing. `oxlint-tsgolint` stays on `^7.0.2004`, the same major as the version this package develops against.
+All five tools are peer dependencies. Keep `oxlint` and `@oxlint/plugins` on the same version, `^1.94.0` or newer. `@nkzw/oxlint-config` v4 requires that oxlint release. anti-slop's rules are built against that pairing. `oxlint-tsgolint` stays on `^7.0.2004`, the same major as the version this package develops against.
 
 Bun may warn that `typescript@7` is an incorrect peer of a transitive `@typescript-eslint` package. The install still completes, and this package typechecks with TypeScript 7.
 
@@ -50,7 +50,7 @@ The project needs a `tsconfig.json`. Type-aware rules are on by default.
 ## What the oxlint config enables
 
 - Everything in [`@nkzw/oxlint-config`](https://github.com/nkzw-tech/oxlint-config).
-- Every anti-slop rule at `error`. `anti-slop/no-runtime-typeof` still allows `typeof` inside type guards.
+- The anti-slop rules that `@nkzw/oxlint-config` does not already enable as `quality/` rules, at `error`. `anti-slop/no-runtime-typeof` still allows `typeof` inside type guards.
 - A ban on React's `useEffect` and `useLayoutEffect` through the `react-effect-ban` plugin, at `error`.
 - `typescript/await-thenable`, `typescript/no-floating-promises`, `typescript/no-misused-promises`, `typescript/no-unnecessary-condition`, and `oxc/no-accumulating-spread`.
 
